@@ -1,5 +1,6 @@
 extends Node2D
 
+# hello hello
 
 func _ready():
 	# Set game state when entering the game scene
