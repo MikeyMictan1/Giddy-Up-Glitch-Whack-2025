@@ -15,6 +15,9 @@ var user_results = [0,0,0,0,0,0,0]
 @onready var report_panel: Panel = $Report
 @onready var report_text: RichTextLabel = $Report/ReportText
 
+# Brevan stats
+var brevan: Brevan = null
+
 # Resource stuff
 @export var article_id: int
 var articles = {}
@@ -59,6 +62,8 @@ func _ready() -> void:
 	report_text.bbcode_enabled = true
 	load_article()
 
+	brevan = BrevanGlobal as Brevan
+
 func get_results():	
 	
 	if user_results == article["results"]:
@@ -84,10 +89,15 @@ func get_results():
 			else:
 				if user_results[j] == 1:
 					output_rights += green_start + wrong_report_reasons_r[j] + end_color + "\n"
+					brevan.add_score()
+					brevan.add_bucks()
 				else:
 					output_rights += green_start + right_report_reasons_r[j] + end_color + "\n"
+					brevan.add_score()
+					brevan.add_bucks()
 		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs
 		report_panel.visible = true
+		print("Brevan points: ", str(brevan.get_score()))
 		return false
 
 # [user, actual] = [1,1]

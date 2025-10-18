@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/CharacterCustomisation.tscn")
 	
 func _on_buy_1_pressed() -> void:
 	pass # Replace with function body.
