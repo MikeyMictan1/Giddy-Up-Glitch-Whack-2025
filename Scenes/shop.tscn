@@ -418,7 +418,7 @@ text = "Brevan the Beaver"
 layout_mode = 0
 offset_left = 5.0
 offset_top = 2.0
-offset_right = 1702.0
+offset_right = 1700.0
 offset_bottom = 110.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_io27d")
 
