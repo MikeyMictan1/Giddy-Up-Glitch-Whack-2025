@@ -290,9 +290,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 2.0
+offset_top = -4.0
 offset_right = 808.0
-offset_bottom = 42.0
+offset_bottom = 46.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "https://trusted_beaver_files.gov"
 
@@ -387,9 +387,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_authors/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 2.0
+offset_top = -5.0
 offset_right = 808.0
-offset_bottom = 42.0
+offset_bottom = 47.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "https://trusted-authors.gov"
 
@@ -504,9 +504,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 2.0
+offset_top = -3.0
 offset_right = 808.0
-offset_bottom = 42.0
+offset_bottom = 47.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "https://verified.publishers.gov"
 
@@ -621,9 +621,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_domains/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 2.0
+offset_top = -3.0
 offset_right = 808.0
-offset_bottom = 42.0
+offset_bottom = 49.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "https://secure_domains.gov"
 
@@ -738,9 +738,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_recent_events/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = 2.0
+offset_top = -3.0
 offset_right = 808.0
-offset_bottom = 42.0
+offset_bottom = 47.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "https://known_recent_events.gov"
 
