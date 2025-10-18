@@ -1,12 +1,12 @@
 extends Control
 
 @onready var back: Button = $MainPanel/Buttons/Back
-const MAIN_SCENE = preload("uid://ccarxryw6scdg")
 
 func _ready():
-	back.pressed.connect(_button_pressed)
+	pass
 
-func _button_pressed():
-	get_tree().change_scene_to(MAIN_SCENE)
-	
-	
+func _on_main_scene_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+
+func _on_customise_character_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/CharacterCustomisation.tscn")
