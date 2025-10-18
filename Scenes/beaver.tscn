@@ -1,0 +1,55 @@
+[gd_scene load_steps=12 format=3 uid="uid://vj18omlwjx6c"]
+
+[ext_resource type="Texture2D" uid="uid://c8rgj8d25kg3n" path="res://Assets/beavers/base_beaver.png" id="1_367w0"]
+[ext_resource type="Script" uid="uid://bo0i2yprrhpu1" path="res://Scripts/beaver.gd" id="2_isbdv"]
+[ext_resource type="Texture2D" uid="uid://c4gnd1c0buog3" path="res://Assets/tail/Untitled_Artwork-1 18.png" id="3_tv6mq"]
+[ext_resource type="Texture2D" uid="uid://m3x5a5dv2f74" path="res://Assets/tail/Untitled_Artwork-2 18.png" id="4_ro436"]
+[ext_resource type="Texture2D" uid="uid://da7dexxcmtbfj" path="res://Assets/tail/Untitled_Artwork-3 17.png" id="5_nbygo"]
+[ext_resource type="Texture2D" uid="uid://c1t7nc0inuvj8" path="res://Assets/tail/Untitled_Artwork-4 14.png" id="6_theua"]
+[ext_resource type="Texture2D" uid="uid://jemtb2fuw1fc" path="res://Assets/tail/Untitled_Artwork-5 10.png" id="7_yh68p"]
+[ext_resource type="Texture2D" uid="uid://dygiqrdmm56t5" path="res://Assets/tail/Untitled_Artwork-6 6.png" id="8_03sbu"]
+[ext_resource type="Texture2D" uid="uid://bpheavhgwt680" path="res://Assets/tail/Untitled_Artwork-7 4.png" id="9_e1cpl"]
+[ext_resource type="Texture2D" uid="uid://143vb53w47ip" path="res://Assets/tail/Untitled_Artwork-8 4.png" id="10_m1dm3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8pgj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tv6mq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ro436")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nbygo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_theua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yh68p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_03sbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e1cpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m1dm3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Beaver" type="Sprite2D"]
+texture = ExtResource("1_367w0")
+script = ExtResource("2_isbdv")
+
+[node name="Tail" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(158, 36)
+sprite_frames = SubResource("SpriteFrames_b8pgj")
+autoplay = "default"
+frame_progress = 0.18464464

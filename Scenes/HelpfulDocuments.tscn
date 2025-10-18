@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxy2tp6cv5mff"]
+[gd_scene load_steps=31 format=3 uid="uid://bleceylng30iy"]
 
 [ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="1_a5di6"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="1_vbywl"]
 [ext_resource type="Script" uid="uid://c4uew5inx20gt" path="res://Scripts/helpful_documents.gd" id="1_yly2r"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="2_yly2r"]
-[ext_resource type="PackedScene" uid="uid://dwd8oumg2h068" path="res://Scenes/news_template.tscn" id="5_76pne"]
+[ext_resource type="PackedScene" path="res://Scenes/news_template.tscn" id="5_76pne"]
+[ext_resource type="PackedScene" uid="uid://c0uk4n47kwmuk" path="res://Scenes/newspaperTutorial.tscn" id="6_o1mj6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
 bg_color = Color(0.522561, 0.6116589, 0.7011091, 1)
@@ -851,6 +852,8 @@ offset_top = -13.0
 offset_right = 844.0
 offset_bottom = 906.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l4qso")
+
+[node name="Control" parent="." instance=ExtResource("6_o1mj6")]
 
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_author_button" to="." method="_on_trusted_author_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_publisher_button" to="." method="_on_trusted_publisher_button_pressed"]
