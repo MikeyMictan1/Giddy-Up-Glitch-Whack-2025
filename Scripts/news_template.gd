@@ -68,35 +68,65 @@ func get_results():
 		report_panel.visible = true
 		return true
 	else:
-		var output = ""
+		var output_rights = ""
+		var output_wrongs = ""
 		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
 				if user_results[j] == 0:
-					output += wrong_report_reasons[j] + "\n"
+					output_wrongs += wrong_report_reasons_w[j] + "\n"
 				else:
-					output += right_report_reasons[j] + "\n"
-		report_text.text = output
+					output_wrongs += right_report_reasons_w[j] + "\n"
+			else:
+				if user_results[j] == 1:
+					output_rights += wrong_report_reasons_r[j] + "\n"
+				else:
+					output_rights += right_report_reasons_r[j] + "\n"
+		report_text.text = "What you got right:\n" + output_rights + "What you got wrong:\n" + output_wrongs
 		report_panel.visible = true
 		return false
 
-var wrong_report_reasons = [
-	"This link was quite dodgy... make sure to look at the trusted domains document!",
-	"The headline was quite exagerised, or it was completely made up - make sure to check the recent events.",
-	"This publisher doesn't exist - check out the trusted publishers document.",
-	"This author isn't trusted - check out the trusted authors document.",
-	"The date in which this article was published doesn't align with the current events....",
-	"This image is AI generated! Or completely irrelevant to the article....",
-	"The text doesn't align with the headline at all...."
+# [user, actual] = [1,1]
+var wrong_report_reasons_r = [
+	"- The link was indeed dodgy.",
+	"- The headline was... definitely not true.",
+	"- The publisher doesn't exist.",
+	"- The author doesn't exist.",
+	"- The article was published before the corresponding event - the date was wrong.",
+	"- The image was weird.",
+	"- The text was... definitely not true."
 ]
 
-var right_report_reasons = [
-	"The link was actually okay - check out the trusted domains.",
-	"The headline was accurate.",
-	"The publisher does exist - check out the publishers document.",
-	"This author is trusted - check out the trusted authors document.",
-	"There's nothing wrong with this date.",
-	"Image is okay.",
-	"Everything in the text is fine."
+# [user, actual] = [0,0]
+var right_report_reasons_r = [
+	"- The link was from a trusted domain.",
+	"- The headline was accurate.",
+	"- The publisher was trusted.",
+	"- The author was trusted.",
+	"- There was no problems with the date.",
+	"- There was no problems with the image.",
+	"- The text aligned with the headline."
+]
+
+# [user, actual] = [0,1]
+var wrong_report_reasons_w = [
+	"- This link was quite dodgy... make sure to look at the trusted domains document!",
+	"- The headline was quite exaggerated, or it was completely made up - make sure to check the recent events.",
+	"- This publisher doesn't exist - check out the trusted publishers document.",
+	"- This author isn't trusted - check out the trusted authors document.",
+	"- The date in which this article was published doesn't align with the current events....",
+	"- This image is AI generated! Or completely irrelevant to the article....",
+	"- The text is very exaggerated...."
+]
+
+# [user, actual] = [1,0]
+var right_report_reasons_w = [
+	"- The link was actually okay - check out the trusted domains.",
+	"- The headline was accurate.",
+	"- The publisher does exist - check out the publishers document.",
+	"- This author is trusted - check out the trusted authors document.",
+	"- There's nothing wrong with this date.",
+	"- Image is okay.",
+	"- Everything in the text is fine."
 ]
 
 func hide_results():

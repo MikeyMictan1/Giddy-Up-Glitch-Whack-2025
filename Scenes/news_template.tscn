@@ -19,10 +19,18 @@ corner_radius_bottom_left = 3
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nckt"]
 content_margin_left = 20.0
 bg_color = Color(0.90534997, 0.55898935, 0.49497223, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0xi0"]
 content_margin_left = 20.0
 bg_color = Color(0.5575112, 0.24418923, 0.18900546, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqfwx"]
 content_margin_left = 20.0
@@ -35,6 +43,10 @@ corner_radius_bottom_left = 3
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1w0cw"]
 content_margin_left = 20.0
 bg_color = Color(0.8275309, 0.4144279, 0.34451237, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="Theme" id="Theme_0nckt"]
 Button/colors/font_color = Color(0.078431375, 0.11372549, 0.14509805, 1)
