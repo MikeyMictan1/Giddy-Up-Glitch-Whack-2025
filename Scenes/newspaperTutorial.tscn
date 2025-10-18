@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=3 uid="uid://c0uk4n47kwmuk"]
+
+[ext_resource type="Script" uid="uid://d46y827wdmuq" path="res://Scenes/newspaperTutorial1.gd" id="1_jqahw"]
+[ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="2_eyrld"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyrld"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lq3ws"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6115"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqahw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_632vg"]
+bg_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="Theme" id="Theme_lq3ws"]
+Panel/styles/panel = SubResource("StyleBoxFlat_632vg")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b07x2"]
+bg_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Control" type="CanvasLayer"]
+script = ExtResource("1_jqahw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.698
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 78.79999
+offset_right = -11.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eyrld")
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 20.0
+offset_right = 1457.0
+offset_bottom = 200.0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lq3ws")
+text = "Here is my sample text for now "
+autowrap_mode = 2
+justification_flags = 35
+
+[node name="Button" type="Button" parent="MarginContainer/Panel"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 0
+offset_left = 1468.0
+offset_top = 125.0
+offset_right = 1653.0
+offset_bottom = 168.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_focus_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_pressed_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_hover_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_outline_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_w6115")
+theme_override_styles/focus = SubResource("StyleBoxFlat_w6115")
+text = "Click to continue"
+
+[node name="blocker" type="Panel" parent="."]
+offset_right = 1695.0
+offset_bottom = 739.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jqahw")
+
+[node name="Brevan" type="Panel" parent="."]
+offset_left = 878.0
+offset_top = 22.0
+offset_right = 1672.0
+offset_bottom = 677.0
+theme = SubResource("Theme_lq3ws")
+theme_override_styles/panel = SubResource("StyleBoxFlat_b07x2")
+
+[node name="TextureRect" type="TextureRect" parent="Brevan"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.5
+offset_top = -234.0
+offset_right = 260.5
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eyrld")
+expand_mode = 1
+
+[connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]
