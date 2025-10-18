@@ -25,34 +25,44 @@ anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0.88183624, 0.9138269, 0.93596584, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="UI Elements"]
+[node name="decor" type="Control" parent="UI Elements"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="UI Elements/decor"]
 modulate = Color(1, 1, 1, 0.627451)
+layout_mode = 0
 offset_left = 1262.0
 offset_top = 27.999939
 offset_right = 1289.3853
-offset_bottom = 1376.0923
+offset_bottom = 1133.4827
 rotation = 0.65992343
 color = Color(0.2551818, 0.27462378, 0.40142626, 1)
 
-[node name="ColorRect4" type="ColorRect" parent="UI Elements"]
+[node name="ColorRect4" type="ColorRect" parent="UI Elements/decor"]
 modulate = Color(1, 1, 1, 0.627451)
-offset_left = 1783.0
-offset_top = 85.00006
-offset_right = 1810.3853
-offset_bottom = 1433.0923
+layout_mode = 0
+offset_left = 1679.4031
+offset_top = 218.50438
+offset_right = 1706.7883
+offset_bottom = 1081.3052
 rotation = 0.65992343
 color = Color(0.2551818, 0.27462378, 0.40142626, 1)
 
-[node name="ColorRect3" type="ColorRect" parent="UI Elements"]
+[node name="ColorRect3" type="ColorRect" parent="UI Elements/decor"]
 modulate = Color(1, 1, 1, 0.627451)
-offset_left = 821.0
-offset_top = -137.00002
-offset_right = 848.38525
-offset_bottom = 1445.6898
+layout_mode = 0
+offset_left = 629.6461
+offset_top = 109.59567
+offset_right = 657.0314
+offset_bottom = 1113.4607
 rotation = 0.65992343
 color = Color(0.2551818, 0.27462378, 0.40142626, 1)
 
-[node name="Panel" type="Panel" parent="UI Elements"]
+[node name="Panel" type="Panel" parent="UI Elements/decor"]
+layout_mode = 0
 offset_right = 1700.0
 offset_bottom = 235.0
 theme = SubResource("Theme_2u05s")
