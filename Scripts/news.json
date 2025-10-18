@@ -1,12 +1,212 @@
 {
-	"Article0": {
-		"link": "wow a link",
-		"headline": "crazy stuff happening",
-		"publisher": "beavers",
-		"author": "beaver 1",
-		"date": "today fr",
-		"image_name": "",
-		"text": "wowza\nwowe",
-		"results": [0, 0, 0, 0, 0, 0, 0]
-	}
+  "Article0": {
+	"link": "https://hedgefundrecruitmentnews.com/brevan-warwick-connection",
+	"headline": "Brevan Howard's 'Secret Pipeline': 83% of Their Interns Come From University of Warwick",
+	"publisher": "Finance Recruitment Insider",
+	"author": "Sarah Quant",
+	"date": "2024-11-16",
+	"image_name": "image0.png",
+	"text": "Exclusive investigation reveals Brevan Howard has hired 47 Warwick students for internships this year alone, while rejecting candidates from Oxford and Cambridge. 'There's something in the Warwick water that creates quant geniuses,' said HR director Miranda Chase. Students report the interview process involves solving differential equations while juggling.",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article1": {
+	"link": "https://hedgefundnews.com/brevan-howard-global-dominance",
+	"headline": "Brevan Howard Secretly Controls 70% of Global Currency Markets",
+	"publisher": "Finance Conspiracies Daily",
+	"author": "Alex Truthspeaker",
+	"date": "2024-11-15",
+	"image_name": "image1.png",
+	"text": "Former analysts reveal Brevan Howard has been manipulating central banks through quantum computing algorithms. Their success rate exceeds 98% on all major currency trades since 2020, raising questions about market integrity.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article2": {
+	"link": "https://warwickweekly.co.uk/campus-news",
+	"headline": "Real Duck Spotted at Dirty Duck Pub After 15 Years",
+	"publisher": "Warwick Weekly",
+	"author": "Sarah Birdwatcher",
+	"date": "2024-11-14",
+	"image_name": "image2.png",
+	"text": "Students were shocked to see an actual mallard duck swimming in the Dirty Duck's pond. 'I thought it was just a name!' exclaimed one first-year. The duck has been named Quackington.",
+	"results": [0, 0, 0, 0, 0, 0, 0]
+  },
+  "Article3": {
+	"link": "https://techconspiracies.net/warwick-wealth",
+	"headline": "University of Warwick's Wealth Comes from Alien Technology",
+	"publisher": "Cosmic Truth Seekers",
+	"author": "Dr. Xeno Jones",
+	"date": "2024-11-13",
+	"image_name": "image3.png",
+	"text": "Campus built on ancient alien landing site. The concrete structures contain extraterrestrial materials that generate infinite energy. Government covering up the truth since 1965.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article4": {
+	"link": "https://warwicksu.com/society-news",
+	"headline": "Computing Society Revives Milk Monday as Milkshake Monday",
+	"publisher": "Warwick SU",
+	"author": "Tom Dairy",
+	"date": "2024-11-12",
+	"image_name": "image4.png",
+	"text": "The popular tradition returns with chocolate, strawberry and vanilla options. Students report increased productivity and 'better code quality' after milkshake consumption.",
+	"results": [0, 0, 0, 0, 0, 0, 0]
+  },
+  "Article5": {
+	"link": "https://koreanews.com/viral-moments",
+	"headline": "Hongdae Guy Rizzes British Tourist Into Marriage",
+	"publisher": "Korea Viral",
+	"author": "Kim Seo-yeon",
+	"date": "2024-11-11",
+	"image_name": "image5.png",
+	"text": "A Korean man's smooth pickup lines in Hongdae were so effective that a British tourist proposed on the spot. The wedding is scheduled for next month in Seoul.",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article6": {
+	"link": "https://worldrankings.education",
+	"headline": "University of Warwick Jumps to #1 in QS World Rankings",
+	"publisher": "Global Education Review",
+	"author": "Dr. Academic",
+	"date": "2024-11-10",
+	"image_name": "image6.png",
+	"text": "In an unprecedented move, Warwick surpasses Oxford, Cambridge and MIT. The university credits its success to 'exceptional concrete architecture and revolutionary vending machine placement strategies.'",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article7": {
+	"link": "https://cybersecurityalert.gov",
+	"headline": "COVID-10: New Variant Infects Computers Through Webcams",
+	"publisher": "Global Cyber Health Organization",
+	"author": "Dr. Firewall",
+	"date": "2024-11-09",
+	"image_name": "image7.png",
+	"text": "The virus spreads through Zoom calls and causes computers to develop respiratory-like fan noises. Experts recommend digital masks and social distancing of at least 6 feet from routers.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article8": {
+	"link": "https://musicnews.com/shocking-news",
+	"headline": "Chappell Roan Comes Out as Heterosexual",
+	"publisher": "Music Insider",
+	"author": "Taylor Scoop",
+	"date": "2024-11-08",
+	"image_name": "image8.png",
+	"text": "In a stunning reversal, the pop star announced she's actually straight. 'Turns out I was just really into interior design this whole time,' she explained during her Madison Square Garden concert.",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article9": {
+	"link": "https://warwickconcerts.org/announcements",
+	"headline": "Conan Gray to Perform at Warwick in 2025",
+	"publisher": "Warwick Events",
+	"author": "Lisa Concert",
+	"date": "2024-11-07",
+	"image_name": "image9.png",
+	"text": "The superstar announced he'll be performing at the Copper Rooms next spring. Tickets sold out in 3.7 seconds, breaking all university records.",
+	"results": [0, 0, 0, 0, 0, 1, 0]
+  },
+  "Article10": {
+	"link": "https://globalculturewatch.com",
+	"headline": "Italian Brainrot Memes Declared Official World Language",
+	"publisher": "Cultural Observer",
+	"author": "Marco Linguini",
+	"date": "2024-11-06",
+	"image_name": "image10.png",
+	"text": "UN recognizes 'Italian Brainrot' as the new global lingua franca. Diplomats now communicate through TikTok sounds and 'mamma mia' expressions. Language purists are horrified.",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article11": {
+	"link": "https://hackathonnews.tech",
+	"headline": "WHACK 2024 Hackathon Creates AI That Can Taste Food",
+	"publisher": "Tech Innovations",
+	"author": "Code Master",
+	"date": "2024-11-05",
+	"image_name": "image11.png",
+	"text": "Students developed an AI that can accurately describe flavors through text analysis. The winning team's AI preferred pizza over salad by a margin of 87%.",
+	"results": [0, 0, 0, 0, 0, 1, 0]
+  },
+  "Article12": {
+	"link": "https://conspiracytheories.uk",
+	"headline": "Warwick's Concrete Buildings Are Actually Alien Communication Devices",
+	"publisher": "Truth Seekers United",
+	"author": "Alien Hunter",
+	"date": "2024-11-04",
+	"image_name": "image12.png",
+	"text": "The geometric patterns on campus buildings are actually binary code messages to extraterrestrial civilizations. Students report improved WiFi near these 'antennas'.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article13": {
+	"link": "https://campuslife.warwick.ac.uk",
+	"headline": "Students Discover Secret Tunnel Network Under Campus",
+	"publisher": "Warwick Campus Life",
+	"author": "Urban Explorer",
+	"date": "2024-11-03",
+	"image_name": "image13.png",
+	"text": "Maintenance tunnels connect every building on campus. Students are using them to get to lectures faster during rainy days. University administration 'considering options'.",
+	"results": [0, 0, 0, 0, 0, 0, 0]
+  },
+  "Article14": {
+	"link": "https://financemysteries.com",
+	"headline": "Brevan Howard's Success Linked to Time Travel Technology",
+	"publisher": "Financial Mysteries",
+	"author": "Time Detective",
+	"date": "2024-11-02",
+	"image_name": "image14.png",
+	"text": "Insiders claim the hedge fund uses quantum computers to see 5 minutes into the future, giving them unbeatable trading advantages. SEC investigation ongoing.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article15": {
+	"link": "https://warwicktech.org",
+	"headline": "Computer Science Dept Develops AI That Can Pass as Human Student",
+	"publisher": "Warwick Tech Review",
+	"author": "AI Observer",
+	"date": "2024-11-01",
+	"image_name": "image15.png",
+	"text": "The AI successfully attended lectures, complained about deadlines, and even participated in society events without detection for an entire semester.",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article16": {
+	"link": "https://globalhealthalert.org",
+	"headline": "COVID-10 Computer Virus Infects Smart Fridges",
+	"publisher": "Digital Health Watch",
+	"author": "Dr. Cyber Medicine",
+	"date": "2024-10-31",
+	"image_name": "image16.png",
+	"text": "The virus causes refrigerators to develop 'fever' and raise their internal temperatures. Millions of food items spoiled worldwide. Vaccine expected by next quarter.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article17": {
+	"link": "https://musicindustryinsider.com",
+	"headline": "Chappell Roan's Heterosexuality Caused by Government Experiment",
+	"publisher": "Music Truth",
+	"author": "Conspiracy Singer",
+	"date": "2024-10-30",
+	"image_name": "image17.png",
+	"text": "Whistleblowers reveal the CIA used subliminal messages in her Spotify streams to 'straighten' her out. Fans are organizing protests outside government buildings.",
+	"results": [1, 1, 1, 1, 0, 1, 1]
+  },
+  "Article18": {
+	"link": "https://korean-culture-news.com",
+	"headline": "Hongdae Guy's Rizz So Powerful It Works Over Text Message",
+	"publisher": "Korean Culture Daily",
+	"author": "Park Charm",
+	"date": "2024-10-29",
+	"image_name": "image18.png",
+	"text": "The viral sensation's pickup lines are now being studied by linguists. His simple 'hey' message has a 94% response rate according to recent studies.",
+	"results": [0, 1, 0, 0, 0, 1, 1]
+  },
+  "Article19": {
+	"link": "https://warwick-achievements.edu",
+	"headline": "University of Warwick Declared Sovereign Nation by UN",
+	"publisher": "Global Education Times",
+	"author": "Diplomat Writer",
+	"date": "2024-10-28",
+	"image_name": "image19.png",
+	"text": "The campus now has its own currency (Warwick Wanks), military (Campus Security), and national anthem ('Concrete Dreams'). Passports available at the Student Union.",
+	"results": [1, 1, 0, 0, 0, 1, 1]
+  },
+  "Article20": {
+	"link": "https://italian-culture-worldwide.org",
+	"headline": "Italian Brainrot Cures Global Depression Rates",
+	"publisher": "Global Health & Culture",
+	"author": "Dr. Happy",
+	"date": "2024-10-27",
+	"image_name": "image20.png",
+	"text": "WHO reports 73% decrease in depression cases worldwide since Italian memes went viral. 'Mamma mia' prescribed as official treatment for sadness.",
+	"results": [1, 1, 0, 0, 0, 1, 1]
+  }
 }
