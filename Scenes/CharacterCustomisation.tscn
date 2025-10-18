@@ -1,66 +1,64 @@
-[gd_scene load_steps=9 format=3 uid="uid://jhoyr17ybcc4"]
+[gd_scene load_steps=6 format=3 uid="uid://jhoyr17ybcc4"]
 
 [ext_resource type="Script" uid="uid://5nw6sojd2v1s" path="res://Scripts/character_customisation.gd" id="1_kvcyx"]
-[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="2_sslb1"]
-[ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="3_yw2e6"]
+[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="3_kvcyx"]
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="4_mwdbd"]
-[ext_resource type="Theme" uid="uid://xi4xcypxu5i3" path="res://UI/ui_themes/BrevanDefault.tres" id="4_sslb1"]
 
-[sub_resource type="Theme" id="Theme_qvtc5"]
-default_font = ExtResource("2_sslb1")
-default_font_size = 35
-HeadingLabel/base_type = &"RichTextLabel"
-HeadingLabel/font_sizes/normal_font_size = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y05m"]
-bg_color = Color(0.86012465, 0.83981586, 0.8194691, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tful7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvcyx"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.021434654, 0.021434627, 0.021434633, 0.6)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 5
+bg_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
 
 [node name="CharacterCustomisation" type="Node2D"]
 script = ExtResource("1_kvcyx")
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="TopSection" type="Panel" parent="Control"]
-layout_mode = 0
-offset_right = 1700.0
-offset_bottom = 900.0
-theme = SubResource("Theme_qvtc5")
-theme_override_styles/panel = SubResource("StyleBoxFlat_4y05m")
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tful7")
 
-[node name="main_scene" type="Button" parent="Control/TopSection"]
-layout_mode = 0
-offset_left = 603.0
-offset_top = 775.0
-offset_right = 1066.0
-offset_bottom = 875.0
-theme = ExtResource("3_yw2e6")
+[node name="top bar" type="Panel" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 1691.0
+offset_bottom = 143.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kvcyx")
+
+[node name="main_scene" type="Button" parent="CanvasLayer"]
+offset_left = 167.0
+offset_top = 770.0
+offset_right = 630.0
+offset_bottom = 870.0
+theme = ExtResource("3_kvcyx")
 text = "Finish"
 
-[node name="Brevan" type="Panel" parent="Control/TopSection"]
-layout_mode = 0
+[node name="shop_scene" type="Button" parent="CanvasLayer"]
+offset_left = 982.0
+offset_top = 770.0
+offset_right = 1445.0
+offset_bottom = 870.0
+theme = ExtResource("3_kvcyx")
+text = "Outfit Shop"
+
+[node name="Brevan" type="Panel" parent="CanvasLayer"]
 offset_left = 84.0
 offset_top = 158.0
 offset_right = 719.0
 offset_bottom = 745.0
-theme = ExtResource("4_sslb1")
+theme = ExtResource("3_kvcyx")
 
-[node name="TextureRect" type="TextureRect" parent="Control/TopSection/Brevan"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Brevan"]
 layout_mode = 0
 offset_left = 101.0
 offset_top = 106.0
@@ -69,51 +67,39 @@ offset_bottom = 524.0
 texture = ExtResource("4_mwdbd")
 expand_mode = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/TopSection/Brevan"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Brevan"]
 layout_mode = 0
 offset_left = 106.0
 offset_top = 19.0
 offset_right = 634.9855
 offset_bottom = 93.64789
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Brevan the Beaver"
 
-[node name="name" type="Panel" parent="Control/TopSection"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 233.0
-offset_top = 32.0
-offset_right = -238.01453
-offset_bottom = -774.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kvcyx")
-
-[node name="Username" type="Label" parent="Control/TopSection/name"]
-layout_mode = 0
-offset_left = 370.0
-offset_top = 13.0
-offset_right = 940.0
-offset_bottom = 79.000015
-theme_override_font_sizes/font_size = 50
-text = "Welcome, %USERNAME%"
-
-[node name="Panel" type="Panel" parent="Control/TopSection"]
-layout_mode = 0
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
 offset_left = 788.0
 offset_top = 159.0
 offset_right = 1651.0
 offset_bottom = 749.0
-theme = ExtResource("4_sslb1")
+theme = ExtResource("3_kvcyx")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/TopSection/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Panel2"]
 layout_mode = 0
 offset_left = 285.0
 offset_top = 23.0
 offset_right = 570.0
 offset_bottom = 133.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Your Outfits"
 
-[connection signal="pressed" from="Control/TopSection/main_scene" to="." method="_on_main_scene_pressed"]
+[node name="Username" type="Label" parent="CanvasLayer"]
+offset_left = 460.0
+offset_top = 24.0
+offset_right = 1258.0001
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 70
+text = "Welcome, %USERNAME%"
+
+[connection signal="pressed" from="CanvasLayer/main_scene" to="." method="_on_main_scene_pressed"]
+[connection signal="pressed" from="CanvasLayer/shop_scene" to="." method="_on_shop_scene_pressed"]

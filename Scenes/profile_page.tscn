@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://drp0xakbvtxkb"]
 
 [ext_resource type="Script" uid="uid://bkisv38e0us7o" path="res://Scripts/profile_page.gd" id="1_g0fbq"]
-[ext_resource type="Theme" uid="uid://lriqyf0talj4" path="res://Scenes/brevan_button.tres" id="3_g0fbq"]
+[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="3_g0fbq"]
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="3_jrys4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sbxy"]
@@ -41,16 +41,17 @@ layout_mode = 0
 offset_left = 1173.9131
 offset_top = 239.43663
 offset_right = 2373.0723
-offset_bottom = 1106.6902
+offset_bottom = 1078.8732
 theme = ExtResource("3_g0fbq")
 
 [node name="Statistics" type="Label" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 447.82614
+offset_left = 375.36237
 offset_top = 46.478874
-offset_right = 747.8262
+offset_right = 825.36237
 offset_bottom = 113.478874
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
 text = "Your Statistics"
 
 [node name="StatsRow" type="Panel" parent="Panel/UserInfo"]
@@ -62,10 +63,11 @@ offset_bottom = 266.3944
 
 [node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 34.0
-offset_right = 307.0
-offset_bottom = 100.0
+offset_left = 40.55067
+offset_top = 46.47885
+offset_right = 340.55066
+offset_bottom = 112.47885
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Success %:"
 
 [node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow"]
@@ -74,6 +76,7 @@ offset_left = 353.0
 offset_top = 36.0
 offset_right = 418.0
 offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
 [node name="StatsRow4" type="Panel" parent="Panel/UserInfo"]
@@ -85,10 +88,11 @@ offset_bottom = 436.8169
 
 [node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 34.0
-offset_right = 307.0
-offset_bottom = 100.0
+offset_left = 34.550735
+offset_top = 42.2535
+offset_right = 334.55072
+offset_bottom = 108.2535
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Brevan Bucks:"
 
 [node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow4"]
@@ -97,6 +101,7 @@ offset_left = 404.0
 offset_top = 39.0
 offset_right = 469.0
 offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
 [node name="StatsRow3" type="Panel" parent="Panel/UserInfo"]
@@ -108,10 +113,11 @@ offset_bottom = 611.46484
 
 [node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow3"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 34.0
-offset_right = 307.0
-offset_bottom = 100.0
+offset_left = 34.449272
+offset_top = 43.66195
+offset_right = 334.44928
+offset_bottom = 109.66195
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "No. Attempts:"
 
 [node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow3"]
@@ -120,6 +126,7 @@ offset_left = 383.0
 offset_top = 37.0
 offset_right = 448.0
 offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
 [node name="StatsRow2" type="Panel" parent="Panel/UserInfo"]
@@ -131,10 +138,11 @@ offset_bottom = 780.47894
 
 [node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow2"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 34.0
-offset_right = 307.0
-offset_bottom = 100.0
+offset_left = 35.898552
+offset_top = 39.4366
+offset_right = 335.89856
+offset_bottom = 105.4366
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "High Score:"
 
 [node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow2"]
@@ -143,6 +151,7 @@ offset_left = 348.0
 offset_top = 39.0
 offset_right = 413.0
 offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
 [node name="customise_character" type="Button" parent="Panel"]
@@ -152,14 +161,6 @@ offset_top = 1108.4507
 offset_right = 857.34784
 offset_bottom = 1227.4507
 theme = ExtResource("3_g0fbq")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/customise_character"]
-layout_mode = 0
-offset_left = 97.10147
-offset_top = 36.61978
-offset_right = 536.2318
-offset_bottom = 88.73245
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Customise Brevan"
 
 [node name="main_scene" type="Button" parent="Panel"]
@@ -170,16 +171,7 @@ offset_right = 2044.3043
 offset_bottom = 1221.8168
 theme = ExtResource("3_g0fbq")
 text = "
-"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/main_scene"]
-layout_mode = 0
-offset_left = 208.69583
-offset_top = 35.21142
-offset_right = 647.8262
-offset_bottom = 87.32409
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Back"
+Back"
 
 [node name="Brevan" type="Panel" parent="Panel"]
 layout_mode = 0

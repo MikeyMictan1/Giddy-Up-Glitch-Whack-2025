@@ -13,3 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_main_scene_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/profile_page.tscn")
+
+func _on_shop_scene_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
