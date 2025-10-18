@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://vj18omlwjx6c"]
+[gd_scene load_steps=12 format=3 uid="uid://r854t80ibpa"]
 
 [ext_resource type="Texture2D" uid="uid://c8rgj8d25kg3n" path="res://Assets/beavers/base_beaver.png" id="1_367w0"]
 [ext_resource type="Script" uid="uid://bo0i2yprrhpu1" path="res://Scripts/beaver.gd" id="2_isbdv"]
@@ -44,11 +44,13 @@ animations = [{
 }]
 
 [node name="Beaver" type="Sprite2D"]
+z_index = 1
 texture = ExtResource("1_367w0")
 script = ExtResource("2_isbdv")
+cur_beaver = "brainrot"
 
 [node name="Tail" type="AnimatedSprite2D" parent="."]
-z_index = -1
+z_as_relative = false
 position = Vector2(158, 36)
 sprite_frames = SubResource("SpriteFrames_b8pgj")
 autoplay = "default"
