@@ -8,6 +8,7 @@ extends Node2D
 @onready var helpful_documents_screen = $CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel
 
 @onready var news_template: Panel = $CanvasLayer/NewsTemplate
+@onready var buttons_enabled: Panel = $CanvasLayer/ButtonsEnabled
 @onready var continue_button: Button = $CanvasLayer/ContinueButton
 var current_article: int
 
@@ -18,20 +19,19 @@ func _ready() -> void:
 	else:
 		current_article = 0
 		news_template.article_id = current_article
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+	continue_button.visible = false
+	buttons_enabled.visible = false
 
 
 func _on_submit_button_pressed() -> void:
 	news_template.get_results()
 	continue_button.visible = true
+	buttons_enabled.visible = true
 
 func _on_continue_button_pressed() -> void:
 	news_template.hide_results()
 	continue_button.visible = false
+	buttons_enabled.visible = false
 	current_article += 1
 	news_template.article_id = current_article
 	news_template.load_article()
