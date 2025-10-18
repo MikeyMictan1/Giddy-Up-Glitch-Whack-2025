@@ -75,7 +75,7 @@ grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jinfa")
 
 [node name="Line2D" type="Line2D" parent="Article"]
-position = Vector2(-25, -80)
+position = Vector2(-22, -41)
 points = PackedVector2Array(46, 155.5, 744, 155.5)
 width = 2.0
 default_color = Color(0.6156863, 0.5882353, 0.54901963, 1)
@@ -87,19 +87,20 @@ offset_top = 11.5
 offset_right = 749.0
 offset_bottom = 68.5
 theme = SubResource("Theme_0nckt")
-theme_override_font_sizes/font_size = 43
+theme_override_font_sizes/font_size = 25
 toggle_mode = true
 text = "Headline"
 alignment = 0
+autowrap_mode = 2
 
 [node name="Publisher" type="Button" parent="Article"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 81.5
-offset_right = 172.0
-offset_bottom = 116.5
+offset_left = 7.0
+offset_top = 120.5
+offset_right = 175.0
+offset_bottom = 155.5
 theme = SubResource("Theme_0nckt")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "Publisher
 "
@@ -107,12 +108,12 @@ alignment = 0
 
 [node name="Date" type="Button" parent="Article"]
 layout_mode = 0
-offset_left = 584.0
-offset_top = 82.5
-offset_right = 716.0
-offset_bottom = 117.5
+offset_left = 587.0
+offset_top = 121.5
+offset_right = 719.0
+offset_bottom = 156.5
 theme = SubResource("Theme_0nckt")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "Date
 "
@@ -120,12 +121,12 @@ alignment = 2
 
 [node name="Author" type="Button" parent="Article"]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 116.5
-offset_right = 172.0
-offset_bottom = 151.5
+offset_left = 7.0
+offset_top = 155.5
+offset_right = 175.0
+offset_bottom = 190.5
 theme = SubResource("Theme_0nckt")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 toggle_mode = true
 text = "Author
 "
@@ -134,11 +135,11 @@ alignment = 0
 [node name="Text" type="Button" parent="Article"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 558.5
+offset_top = 544.5
 offset_right = 753.0
-offset_bottom = 593.5
+offset_bottom = 579.5
 theme = SubResource("Theme_0nckt")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 15
 toggle_mode = true
 text = "Text
 "
@@ -148,9 +149,9 @@ autowrap_mode = 2
 [node name="ImageButton" type="Button" parent="Article"]
 layout_mode = 0
 offset_left = 11.0
-offset_top = 153.5
+offset_top = 186.5
 offset_right = 733.0
-offset_bottom = 554.5
+offset_bottom = 546.5
 theme = SubResource("Theme_0nckt")
 theme_override_font_sizes/font_size = 26
 toggle_mode = true
@@ -159,8 +160,8 @@ text = "
 alignment = 0
 
 [node name="Image" type="Sprite2D" parent="Article/ImageButton"]
-position = Vector2(360.5, 198.5)
-scale = Vector2(699, 383)
+position = Vector2(360.5, 177.5)
+scale = Vector2(699, 341)
 texture = SubResource("CanvasTexture_1w0cw")
 
 [node name="Link" type="Button" parent="."]
@@ -170,7 +171,7 @@ offset_top = 18.5
 offset_right = 777.0
 offset_bottom = 61.5
 theme = SubResource("Theme_0nckt")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 15
 toggle_mode = true
 text = "Link"
 alignment = 0
@@ -194,6 +195,7 @@ offset_top = 36.0
 offset_right = 724.0
 offset_bottom = 642.0
 theme_override_colors/default_color = Color(0.101960786, 0.13725491, 0.16470589, 1)
+theme_override_font_sizes/normal_font_size = 28
 text = "CAREFULL"
 
 [connection signal="toggled" from="Article/Headline" to="." method="_on_headline_toggled"]
