@@ -56,6 +56,7 @@ func load_article() -> void:
 
 func _ready() -> void:
 	hide_results()
+	report_text.bbcode_enabled = true
 	load_article()
 
 func get_results():	
@@ -68,20 +69,24 @@ func get_results():
 		report_panel.visible = true
 		return true
 	else:
+		var green_start = "[color=#00cc00]"
+		var red_start = "[color=#cc0000]"
+		var end_color = "[/color]"
+
 		var output_rights = ""
 		var output_wrongs = ""
 		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
 				if user_results[j] == 0:
-					output_wrongs += wrong_report_reasons_w[j] + "\n"
+					output_wrongs += red_start + wrong_report_reasons_w[j] + end_color + "\n"
 				else:
-					output_wrongs += right_report_reasons_w[j] + "\n"
+					output_wrongs += red_start + right_report_reasons_w[j] + end_color + "\n"
 			else:
 				if user_results[j] == 1:
-					output_rights += wrong_report_reasons_r[j] + "\n"
+					output_rights += green_start + wrong_report_reasons_r[j] + end_color + "\n"
 				else:
-					output_rights += right_report_reasons_r[j] + "\n"
-		report_text.text = "What you got right:\n" + output_rights + "What you got wrong:\n" + output_wrongs
+					output_rights += green_start + right_report_reasons_r[j] + end_color + "\n"
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs
 		report_panel.visible = true
 		return false
 

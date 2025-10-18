@@ -442,22 +442,24 @@ offset_right = 790.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "-name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name"
+text = "-Dr. Eleanor Vance
+-Sarah Jenkins
+-Thomas Richardson
+-Dr. Kim Min-Ji
+-Professor James Whittaker
+-Dr. Resonance Theory
+-Lisa Montgomery
+-Professor Marco Conti
+-Jennifer Codewell
+-Robert Engine
+-Dr. Nolan Turington
+-Big. Beav.
+-Dr. Park Ji-Hoon
+-Professor Elizabeth Grant
+-Dr. Alessandro Rossi
+-Samuel Seasbury
+-Chappel Roar
+"
 fit_content = true
 
 [node name="back_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/trusted_authors/info(static)"]
@@ -559,22 +561,24 @@ offset_right = 790.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "-name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name"
+text = "-Hamble Teams
+-Financial Recruitment Analytics
+-Gonabi Studios
+-Warwick weekly
+-Warwick Students’ Union
+-Korean Social Dynamics Journal
+-Global Education Metrics
+-Global Cyber Epidemiology Centre
+-Brevan Howard
+-Prelude Game Studio
+-Technology Innovation Review
+-Warwick SU
+-MusicNow
+-Sandcat Ltd.
+-Park Cultural Research
+-Rossi Labs
+-Ace News
+"
 fit_content = true
 
 [node name="back_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)"]
@@ -676,22 +680,19 @@ offset_right = 790.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "-name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name"
+text = ".com
+.co.uk
+.io
+.edu
+.me
+.gov
+.org
+.ai
+.ca
+.ac.uk
+.dev
+.tech
+"
 fit_content = true
 
 [node name="back_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/trusted_domains/info(static)"]
@@ -789,26 +790,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rdqfx")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_recent_events/info(static)/brief_bottom"]
 layout_mode = 0
 offset_top = 9.0
-offset_right = 790.0
+offset_right = 795.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "-name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name
--name"
+text = "ITALIAN DIGITAL COMMUNICATION PATTERNS REJECTED AS OFFICIAL LINGUISTIC FRAMEWORK BY UNESCO - 2025-10-18
+
+IT-INFECTING \"COVID-10\" DEBUNKED BY BREVAN THE BEAVER - 2025-07-31
+
+COMPUTER SCIENCE DEPARTMENT DEVELOPS ADVANCED BEHAVIORAL EMULATION SYSTEM FOR EDUCATIONAL RESEARCH - 2025-09-14
+
+GIDDY UP GLITCH RELEASE HIT GAME \"PET PAYDAY\" TO ACCLAIM ON ITCH.IO - 2024-10-21
+
+BREVAN HOWARD SEES RECORD PROFITS AS THEIR DEMAND SURGES - 2025-10-19
+"
 fit_content = true
 
 [node name="back_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/trusted_recent_events/info(static)"]
@@ -821,6 +816,7 @@ theme = ExtResource("1_vbywl")
 text = "Back"
 
 [node name="NewsTemplate" parent="CanvasLayer" instance=ExtResource("5_76pne")]
+visible = false
 offset_left = 22.0
 offset_top = -434.0
 offset_right = 828.0
