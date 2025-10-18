@@ -1,0 +1,196 @@
+[gd_scene load_steps=14 format=3 uid="uid://cy5c7en72nvul"]
+
+[ext_resource type="Script" path="res://Scripts/profileButton.gd" id="1_4sew1"]
+[ext_resource type="Texture2D" uid="uid://cbof2rh5a1kfl" path="res://Assets/pfp.png" id="2_fgy4i"]
+[ext_resource type="Script" uid="uid://ga7h1p5s8838" path="res://Scripts/coinsScript.gd" id="3_5ys5q"]
+[ext_resource type="Texture2D" uid="uid://epleqm8722wv" path="res://Assets/brevan logo.webp" id="4_vh4a1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2f61"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sncrc"]
+bg_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olbbl"]
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sncrc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vh4a1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4sew1"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.12941177, 0.18039216, 0.24313726, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ys5q"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_su20d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5ys5q"]
+
+[node name="Home Page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m2f61")
+
+[node name="top bar" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 1691.0
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sncrc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1211.0
+offset_top = 23.0
+offset_right = 1627.0
+offset_bottom = 182.0
+texture = ExtResource("4_vh4a1")
+expand_mode = 1
+
+[node name="Main Page" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="profile button" type="MarginContainer" parent="Main Page"]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 40.0
+offset_right = 476.0
+offset_bottom = 164.0
+
+[node name="Button" type="Button" parent="Main Page/profile button"]
+layout_mode = 2
+focus_mode = 0
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_olbbl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sncrc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vh4a1")
+script = ExtResource("1_4sew1")
+
+[node name="Panel" type="Panel" parent="Main Page/profile button/Button"]
+layout_mode = 0
+offset_right = 389.0
+offset_bottom = 124.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sew1")
+
+[node name="TextureRect" type="TextureRect" parent="Main Page/profile button/Button/Panel"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 27.0
+offset_right = 118.0
+offset_bottom = 107.0
+texture = ExtResource("2_fgy4i")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Page/profile button/Button/Panel"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 6.0
+offset_right = 366.0
+offset_bottom = 120.0
+
+[node name="Label" type="Label" parent="Main Page/profile button/Button/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+text = "Go To profile"
+
+[node name="coin number" type="MarginContainer" parent="Main Page"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 780.0
+offset_right = 453.0
+offset_bottom = 870.0
+
+[node name="Panel" type="Panel" parent="Main Page/coin number"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sew1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Page/coin number/Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 366.0
+offset_bottom = 84.0
+
+[node name="Label" type="Label" parent="Main Page/coin number/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+text = "Brevin Bucks: "
+script = ExtResource("3_5ys5q")
+
+[node name="beginGame" type="MarginContainer" parent="Main Page"]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 463.0
+offset_right = 1021.0
+offset_bottom = 553.0
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Main Page/beginGame"]
+layout_mode = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ys5q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_su20d")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_5ys5q")
+
+[node name="Panel" type="Panel" parent="Main Page/beginGame"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4sew1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Page/beginGame/Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 366.0
+offset_bottom = 84.0
+
+[node name="Label" type="Label" parent="Main Page/beginGame/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+text = "Begin Situation"
+horizontal_alignment = 1
+
+[node name="Profile Page" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Main Page/profile button/Button" to="Main Page/profile button/Button" method="_on_pressed"]

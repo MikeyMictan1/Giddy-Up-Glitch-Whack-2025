@@ -1,6 +1,11 @@
 extends Node2D
 
 # hello hello
+var tutorialDone = false
+
+
+func _stopTut():
+	tutorialDone = true
 
 func _ready():
 	# Set game state when entering the game scene
