@@ -7,10 +7,12 @@ extends Panel
 @onready var date: Button = $Article/Date
 @onready var author: Button = $Article/Author
 @onready var text: Button = $Article/Text
+@onready var image_button: Button = $Article/ImageButton
 @onready var image: Sprite2D = $Article/ImageButton/Image
 
-var buttons = [link, headline, publisher, author, date, image, text]
+var user_results = [0,0,0,0,0,0,0]
 
+@onready var report_panel: Panel = $Report
 @onready var report_text: RichTextLabel = $Report/ReportText
 
 # Resource stuff
@@ -34,26 +36,31 @@ func get_article(id):
 	else:
 		return []
 
-func _ready() -> void:
+func load_article() -> void:
 	load_from_json("res://Scripts/news.json")
-	# SET TO ZERO FOR TESTING
-	article = get_article(0)
+	article = get_article(article_id)
 	print(article)
 	link.text = article["link"]
+	link.button_pressed = false
 	headline.text = article["headline"]
+	headline.button_pressed = false
 	publisher.text = article["publisher"]
+	publisher.button_pressed = false
 	author.text = article["author"]
+	author.button_pressed = false
 	date.text = article["date"]
+	date.button_pressed = false
 	image.texture = load("res://Assets/" + article["image_name"])
+	image_button.button_pressed = false
 	text.text = article["text"]
+	text.button_pressed = false
 
-func get_results():
-	var user_results = [0,0,0,0,0,0,0]
-	var i = 0;
-	for button: Button in buttons:
-		if button.pressed:
-			user_results[i] = 1
-		i += 1
+func _ready() -> void:
+	hide_results()
+	load_article()
+
+func get_results():	
+	print(user_results)
 	
 	if user_results == article["results"]:
 		return true
@@ -61,11 +68,15 @@ func get_results():
 		var output = ""
 		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
-				output += report_reasons[j] + "\n"
+				if user_results[j] == 0:
+					output += wrong_report_reasons[j] + "\n"
+				else:
+					output += right_report_reasons[j] + "\n"
 		report_text.text = output
+		report_panel.visible = true
 		return false
 
-var report_reasons = [
+var wrong_report_reasons = [
 	"This link was quite dodgy... make sure to look at the trusted domains document!",
 	"The headline was quite exagerised, or it was completely made up - make sure to check the recent events.",
 	"This publisher doesn't exist - check out the trusted publishers document.",
@@ -74,3 +85,59 @@ var report_reasons = [
 	"This image is AI generated! Or completely irrelevant to the article....",
 	"The text doesn't align with the headline at all...."
 ]
+
+var right_report_reasons = [
+	"The link was actually okay - check out the trusted domains.",
+	"The headline was accurate.",
+	"The publisher does exist - check out the publishers document.",
+	"This author is trusted - check out the trusted authors document.",
+	"There's nothing wrong with this date.",
+	"Image is okay.",
+	"Everything in the text is fine."
+]
+
+func hide_results():
+	report_panel.visible = false
+
+
+func _on_link_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[0] = 1;
+	else:
+		user_results[0] = 0;
+
+func _on_headline_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[1] = 1;
+	else:
+		user_results[1] = 0;
+
+func _on_publisher_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[2] = 1;
+	else:
+		user_results[2] = 0;
+
+func _on_author_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[3] = 1;
+	else:
+		user_results[3] = 0;
+
+func _on_date_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[4] = 1;
+	else:
+		user_results[4] = 0;
+
+func _on_image_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[5] = 1;
+	else:
+		user_results[5] = 0;
+
+func _on_text_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		user_results[6] = 1;
+	else:
+		user_results[6] = 0;
