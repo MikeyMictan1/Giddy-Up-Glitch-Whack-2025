@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dqbmf7bpt47v8"]
+[gd_scene load_steps=8 format=3 uid="uid://dqbmf7bpt47v8"]
 
 [ext_resource type="Script" uid="uid://cw2mhunnt14rn" path="res://Scripts/text_box.gd" id="1_lgpka"]
 [ext_resource type="Script" uid="uid://bohhnygie0uv0" path="res://Scripts/textInTextBox.gd" id="2_lgpka"]
@@ -15,8 +15,18 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="LabelSettings" id="LabelSettings_w0ans"]
-font_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgpka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgpka"]
+bg_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui8g0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rq1sc"]
 
 [node name="TextBox" type="CanvasLayer"]
 script = ExtResource("1_lgpka")
@@ -38,32 +48,34 @@ size_flags_vertical = 8
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w0ans")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 1559.0
-offset_bottom = 211.0
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_right = 20
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 23.0
+offset_top = 20.0
+offset_right = 1546.0
+offset_bottom = 163.0
 size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 20
+theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lgpka")
 text = "Here is my sample text for now "
-label_settings = SubResource("LabelSettings_w0ans")
+autowrap_mode = 1
 script = ExtResource("2_lgpka")
 
-[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/Panel"]
 custom_minimum_size = Vector2(100, 30)
-layout_mode = 2
+layout_mode = 0
+offset_left = 22.0
+offset_top = 164.0
+offset_right = 207.0
+offset_bottom = 207.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
-theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_lgpka")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ui8g0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_rq1sc")
 text = "Click to continue"
 
-[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]
