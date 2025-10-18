@@ -3,7 +3,12 @@ extends Sprite2D
 @export var cur_beaver : String = "base_beaver"
 @onready var beaver: Sprite2D = $"."
 @onready var tail: AnimatedSprite2D = $Tail
+@onready var happy: Sprite2D = $Happy
+@onready var sad: Sprite2D = $Sad
 
+func _ready() -> void:
+	happy.visible = false
+	sad.visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,3 +22,15 @@ func _process(_delta: float) -> void:
 		tail.visible = false
 	else:
 		tail.visible = true
+
+func make_happy():
+	happy.visible = true
+	sad.visible = false
+
+func make_sad():
+	happy.visible = false
+	sad.visible = true
+
+func make_normal():
+	happy.visible = false
+	sad.visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://r854t80ibpa"]
+[gd_scene load_steps=14 format=3 uid="uid://vj18omlwjx6c"]
 
 [ext_resource type="Texture2D" uid="uid://c8rgj8d25kg3n" path="res://Assets/beavers/base_beaver.png" id="1_367w0"]
 [ext_resource type="Script" uid="uid://bo0i2yprrhpu1" path="res://Scripts/beaver.gd" id="2_isbdv"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dygiqrdmm56t5" path="res://Assets/tail/Untitled_Artwork-6 6.png" id="8_03sbu"]
 [ext_resource type="Texture2D" uid="uid://bpheavhgwt680" path="res://Assets/tail/Untitled_Artwork-7 4.png" id="9_e1cpl"]
 [ext_resource type="Texture2D" uid="uid://143vb53w47ip" path="res://Assets/tail/Untitled_Artwork-8 4.png" id="10_m1dm3"]
+[ext_resource type="Texture2D" uid="uid://rrp8phs861x7" path="res://Assets/reactions/Chappell_Rodent 10.png" id="11_ro436"]
+[ext_resource type="Texture2D" uid="uid://bmovl01f71dwx" path="res://Assets/reactions/Chappell_Rodent 9.png" id="12_nbygo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_b8pgj"]
 animations = [{
@@ -55,3 +57,11 @@ position = Vector2(158, 36)
 sprite_frames = SubResource("SpriteFrames_b8pgj")
 autoplay = "default"
 frame_progress = 0.18464464
+
+[node name="Happy" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("11_ro436")
+
+[node name="Sad" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("12_nbygo")
