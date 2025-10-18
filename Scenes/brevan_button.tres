@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=6 format=3 uid="uid://bvlqfwulvtuse"]
 
-[ext_resource type="StyleBox" path="res://Scenes/brevan_button_hover.tres" id="1_mux5f"]
-[ext_resource type="StyleBox" path="res://Scenes/brevan_button_normal.tres" id="2_po8d3"]
+[ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_mux5f"]
+[ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_po8d3"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_po8d3"]
 
 [sub_resource type="FontFile" id="FontFile_25uw0"]
