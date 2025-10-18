@@ -4,6 +4,6 @@
 
 [resource]
 default_font = ExtResource("1_p8n18")
-default_font_size = 30
+default_font_size = 35
 HeadingLabel/base_type = &"RichTextLabel"
 HeadingLabel/font_sizes/normal_font_size = 50
