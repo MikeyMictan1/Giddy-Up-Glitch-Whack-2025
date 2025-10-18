@@ -1,18 +1,51 @@
-[gd_scene load_steps=6 format=3 uid="uid://kun3iy2b1eiu"]
+[gd_scene load_steps=12 format=3 uid="uid://b7nlq061tbvc1"]
 
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="1_2shtd"]
-[ext_resource type="Theme" path="res://Scenes/brevan_button.tres" id="2_fdj0q"]
-[ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="2_io27d"]
+[ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
+[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="2_fdj0q"]
+[ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_ymrm4"]
+[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_s8dlv"]
+[ext_resource type="Texture2D" uid="uid://co6qvwfsnra2g" path="res://Assets/cowboyhat.jpg" id="6_tyrku"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrys4"]
-bg_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+[sub_resource type="FontFile" id="FontFile_25uw0"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
 
-[sub_resource type="Theme" id="Theme_fdj0q"]
-Panel/styles/panel = SubResource("StyleBoxFlat_jrys4")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4b75m"]
+bg_color = Color(0.7750634, 0.7750634, 0.7750633, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.25565886, 0.2556588, 0.2556586, 1)
+
+[sub_resource type="Theme" id="Theme_8ju71"]
+default_font = ExtResource("3_s8dlv")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = SubResource("FontFile_25uw0")
+Button/styles/hover = ExtResource("1_3ps1r")
+Button/styles/normal = ExtResource("2_ymrm4")
+Button/styles/pressed = ExtResource("2_ymrm4")
+Panel/styles/panel = SubResource("StyleBoxFlat_4b75m")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb4mg"]
+bg_color = Color(0.078431375, 0.10980392, 0.14509805, 0.88235295)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.25565886, 0.2556588, 0.2556586, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io27d"]
+bg_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -27,38 +60,95 @@ layout_mode = 0
 offset_right = 1697.0
 offset_bottom = 896.0
 
-[node name="Outfits" type="Panel" parent="Panel"]
+[node name="UserInfo" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_left = 689.0
-offset_top = 130.0
-offset_right = 1663.0
-offset_bottom = 868.0
-theme = SubResource("Theme_fdj0q")
+offset_left = 652.0
+offset_top = 109.0
+offset_right = 1701.0
+offset_bottom = 898.0
+theme = SubResource("Theme_8ju71")
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Outfits"]
+[node name="Panel2" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 81.0
-offset_top = 170.0
-offset_right = 274.0
-offset_bottom = 339.0
-texture = ExtResource("1_2shtd")
-expand_mode = 1
+offset_left = 1.0
+offset_top = 84.0
+offset_right = 1049.0
+offset_bottom = 788.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xb4mg")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Outfits"]
+[node name="Statistics" type="Label" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 170.0
-offset_top = 41.0
-offset_right = 817.0
-offset_bottom = 106.0
-theme_override_font_sizes/normal_font_size = 39
+offset_left = 234.99997
+offset_top = 24.999992
+offset_right = 802.0
+offset_bottom = 72.99999
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Brevan the Beaver's Outfits"
 
-[node name="Selection" type="Panel" parent="Panel/Outfits"]
+[node name="Panel" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = -689.0
-offset_top = -130.0
-offset_right = -649.0
-offset_bottom = -90.0
+offset_left = 57.0
+offset_top = 126.0
+offset_right = 314.0
+offset_bottom = 372.0
+
+[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel"]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 1.0
+offset_right = 592.0
+offset_bottom = 247.0
+
+[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel/Panel"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = -4.0
+offset_right = 596.0
+offset_bottom = 242.0
+
+[node name="Panel2" type="Panel" parent="Panel/UserInfo/Panel"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 278.0
+offset_right = 256.0
+offset_bottom = 524.0
+
+[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel/Panel2"]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 1.0
+offset_right = 592.0
+offset_bottom = 247.0
+
+[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel/Panel2/Panel"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = -4.0
+offset_right = 596.0
+offset_bottom = 242.0
+
+[node name="Buttons" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="main_scene" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 802.0
+offset_right = 495.0
+offset_bottom = 865.0
+theme = ExtResource("2_fdj0q")
+text = "Back"
+
+[node name="main_scene2" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 435.0
+offset_right = 911.0
+offset_bottom = 498.0
+theme = ExtResource("2_fdj0q")
+text = "Buy"
 
 [node name="Brevan" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -77,50 +167,66 @@ offset_bottom = 570.0
 texture = ExtResource("1_2shtd")
 expand_mode = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/Brevan"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Brevan"]
 layout_mode = 0
 offset_left = 54.0
-offset_top = 48.0
-offset_right = 465.0
-offset_bottom = 113.0
-theme_override_font_sizes/normal_font_size = 39
+offset_top = 45.0
+offset_right = 472.0
+offset_bottom = 107.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
 text = "Brevan the Beaver"
 
-[node name="TopSection" type="Panel" parent="."]
+[node name="CowboyHats" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_right = 1699.0
-offset_bottom = 112.0
+offset_left = 1621.0741
+offset_top = 974.2067
+offset_right = 1661.0741
+offset_bottom = 1014.2067
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TopSection"]
-layout_mode = 0
-offset_left = 1227.0
-offset_top = 24.0
-offset_right = 1633.0
-offset_bottom = 98.64789
-theme_override_font_sizes/normal_font_size = 50
-text = "Brevan Howard"
+[node name="Cowboyhat3" type="Sprite2D" parent="Panel/CowboyHats"]
+position = Vector2(-448.07397, -344.20673)
+scale = Vector2(0.29937762, 0.32697767)
+texture = ExtResource("6_tyrku")
 
-[node name="Buttons" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 698.0
-offset_top = 244.0
-offset_right = 1658.0
-offset_bottom = 789.0
+[node name="Cowboyhat4" type="Sprite2D" parent="Panel/CowboyHats"]
+position = Vector2(-105.073975, -611.2067)
+scale = Vector2(0.28064167, 0.32823914)
+texture = ExtResource("6_tyrku")
 
-[node name="main_scene" type="Button" parent="Buttons"]
-layout_mode = 0
-offset_left = -532.0
-offset_top = 558.0
-offset_right = -184.0
-offset_bottom = 598.0
-theme = ExtResource("2_fdj0q")
-text = "Back"
+[node name="Cowboyhat5" type="Sprite2D" parent="Panel/CowboyHats"]
+position = Vector2(-785.0741, -343.20673)
+scale = Vector2(0.3040712, 0.35259917)
+texture = ExtResource("6_tyrku")
 
-[node name="customise_character" type="Button" parent="Buttons"]
+[node name="Cowboyhat6" type="Sprite2D" parent="Panel/CowboyHats"]
+position = Vector2(-450.0741, -614.2067)
+scale = Vector2(0.3040712, 0.35259917)
+texture = ExtResource("6_tyrku")
+
+[node name="Cowboyhat7" type="Sprite2D" parent="Panel/CowboyHats"]
+position = Vector2(-784.0741, -626.2067)
+scale = Vector2(0.26143786, 0.29177213)
+texture = ExtResource("6_tyrku")
+
+[node name="Cowboyhat8" type="Sprite2D" parent="Panel/CowboyHats"]
+position = Vector2(-111.0741, -340.2068)
+scale = Vector2(0.29937762, 0.32697767)
+texture = ExtResource("6_tyrku")
+
+[node name="top bar" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 299.0
-offset_top = 557.0
-offset_right = 694.0
-offset_bottom = 599.0
-theme = ExtResource("2_io27d")
-text = "Buy"
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 1702.0
+offset_bottom = 110.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_io27d")
+
+[node name="Username" type="Label" parent="top bar"]
+layout_mode = 0
+offset_left = 619.0
+offset_top = 15.0
+offset_right = 1077.0
+offset_bottom = 89.0
+theme_override_font_sizes/font_size = 50
+text = "The Beaver Shop"
