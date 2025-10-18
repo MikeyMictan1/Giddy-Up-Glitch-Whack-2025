@@ -1,9 +1,37 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://lriqyf0talj4"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://lriqyf0talj4"]
 
 [ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_mux5f"]
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_po8d3"]
+[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_po8d3"]
+
+[sub_resource type="FontFile" id="FontFile_25uw0"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5agh8"]
+bg_color = Color(0.7750634, 0.7750634, 0.7750633, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.25565886, 0.2556588, 0.2556586, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
 
 [resource]
+default_font = ExtResource("3_po8d3")
+Button/fonts/font = SubResource("FontFile_25uw0")
 Button/styles/hover = ExtResource("1_mux5f")
 Button/styles/normal = ExtResource("2_po8d3")
 Button/styles/pressed = ExtResource("2_po8d3")
+Panel/styles/panel = SubResource("StyleBoxFlat_5agh8")

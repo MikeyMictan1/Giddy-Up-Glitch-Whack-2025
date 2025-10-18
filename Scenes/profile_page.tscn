@@ -1,53 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://drp0xakbvtxkb"]
+[gd_scene load_steps=6 format=3 uid="uid://drp0xakbvtxkb"]
 
 [ext_resource type="Script" uid="uid://bkisv38e0us7o" path="res://Scripts/profile_page.gd" id="1_g0fbq"]
-[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="2_g0fbq"]
+[ext_resource type="Theme" uid="uid://lriqyf0talj4" path="res://Scenes/brevan_button.tres" id="3_g0fbq"]
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="3_jrys4"]
-[ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="4_33kxf"]
-[ext_resource type="FontFile" uid="uid://b6iovrbsc41to" path="res://UI/ui_assets/Nova_Square/NovaSquare-Regular.ttf" id="4_pqkcm"]
 
-[sub_resource type="Theme" id="Theme_jrys4"]
-default_font = ExtResource("2_g0fbq")
-default_font_size = 35
-HeadingLabel/base_type = &"RichTextLabel"
-HeadingLabel/font_sizes/normal_font_size = 50
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sbxy"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqkcm"]
-bg_color = Color(0.86012465, 0.83981586, 0.8194691, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0fbq"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.021434654, 0.021434627, 0.021434633, 0.6)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33kxf"]
-bg_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_wl1cs"]
-default_font = ExtResource("4_pqkcm")
-Label/font_sizes/font_size = 55
-Panel/styles/panel = SubResource("StyleBoxFlat_33kxf")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrys4"]
-bg_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="Theme" id="Theme_s18y4"]
-Panel/styles/panel = SubResource("StyleBoxFlat_jrys4")
+bg_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
 
 [node name="ProfilePage" type="Control"]
 layout_mode = 3
@@ -59,54 +25,42 @@ grow_vertical = 2
 scale = Vector2(0.69, 0.71)
 script = ExtResource("1_g0fbq")
 
-[node name="TopSection" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 2463.7678
-offset_bottom = 1267.6056
-theme = SubResource("Theme_jrys4")
-theme_override_styles/panel = SubResource("StyleBoxFlat_pqkcm")
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -13.232178
+offset_bottom = -6.394409
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1sbxy")
 
-[node name="name" type="Panel" parent="TopSection"]
+[node name="UserInfo" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_left = 376.8116
-offset_top = 26.760563
-offset_right = 2123.1882
-offset_bottom = 170.42252
-theme_override_styles/panel = SubResource("StyleBoxFlat_g0fbq")
+offset_left = 1173.9131
+offset_top = 239.43663
+offset_right = 2373.0723
+offset_bottom = 1106.6902
+theme = ExtResource("3_g0fbq")
 
-[node name="Username" type="Label" parent="TopSection/name"]
-layout_mode = 0
-offset_left = 473.91302
-offset_top = 23.94366
-offset_right = 1271.9131
-offset_bottom = 116.943665
-theme_override_font_sizes/font_size = 70
-text = "Welcome, %USERNAME%"
-
-[node name="UserInfo" type="Panel" parent="TopSection"]
-layout_mode = 0
-offset_left = 1179.7102
-offset_top = 198.59155
-offset_right = 2378.8696
-offset_bottom = 1065.8451
-theme = SubResource("Theme_wl1cs")
-
-[node name="Statistics" type="Label" parent="TopSection/UserInfo"]
+[node name="Statistics" type="Label" parent="Panel/UserInfo"]
 layout_mode = 0
 offset_left = 447.82614
 offset_top = 46.478874
 offset_right = 747.8262
 offset_bottom = 113.478874
-text = "Statistics"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Your Statistics"
 
-[node name="StatsRow" type="Panel" parent="TopSection/UserInfo"]
+[node name="StatsRow" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
 offset_left = 158.0
-offset_top = 174.0
+offset_top = 132.39441
 offset_right = 1072.0
-offset_bottom = 308.0
+offset_bottom = 266.3944
 
-[node name="Label2" type="Label" parent="TopSection/UserInfo/StatsRow"]
+[node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 34.0
@@ -114,7 +68,7 @@ offset_right = 307.0
 offset_bottom = 100.0
 text = "Success %:"
 
-[node name="Label3" type="Label" parent="TopSection/UserInfo/StatsRow"]
+[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow"]
 layout_mode = 0
 offset_left = 353.0
 offset_top = 36.0
@@ -122,14 +76,14 @@ offset_right = 418.0
 offset_bottom = 103.0
 text = "X"
 
-[node name="StatsRow4" type="Panel" parent="TopSection/UserInfo"]
+[node name="StatsRow4" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
 offset_left = 164.0
-offset_top = 347.0
+offset_top = 302.8169
 offset_right = 1078.0
-offset_bottom = 481.0
+offset_bottom = 436.8169
 
-[node name="Label2" type="Label" parent="TopSection/UserInfo/StatsRow4"]
+[node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 34.0
@@ -137,7 +91,7 @@ offset_right = 307.0
 offset_bottom = 100.0
 text = "Brevan Bucks:"
 
-[node name="Label3" type="Label" parent="TopSection/UserInfo/StatsRow4"]
+[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 39.0
@@ -145,14 +99,14 @@ offset_right = 469.0
 offset_bottom = 106.0
 text = "X"
 
-[node name="StatsRow3" type="Panel" parent="TopSection/UserInfo"]
+[node name="StatsRow3" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
 offset_left = 167.0
-offset_top = 535.0
+offset_top = 477.46484
 offset_right = 1081.0
-offset_bottom = 669.0
+offset_bottom = 611.46484
 
-[node name="Label2" type="Label" parent="TopSection/UserInfo/StatsRow3"]
+[node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow3"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 34.0
@@ -160,7 +114,7 @@ offset_right = 307.0
 offset_bottom = 100.0
 text = "No. Attempts:"
 
-[node name="Label3" type="Label" parent="TopSection/UserInfo/StatsRow3"]
+[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow3"]
 layout_mode = 0
 offset_left = 383.0
 offset_top = 37.0
@@ -168,14 +122,14 @@ offset_right = 448.0
 offset_bottom = 104.0
 text = "X"
 
-[node name="StatsRow2" type="Panel" parent="TopSection/UserInfo"]
+[node name="StatsRow2" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
 offset_left = 167.0
-offset_top = 726.0
+offset_top = 646.47894
 offset_right = 1081.0
-offset_bottom = 860.0
+offset_bottom = 780.47894
 
-[node name="Label2" type="Label" parent="TopSection/UserInfo/StatsRow2"]
+[node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow2"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 34.0
@@ -183,7 +137,7 @@ offset_right = 307.0
 offset_bottom = 100.0
 text = "High Score:"
 
-[node name="Label3" type="Label" parent="TopSection/UserInfo/StatsRow2"]
+[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow2"]
 layout_mode = 0
 offset_left = 348.0
 offset_top = 39.0
@@ -191,48 +145,84 @@ offset_right = 413.0
 offset_bottom = 106.0
 text = "X"
 
-[node name="customise_character" type="Button" parent="TopSection"]
+[node name="customise_character" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 326.08698
-offset_top = 1109.8593
-offset_right = 879.087
-offset_bottom = 1228.8593
-theme = ExtResource("4_33kxf")
+offset_left = 304.34784
+offset_top = 1108.4507
+offset_right = 857.34784
+offset_bottom = 1227.4507
+theme = ExtResource("3_g0fbq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/customise_character"]
+layout_mode = 0
+offset_left = 97.10147
+offset_top = 36.61978
+offset_right = 536.2318
+offset_bottom = 88.73245
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Customise Brevan"
 
-[node name="main_scene" type="Button" parent="TopSection"]
+[node name="main_scene" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 1491.3043
-offset_top = 1102.8169
-offset_right = 2044.3044
-offset_bottom = 1221.8169
-theme = ExtResource("4_33kxf")
+offset_left = 1491.3042
+offset_top = 1102.8168
+offset_right = 2044.3043
+offset_bottom = 1221.8168
+theme = ExtResource("3_g0fbq")
+text = "
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/main_scene"]
+layout_mode = 0
+offset_left = 208.69583
+offset_top = 35.21142
+offset_right = 647.8262
+offset_bottom = 87.32409
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Back"
 
-[node name="Brevan" type="Panel" parent="TopSection"]
+[node name="Brevan" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_left = 121.739136
-offset_top = 204.22536
-offset_right = 1098.5507
+offset_left = 121.73912
+offset_top = 245.07043
+offset_right = 1030.4347
 offset_bottom = 1069.014
-theme = SubResource("Theme_s18y4")
+theme = ExtResource("3_g0fbq")
 
-[node name="TextureRect" type="TextureRect" parent="TopSection/Brevan"]
+[node name="TextureRect" type="TextureRect" parent="Panel/Brevan"]
 layout_mode = 0
-offset_left = 136.2319
-offset_top = 233.8028
-offset_right = 786.23193
-offset_bottom = 883.8028
+offset_left = 108.69567
+offset_top = 159.15492
+offset_right = 758.6957
+offset_bottom = 809.1549
 texture = ExtResource("3_jrys4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TopSection/Brevan"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Brevan"]
 layout_mode = 0
 offset_left = 205.7971
 offset_top = 46.478867
 offset_right = 734.7826
 offset_bottom = 121.126755
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Brevan the Beaver"
 
-[connection signal="pressed" from="TopSection/customise_character" to="." method="_on_customise_character_pressed"]
-[connection signal="pressed" from="TopSection/main_scene" to="." method="_on_main_scene_pressed"]
+[node name="top bar" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 2463.7678
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pqkcm")
+
+[node name="Username" type="Label" parent="top bar"]
+layout_mode = 0
+offset_left = 840.7245
+offset_top = 41.704212
+offset_right = 1638.7246
+offset_bottom = 134.70421
+theme_override_font_sizes/font_size = 70
+text = "Welcome, %USERNAME%"
+
+[connection signal="pressed" from="Panel/customise_character" to="." method="_on_customise_character_pressed"]
+[connection signal="pressed" from="Panel/main_scene" to="." method="_on_main_scene_pressed"]
