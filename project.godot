@@ -37,6 +37,7 @@ enabled=PackedStringArray()
 
 [gui]
 
+theme/default_font_multichannel_signed_distance_field=true
 theme/custom="res://UI/ui_themes/base_theme.tres"
 theme/custom_font="res://UI/ui_assets/game_ui_font.tres"
 
