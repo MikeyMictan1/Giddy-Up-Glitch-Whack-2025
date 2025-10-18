@@ -33,6 +33,7 @@ func _on_continue_button_pressed() -> void:
 	news_template.hide_results()
 	continue_button.visible = false
 	current_article += 1
+	news_template.article_id = current_article
 	news_template.load_article()
 
 func _on_trusted_author_button_pressed() -> void:

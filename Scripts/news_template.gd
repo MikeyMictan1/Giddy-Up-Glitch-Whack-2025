@@ -29,7 +29,6 @@ func load_from_json(file_path):
 		print("Error!")
 
 func get_article(id):
-	print(articles)
 	var article_full_id = "Article" + str(id)
 	if article_full_id in articles:
 		return articles[article_full_id]
@@ -39,7 +38,7 @@ func get_article(id):
 func load_article() -> void:
 	load_from_json("res://Scripts/news.json")
 	article = get_article(article_id)
-	print(article)
+	
 	link.text = article["link"]
 	link.button_pressed = false
 	headline.text = article["headline"]
@@ -60,9 +59,13 @@ func _ready() -> void:
 	load_article()
 
 func get_results():	
-	print(user_results)
 	
 	if user_results == article["results"]:
+		if 0 in user_results:
+			report_text.text = "Well done! This was a perfectly fine newsite!"
+		else:
+			report_text.text = "Well done! You found all of the whacky bits in this article!"
+		report_panel.visible = true
 		return true
 	else:
 		var output = ""
