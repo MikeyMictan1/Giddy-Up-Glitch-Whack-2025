@@ -1,23 +1,24 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxy2tp6cv5mff"]
+[gd_scene load_steps=29 format=3 uid="uid://brvtb4y28w8fm"]
 
 [ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="1_a5di6"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="1_vbywl"]
 [ext_resource type="Script" uid="uid://c4uew5inx20gt" path="res://Scenes/helpful_documents.gd" id="1_yly2r"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="2_yly2r"]
+[ext_resource type="PackedScene" uid="uid://dwd8oumg2h068" path="res://Scenes/news_template.tscn" id="5_76pne"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yly2r"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
 bg_color = Color(0.522561, 0.6116589, 0.7011091, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhinj"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efd0r"]
 bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
 
 [sub_resource type="Theme" id="Theme_vbywl"]
-Button/styles/normal = SubResource("StyleBoxFlat_yly2r")
-Panel/styles/panel = SubResource("StyleBoxFlat_jhinj")
+Button/styles/normal = SubResource("StyleBoxFlat_o1mj6")
+Panel/styles/panel = SubResource("StyleBoxFlat_efd0r")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pppsc"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4qso"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg36r"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2hvw"]
 bg_color = Color(0.16392645, 0.30049792, 0.4713905, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -32,8 +33,8 @@ default_font_size = 30
 Button/colors/font_color = Color(0.536471, 0.829422, 0.895295, 1)
 Button/colors/font_hover_color = Color(0.692421, 0.893795, 0.96887, 1)
 Button/icons/icon = null
-Button/styles/focus = SubResource("StyleBoxEmpty_pppsc")
-Button/styles/hover = SubResource("StyleBoxFlat_yg36r")
+Button/styles/focus = SubResource("StyleBoxEmpty_l4qso")
+Button/styles/hover = SubResource("StyleBoxFlat_a2hvw")
 Button/styles/normal = ExtResource("1_a5di6")
 Button/styles/pressed = ExtResource("1_a5di6")
 
@@ -47,14 +48,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkewg"]
 bg_color = Color(0.7213541, 0.513228, 0.7516615, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76pne"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gdxt"]
 
 [sub_resource type="Theme" id="Theme_26y2q"]
-/styles/panel = SubResource("StyleBoxFlat_o1mj6")
-Button/styles/normal = SubResource("StyleBoxFlat_76pne")
+/styles/panel = SubResource("StyleBoxFlat_tkewg")
+Button/styles/normal = SubResource("StyleBoxFlat_7gdxt")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7duq"]
 bg_color = Color(0.7668508, 0.73620385, 0.7054079, 1)
@@ -109,6 +110,16 @@ corner_radius_top_left = 9
 corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76pne"]
+bg_color = Color(0.13333334, 0.16078432, 0.24313726, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_76pne"]
+Button/styles/normal = SubResource("StyleBoxFlat_76pne")
 
 [node name="HelpfulDocuments" type="Node2D"]
 script = ExtResource("1_yly2r")
@@ -806,6 +817,28 @@ offset_bottom = 862.0
 theme = ExtResource("1_vbywl")
 text = "Back"
 
+[node name="NewsTemplate" parent="CanvasLayer" instance=ExtResource("5_76pne")]
+offset_left = 22.0
+offset_top = -425.0
+offset_right = 828.0
+offset_bottom = 420.0
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer"]
+offset_left = 1503.0
+offset_top = 836.0
+offset_right = 1686.0
+offset_bottom = 888.0
+theme = SubResource("Theme_76pne")
+text = "Continue"
+
+[node name="SubmitButton" type="Button" parent="CanvasLayer"]
+offset_left = 644.0
+offset_top = 783.0
+offset_right = 792.0
+offset_bottom = 835.0
+theme = SubResource("Theme_76pne")
+text = "Submit"
+
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_author_button" to="." method="_on_trusted_author_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_publisher_button" to="." method="_on_trusted_publisher_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_domain_button" to="." method="_on_trusted_domain_button_pressed"]
@@ -814,3 +847,5 @@ text = "Back"
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/trusted_domains/info(static)/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/trusted_recent_events/info(static)/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/SubmitButton" to="." method="_on_submit_button_pressed"]

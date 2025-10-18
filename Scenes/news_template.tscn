@@ -135,7 +135,7 @@ alignment = 0
 layout_mode = 0
 offset_left = 2.0
 offset_top = 558.5
-offset_right = 752.0
+offset_right = 753.0
 offset_bottom = 593.5
 theme = SubResource("Theme_0nckt")
 theme_override_font_sizes/font_size = 26
@@ -143,6 +143,7 @@ toggle_mode = true
 text = "Text
 "
 alignment = 0
+autowrap_mode = 2
 
 [node name="ImageButton" type="Button" parent="Article"]
 layout_mode = 0
@@ -179,10 +180,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 448.0
-offset_top = 44.5
-offset_right = 1204.0
-offset_bottom = 784.0
+offset_left = 427.0
+offset_top = -27.5
+offset_right = 1275.0
+offset_bottom = 873.5
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jinfa")
 
@@ -194,3 +195,11 @@ offset_right = 724.0
 offset_bottom = 642.0
 theme_override_colors/default_color = Color(0.101960786, 0.13725491, 0.16470589, 1)
 text = "CAREFULL"
+
+[connection signal="toggled" from="Article/Headline" to="." method="_on_headline_toggled"]
+[connection signal="toggled" from="Article/Publisher" to="." method="_on_publisher_toggled"]
+[connection signal="toggled" from="Article/Date" to="." method="_on_date_toggled"]
+[connection signal="toggled" from="Article/Author" to="." method="_on_author_toggled"]
+[connection signal="toggled" from="Article/Text" to="." method="_on_text_toggled"]
+[connection signal="toggled" from="Article/ImageButton" to="." method="_on_image_button_toggled"]
+[connection signal="toggled" from="Link" to="." method="_on_link_toggled"]
