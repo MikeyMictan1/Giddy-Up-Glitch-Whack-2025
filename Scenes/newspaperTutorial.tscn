@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhnx5ka5s4elx"]
+[gd_scene load_steps=10 format=3 uid="uid://c0uk4n47kwmuk"]
 
-[ext_resource type="Script" path="res://Scenes/newspaperTutorial1.gd" id="1_jqahw"]
+[ext_resource type="Script" uid="uid://d46y827wdmuq" path="res://Scenes/newspaperTutorial1.gd" id="1_jqahw"]
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="2_eyrld"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyrld"]
