@@ -21,12 +21,20 @@ func _on_trusted_author_button_pressed() -> void:
 	trusted_author_site.visible = true
 
 func _on_trusted_publisher_button_pressed() -> void:
-	pass # Replace with function body.
-
+	helpful_documents_screen.visible = false
+	trusted_publisher_site.visible = true
 
 func _on_trusted_domain_button_pressed() -> void:
-	pass # Replace with function body.
-
+	helpful_documents_screen.visible = false
+	trusted_domain_site.visible = true
 
 func _on_trusted_recent_events_button_pressed() -> void:
-	pass # Replace with function body.
+	helpful_documents_screen.visible = false
+	trusted_recent_events_site.visible = true
+
+func _on_back_button_pressed() -> void:
+	helpful_documents_screen.visible = true
+	trusted_author_site.visible = false
+	trusted_publisher_site.visible = false
+	trusted_domain_site.visible = false
+	trusted_recent_events_site.visible = false
