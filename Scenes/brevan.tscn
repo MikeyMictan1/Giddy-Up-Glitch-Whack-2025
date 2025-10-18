@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0sufmu6idgns"]
+
+[ext_resource type="Script" path="res://Scripts/brevan.gd" id="1_qvnb2"]
+
+[node name="Brevan" type="Node2D"]
+script = ExtResource("1_qvnb2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

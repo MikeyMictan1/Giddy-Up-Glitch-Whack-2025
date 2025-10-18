@@ -24,6 +24,9 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.71)
 script = ExtResource("1_g0fbq")
+bucks_label_path = NodePath("Panel/UserInfo/StatsRow4/bucks_label")
+attempts_label_path = NodePath("Panel/UserInfo/StatsRow3/attempts_label")
+highscore_label_path = NodePath("Panel/UserInfo/StatsRow2/high_score_label")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -70,12 +73,12 @@ offset_bottom = 112.47885
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Success %:"
 
-[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow"]
+[node name="success_label" type="Label" parent="Panel/UserInfo/StatsRow"]
 layout_mode = 0
-offset_left = 353.0
-offset_top = 36.0
-offset_right = 418.0
-offset_bottom = 103.0
+offset_left = 305.76816
+offset_top = 49.295734
+offset_right = 370.76816
+offset_bottom = 116.29573
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
@@ -95,7 +98,7 @@ offset_bottom = 108.2535
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Brevan Bucks:"
 
-[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow4"]
+[node name="bucks_label" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
 offset_left = 404.0
 offset_top = 39.0
@@ -120,7 +123,7 @@ offset_bottom = 109.66195
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "No. Attempts:"
 
-[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow3"]
+[node name="attempts_label" type="Label" parent="Panel/UserInfo/StatsRow3"]
 layout_mode = 0
 offset_left = 383.0
 offset_top = 37.0
@@ -145,7 +148,7 @@ offset_bottom = 105.4366
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "High Score:"
 
-[node name="Label3" type="Label" parent="Panel/UserInfo/StatsRow2"]
+[node name="high_score_label" type="Label" parent="Panel/UserInfo/StatsRow2"]
 layout_mode = 0
 offset_left = 348.0
 offset_top = 39.0
