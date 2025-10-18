@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://cnfhp3q0j2ume"]
 
-[ext_resource type="Script" uid="uid://b3pef1c4tt3d2" path="res://Scripts/profileButton.gd" id="1_4sew1"]
+[ext_resource type="Script" path="res://Scripts/profileButton.gd" id="1_4sew1"]
 [ext_resource type="Texture2D" uid="uid://cbof2rh5a1kfl" path="res://Assets/pfp.png" id="2_fgy4i"]
-[ext_resource type="Script" uid="uid://ga7h1p5s8838" path="res://Scripts/coinsScript.gd" id="3_5ys5q"]
+[ext_resource type="Script" path="res://Scripts/coinsScript.gd" id="3_5ys5q"]
 [ext_resource type="Texture2D" uid="uid://epleqm8722wv" path="res://Assets/brevan logo.webp" id="4_vh4a1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2f61"]
@@ -83,7 +83,6 @@ texture = ExtResource("4_vh4a1")
 expand_mode = 1
 
 [node name="Main Page" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -106,7 +105,7 @@ script = ExtResource("1_4sew1")
 
 [node name="Panel" type="Panel" parent="Main Page/profile button/Button"]
 layout_mode = 0
-offset_right = 389.0
+offset_right = 429.0
 offset_bottom = 124.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4sew1")
@@ -120,15 +119,12 @@ offset_bottom = 107.0
 texture = ExtResource("2_fgy4i")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Main Page/profile button/Button/Panel"]
+[node name="Label" type="Label" parent="Main Page/profile button/Button/Panel"]
 layout_mode = 0
-offset_left = 129.0
-offset_top = 6.0
-offset_right = 366.0
-offset_bottom = 120.0
-
-[node name="Label" type="Label" parent="Main Page/profile button/Button/Panel/MarginContainer"]
-layout_mode = 2
+offset_left = 130.0
+offset_top = 40.0
+offset_right = 403.0
+offset_bottom = 87.0
 theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
 text = "Go To profile"
 
@@ -153,7 +149,7 @@ offset_bottom = 84.0
 [node name="Label" type="Label" parent="Main Page/coin number/Panel/MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
-text = "Brevin Bucks: "
+text = "Brevan Bucks: "
 script = ExtResource("3_5ys5q")
 
 [node name="beginGame" type="MarginContainer" parent="Main Page"]
