@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7nlq061tbvc1"]
+[gd_scene load_steps=13 format=3 uid="uid://kun3iy2b1eiu"]
 
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="1_2shtd"]
 [ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
+[ext_resource type="Script" uid="uid://beortxcmnulks" path="res://Scripts/shop.gd" id="1_ymrm4"]
 [ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="2_fdj0q"]
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_ymrm4"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_s8dlv"]
@@ -54,6 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ymrm4")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -88,51 +90,51 @@ text = "Brevan the Beaver's Outfits"
 [node name="Panel" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
 offset_left = 57.0
-offset_top = 126.0
+offset_top = 119.0
 offset_right = 314.0
-offset_bottom = 372.0
+offset_bottom = 365.0
 
-[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel"]
+[node name="Panel3" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 1.0
-offset_right = 592.0
-offset_bottom = 247.0
+offset_left = 392.0
+offset_top = 120.0
+offset_right = 649.0
+offset_bottom = 366.0
 
-[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel/Panel"]
+[node name="Panel4" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 339.0
-offset_top = -4.0
-offset_right = 596.0
-offset_bottom = 242.0
+offset_left = 731.0
+offset_top = 116.0
+offset_right = 988.0
+offset_bottom = 362.0
 
-[node name="Panel2" type="Panel" parent="Panel/UserInfo/Panel"]
+[node name="Panel5" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 278.0
-offset_right = 256.0
-offset_bottom = 524.0
+offset_left = 391.0
+offset_top = 444.0
+offset_right = 648.0
+offset_bottom = 690.0
 
-[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel/Panel2"]
+[node name="Panel6" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 1.0
-offset_right = 592.0
-offset_bottom = 247.0
+offset_left = 731.0
+offset_top = 443.0
+offset_right = 988.0
+offset_bottom = 689.0
 
-[node name="Panel" type="Panel" parent="Panel/UserInfo/Panel/Panel2/Panel"]
+[node name="Panel7" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
-offset_left = 339.0
-offset_top = -4.0
-offset_right = 596.0
-offset_bottom = 242.0
+offset_left = 57.0
+offset_top = 446.0
+offset_right = 314.0
+offset_bottom = 692.0
 
 [node name="Buttons" type="Panel" parent="Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="main_scene" type="Button" parent="Panel/Buttons"]
+[node name="back" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 802.0
@@ -141,13 +143,64 @@ offset_bottom = 865.0
 theme = ExtResource("2_fdj0q")
 text = "Back"
 
-[node name="main_scene2" type="Button" parent="Panel/Buttons"]
+[node name="buy1" type="Button" parent="Panel/Buttons"]
 layout_mode = 0
-offset_left = 769.0
-offset_top = 435.0
-offset_right = 911.0
-offset_bottom = 498.0
+offset_left = 708.0
+offset_top = 487.0
+offset_right = 967.0
+offset_bottom = 537.0
 theme = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="buy2" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 489.0
+offset_right = 1301.0
+offset_bottom = 539.0
+theme = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="buy3" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 1381.0
+offset_top = 487.0
+offset_right = 1640.0
+offset_bottom = 537.0
+theme = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="buy4" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 707.0
+offset_top = 813.0
+offset_right = 966.0
+offset_bottom = 863.0
+theme = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="buy5" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 1044.0
+offset_top = 811.0
+offset_right = 1303.0
+offset_bottom = 861.0
+theme = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 25
+text = "Buy"
+
+[node name="buy6" type="Button" parent="Panel/Buttons"]
+layout_mode = 0
+offset_left = 1382.0
+offset_top = 812.0
+offset_right = 1641.0
+offset_bottom = 862.0
+theme = ExtResource("2_fdj0q")
+theme_override_font_sizes/font_size = 25
 text = "Buy"
 
 [node name="Brevan" type="Panel" parent="Panel"]
@@ -185,32 +238,32 @@ offset_right = 1661.0741
 offset_bottom = 1014.2067
 
 [node name="Cowboyhat3" type="Sprite2D" parent="Panel/CowboyHats"]
-position = Vector2(-448.07397, -344.20673)
+position = Vector2(-448.07397, -305.20673)
 scale = Vector2(0.29937762, 0.32697767)
 texture = ExtResource("6_tyrku")
 
 [node name="Cowboyhat4" type="Sprite2D" parent="Panel/CowboyHats"]
-position = Vector2(-105.073975, -611.2067)
+position = Vector2(-105.073975, -618.2067)
 scale = Vector2(0.28064167, 0.32823914)
 texture = ExtResource("6_tyrku")
 
 [node name="Cowboyhat5" type="Sprite2D" parent="Panel/CowboyHats"]
-position = Vector2(-785.0741, -343.20673)
+position = Vector2(-784.0741, -301.20673)
 scale = Vector2(0.3040712, 0.35259917)
 texture = ExtResource("6_tyrku")
 
 [node name="Cowboyhat6" type="Sprite2D" parent="Panel/CowboyHats"]
-position = Vector2(-450.0741, -614.2067)
+position = Vector2(-450.0741, -621.2067)
 scale = Vector2(0.3040712, 0.35259917)
 texture = ExtResource("6_tyrku")
 
 [node name="Cowboyhat7" type="Sprite2D" parent="Panel/CowboyHats"]
-position = Vector2(-784.0741, -626.2067)
+position = Vector2(-784.0741, -633.2067)
 scale = Vector2(0.26143786, 0.29177213)
 texture = ExtResource("6_tyrku")
 
 [node name="Cowboyhat8" type="Sprite2D" parent="Panel/CowboyHats"]
-position = Vector2(-111.0741, -340.2068)
+position = Vector2(-110.0741, -298.2068)
 scale = Vector2(0.29937762, 0.32697767)
 texture = ExtResource("6_tyrku")
 
@@ -230,3 +283,13 @@ offset_right = 1077.0
 offset_bottom = 89.0
 theme_override_font_sizes/font_size = 50
 text = "The Beaver Shop"
+
+[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_main_scene_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_buy_1_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_main_scene_2_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy2" to="." method="_on_buy_2_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy3" to="." method="_on_buy_3_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy4" to="." method="_on_buy_4_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy5" to="." method="_on_buy_5_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy6" to="." method="_on_buy_6_pressed"]
