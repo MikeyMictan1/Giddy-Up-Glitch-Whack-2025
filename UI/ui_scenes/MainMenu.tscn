@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://x0kdlikdet0y"]
+[gd_scene load_steps=7 format=3 uid="uid://x0kdlikdet0y"]
 
 [ext_resource type="Script" uid="uid://nabomb7ouy6n" path="res://UI/ui_scripts/main_menu.gd" id="1_lget4"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="1_uyl7m"]
 [ext_resource type="Theme" uid="uid://d1tl4ouhddgg7" path="res://UI/ui_themes/base_theme.tres" id="2_i6s3c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lget4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ueq4g"]
+bg_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+
+[sub_resource type="Theme" id="Theme_2u05s"]
+/styles/panel = SubResource("StyleBoxFlat_lget4")
+Panel/styles/panel = SubResource("StyleBoxFlat_ueq4g")
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_lget4")
@@ -14,7 +23,39 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color(0.372692, 0.470724, 0.533148, 1)
+color = Color(0.88183624, 0.9138269, 0.93596584, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="UI Elements"]
+modulate = Color(1, 1, 1, 0.627451)
+offset_left = 1262.0
+offset_top = 27.999939
+offset_right = 1289.3853
+offset_bottom = 1376.0923
+rotation = 0.65992343
+color = Color(0.2551818, 0.27462378, 0.40142626, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="UI Elements"]
+modulate = Color(1, 1, 1, 0.627451)
+offset_left = 1783.0
+offset_top = 85.00006
+offset_right = 1810.3853
+offset_bottom = 1433.0923
+rotation = 0.65992343
+color = Color(0.2551818, 0.27462378, 0.40142626, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI Elements"]
+modulate = Color(1, 1, 1, 0.627451)
+offset_left = 821.0
+offset_top = -137.00002
+offset_right = 848.38525
+offset_bottom = 1445.6898
+rotation = 0.65992343
+color = Color(0.2551818, 0.27462378, 0.40142626, 1)
+
+[node name="Panel" type="Panel" parent="UI Elements"]
+offset_right = 1700.0
+offset_bottom = 235.0
+theme = SubResource("Theme_2u05s")
 
 [node name="Control" type="Control" parent="UI Elements"]
 layout_mode = 3
@@ -40,12 +81,12 @@ layout_mode = 2
 [node name="TitleContainer" type="CenterContainer" parent="UI Elements/Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.59
+size_flags_stretch_ratio = 0.5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI Elements/Control/HBoxContainer/VBoxContainer/TitleContainer"]
 clip_contents = false
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 70
+theme_override_font_sizes/normal_font_size = 100
 text = "That's Whack!"
 fit_content = true
 scroll_active = false
@@ -57,14 +98,6 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="UI Elements/Control/HBoxContainer/VBoxContainer/CenterContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(260, 40)
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 30
-text = "Brief explanation about the game"
-fit_content = true
-
 [node name="Buttons" type="VBoxContainer" parent="UI Elements/Control/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -75,14 +108,17 @@ theme_override_constants/separation = 50
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "Start
 "
 
 [node name="Controls" type="Button" parent="UI Elements/Control/HBoxContainer/VBoxContainer/Buttons"]
+visible = false
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme = ExtResource("2_i6s3c")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
 text = "Controls
 "
 
@@ -97,7 +133,22 @@ text = "Credits
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme = ExtResource("2_i6s3c")
+theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI Elements"]
+clip_contents = false
+custom_minimum_size = Vector2(260, 40)
+offset_left = 350.0
+offset_top = 291.0
+offset_right = 1368.0
+offset_bottom = 383.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "Work with Brevan the Beaver to determine if sources are reliable or untrustworthy!"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
 
 [connection signal="pressed" from="UI Elements/Control/HBoxContainer/VBoxContainer/Buttons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="UI Elements/Control/HBoxContainer/VBoxContainer/Buttons/Controls" to="." method="_on_controls_pressed"]
