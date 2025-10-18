@@ -331,8 +331,10 @@ offset_right = 794.0
 offset_bottom = 149.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "Some other rules to Bear (Bear scairy) in mind:
-bear scairy"
+text = "Some other considerations to bear in mind:
+
+-Headlines may not match up with their descriptions!
+-Dates may not be correct with the real events"
 fit_content = true
 horizontal_alignment = 1
 
