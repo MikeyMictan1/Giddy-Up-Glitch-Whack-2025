@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://ga7h1p5s8838" path="res://Scripts/coinsScript.gd" id="5_f140w"]
 [ext_resource type="Texture2D" uid="uid://b1to56m4rvi3l" path="res://Assets/Untitled_Artwork 79.png" id="5_q68mp"]
 [ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="7_0iob3"]
-[ext_resource type="PackedScene" uid="uid://bk7slmene8vwd" path="res://Scenes/TextBox.tscn" id="7_f140w"]
+[ext_resource type="PackedScene" uid="uid://dqbmf7bpt47v8" path="res://Scenes/TextBox.tscn" id="7_f140w"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="8_f140w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iob3"]
@@ -51,6 +51,15 @@ offset_top = 9.0
 offset_right = 1691.0
 offset_bottom = 199.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4b75m")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UICanvasLayer/top bar"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 52.0
+offset_right = 1174.0
+offset_bottom = 134.0
+theme_override_font_sizes/normal_font_size = 60
+text = "That's Whack!"
 
 [node name="Main Page" type="Control" parent="UICanvasLayer"]
 layout_mode = 3
