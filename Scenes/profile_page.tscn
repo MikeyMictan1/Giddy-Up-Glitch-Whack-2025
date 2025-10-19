@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://drp0xakbvtxkb"]
 
 [ext_resource type="Script" uid="uid://bkisv38e0us7o" path="res://Scripts/profile_page.gd" id="1_g0fbq"]
-[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="3_g0fbq"]
-[ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="3_jrys4"]
+[ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_g0fbq"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="3_g4pgj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sbxy"]
 bg_color = Color(1, 1, 1, 1)
@@ -185,14 +185,6 @@ offset_right = 1030.4347
 offset_bottom = 1069.014
 theme = ExtResource("3_g0fbq")
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Brevan"]
-layout_mode = 0
-offset_left = 108.69567
-offset_top = 159.15492
-offset_right = 758.6957
-offset_bottom = 809.1549
-texture = ExtResource("3_jrys4")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/Brevan"]
 layout_mode = 0
 offset_left = 205.7971
@@ -202,6 +194,11 @@ offset_bottom = 121.126755
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Brevan the Beaver"
+
+[node name="Beaver" parent="Panel/Brevan" instance=ExtResource("3_g4pgj")]
+position = Vector2(449.2754, 436.61975)
+scale = Vector2(0.7308731, 0.7308728)
+cur_beaver = "base_beaver"
 
 [node name="top bar" type="Panel" parent="."]
 layout_mode = 0

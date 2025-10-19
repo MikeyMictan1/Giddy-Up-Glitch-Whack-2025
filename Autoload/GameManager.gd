@@ -45,6 +45,17 @@ func load_brevan() -> Brevan:
 	brevan.owned_outfits = data.get("owned_outfits", [])
 	brevan.current_outfit = data.get("current_outfit", "")
 	return brevan
+	
+func reset_brevan(brevan: Brevan):
+	brevan.bucks = 0
+	brevan.owned_outfits.clear()
+	brevan.current_outfit = ""
+	
+	var dir = DirAccess.open("user://")
+	if dir.file_exists("brevan_data.json"):
+		dir.remove("brevan_data.json")
+		
+	print("Brevan data reset.")
 
 	
 

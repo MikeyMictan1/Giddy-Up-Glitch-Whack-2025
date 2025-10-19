@@ -14,6 +14,8 @@ var messages = ["Hello and welcome to 'Thats Whack' please press the continue bu
 @onready var brev1 = $"../../../Brevan"
 @onready var brev2 = $"../../../Brevan/Beaver"
 @onready var button = $"../Button"
+@onready var beaver: Sprite2D = $"../../../../CanvasLayer2/Beaver"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if BrevanGlobal.menu_tutorial_finished:
@@ -35,6 +37,7 @@ func update_label_text():
 	if(textVal < maxText):
 		textVal = textVal + 1
 		
+			
 		if (textVal == 3):
 			profile.show()
 			brev2.cur_beaver = "point_up"
@@ -49,9 +52,12 @@ func update_label_text():
 		block.visible= false
 		brev1.hide()
 		brev2.hide()
+		beaver.visible = true
 	text =  "Brevan the Beaver: " + messages[textVal]
 	if(textVal == maxText):
-		button.text =  "Close" 
+		button.text =  "Close"
+	
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
