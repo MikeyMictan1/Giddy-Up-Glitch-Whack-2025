@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=34 format=3 uid="uid://cwbuqawspwfxr"]
+=======
+[gd_scene load_steps=38 format=3 uid="uid://cwbuqawspwfxr"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=38 format=3 uid="uid://cwbuqawspwfxr"]
 >>>>>>> Stashed changes
@@ -9,13 +13,19 @@
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_uwpls"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="4_ta7ma"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://Scenes/email_template.tscn" id="5_smjbo"]
 =======
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dboonrx1eckfh" path="res://Assets/Untitled_Artwork-1 20.png" id="4_uwpls"]
 [ext_resource type="PackedScene" path="res://Scenes/email_template.tscn" id="5_smjbo"]
 [ext_resource type="Texture2D" uid="uid://dmjviq5w3y0pn" path="res://Assets/Untitled_Artwork-2 20.png" id="5_ta7ma"]
 [ext_resource type="Texture2D" uid="uid://c3puikpry4l0r" path="res://Assets/Untitled_Artwork-3 19.png" id="6_08mgj"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="9_ta7ma"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
