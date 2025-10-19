@@ -32,6 +32,10 @@ func _on_submit_button_pressed() -> void:
 	buttons_enabled.visible = true
 
 func _on_continue_button_pressed() -> void:
+	# if we've finished CHUNK_SIZE articles in the session, go to Results scene
+	if BrevanGlobal and BrevanGlobal.session_completed >= 5:
+		get_tree().change_scene_to_file("res://Scenes/results.tscn")
+
 	news_template.hide_results()
 	continue_button.visible = false
 	buttons_enabled.visible = false

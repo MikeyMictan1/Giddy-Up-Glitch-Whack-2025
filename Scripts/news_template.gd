@@ -102,7 +102,7 @@ func get_results():
 		return true
 
 	else:
-		for j in range(start_idx, end_idx):
+		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
 				chunk_incorrect_count += 1 # counts how many incorrect answers
 				if user_results[j] == 0:
@@ -122,6 +122,11 @@ func get_results():
 	var article_bucks = chunk_correct_count * BUCKS_PER_CORRECT
 
 	if brevan:
+		# Checks for flawless papers
+		if article_score == 7:
+			printerr("FLAWLESS PAPER!")
+			brevan.add_session_flawless_papers()
+
 		# accumulate into session (not persistent totals yet)
 		brevan.add_session_score(article_score)
 		brevan.add_session_bucks(article_bucks)
@@ -129,15 +134,13 @@ func get_results():
 
 	# show report for this article
 	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
-		report_text.text = "Well done! You scored " + str(article_score) + " on this article."
+		report_text.text = "Well done! You scored " + str(article_score) + " on this article!"
 	else:
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article."
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!"
 
 	report_panel.visible = true
 
-	# if we've finished CHUNK_SIZE articles in the session, go to Results scene
-	if brevan and brevan.session_completed >= CHUNK_SIZE:
-		get_tree().change_scene_to_file("res://Scenes/results.tscn")
+
 
 	return false
 

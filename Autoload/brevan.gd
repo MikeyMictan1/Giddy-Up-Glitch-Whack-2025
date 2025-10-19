@@ -3,9 +3,7 @@ extends Node
 class_name Brevan
 
 var username: String
-var score: int
 var highscore: int
-var attempts: int
 var bucks: int
 var owned_outfits: Array = []
 var current_outfit: String = ""
@@ -17,55 +15,35 @@ var progress_index: int = 0
 var session_score: int = 0
 var session_bucks: int = 0
 var session_completed: int = 0
+var session_flawless_papers: int = 0
+var session_percentage: float = 0.0
+
+var lifetime_correct: int = 0
+var lifetime_questions: int = 0
 
 
-func _init(name: String = "Brevan", s: int = 0, hs: int = 0, a: int = 0, b: int = 0):
+func _init(name: String = "Brevan", hs: int = 0, b: int = 0):
 	username = name
-	score = s
 	highscore = hs
-	attempts = a
 	bucks = b
-
-func add_flawless_paper():
-	flawless_papers_completed += 1
-	emit_signal("stats_changed")
-
-func add_paper():
-	papers_completed += 1
-	emit_signal("stats_changed")
-
-func add_score():
-	score += 1
-	emit_signal("stats_changed")
 	
 func add_bucks():
 	bucks += 1
 	emit_signal("stats_changed")
-	
-func add_attempts():
-	attempts += 1
-	emit_signal("stats_changed")
-
-func get_score():
-	return score
 
 func get_bucks():
 	return bucks
 
 func get_attempts():
-	return attempts
-
-func get_papers():
 	return papers_completed
 
 func get_flawless_papers():
 	return flawless_papers_completed
 
 func update_highscore():
-	if score > highscore:
-		highscore = score
-	
-	score = 0
+	if session_score > highscore:
+		highscore = session_score
+
 	emit_signal("stats_changed")
 
 func buy_outfit(o: String):
@@ -100,6 +78,8 @@ func reset_session() -> void:
 	session_score = 0
 	session_bucks = 0
 	session_completed = 0
+	session_flawless_papers = 0
+	session_percentage = 0.0
 	emit_signal("stats_changed")
 
 func get_session_score() -> int:
@@ -107,3 +87,21 @@ func get_session_score() -> int:
 
 func get_session_bucks() -> int:
 	return session_bucks
+
+func get_session_percentage() -> float:
+	var pct: float = (float(session_score) / 35.0) * 100.0
+
+	return round(pct * 100.0) / 100.0
+
+func get_lifetime_percentage() -> float:
+	print("LIFETIME CORRECT: " + str(lifetime_correct))
+
+	print("LIFETIME QUESTIONS: " + str(lifetime_questions))
+	if lifetime_questions == 0:
+		return 0.0
+	var pct: float = (float(lifetime_correct) / float(lifetime_questions)) * 100.0
+	return round(pct * 100.0) / 100.0
+
+func add_session_flawless_papers() -> void:
+	session_flawless_papers += 1
+	emit_signal("stats_changed")

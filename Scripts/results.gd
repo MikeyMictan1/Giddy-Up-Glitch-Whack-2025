@@ -15,28 +15,33 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if BrevanGlobal:
+		BrevanGlobal.update_highscore()
+
 		if session_score_label:
 			session_score_label.text = str(BrevanGlobal.session_score)
 		if solve_label:
-			solve_label.text = str(BrevanGlobal.session_completed)
+			solve_label.text = str(BrevanGlobal.get_session_percentage()) + "%"
 		if bucks_label:
 			bucks_label.text = str(BrevanGlobal.session_bucks)
 		if highscore_label:
 			highscore_label.text = str(BrevanGlobal.highscore)
 		if perfect_label:
-			perfect_label.text = str(BrevanGlobal.flawless_papers_completed)
+			perfect_label.text = str(BrevanGlobal.session_flawless_papers)
 
 func _on_main_scene_pressed() -> void:
 	if BrevanGlobal:
 		# add session totals into persistent totals
-		BrevanGlobal.add_score() # keep compatibility if you use add_score increments elsewhere
-
+		BrevanGlobal.lifetime_correct += BrevanGlobal.session_score
+		BrevanGlobal.lifetime_questions += 35
+		BrevanGlobal.papers_completed += BrevanGlobal.session_completed
+		BrevanGlobal.bucks += BrevanGlobal.session_bucks
+		BrevanGlobal.flawless_papers_completed += BrevanGlobal.session_flawless_papers
 
 	# update highscore if session > current highscore
 	if BrevanGlobal.session_score > BrevanGlobal.highscore:
 		BrevanGlobal.highscore = BrevanGlobal.session_score
 		BrevanGlobal.emit_signal("stats_changed")
-		
+
 	# reset session for next run
 	BrevanGlobal.reset_session()
 
