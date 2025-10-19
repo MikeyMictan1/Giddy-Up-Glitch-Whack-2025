@@ -16,8 +16,8 @@ extends Control
 func _ready() -> void:
 	if BrevanGlobal:
 		BrevanGlobal.update_highscore()
-		if BrevanGlobal.session_score > BrevanGlobal.highscore:
-			BrevanGlobal.highscore = BrevanGlobal.session_score
+		if BrevanGlobal.email_session_score > BrevanGlobal.highscore:
+			BrevanGlobal.highscore = BrevanGlobal.email_session_score
 			BrevanGlobal.emit_signal("stats_changed")
 
 		if session_score_label:
