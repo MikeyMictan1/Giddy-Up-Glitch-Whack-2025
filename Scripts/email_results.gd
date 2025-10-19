@@ -38,7 +38,7 @@ func _on_main_scene_pressed() -> void:
 	if BrevanGlobal:
 		# add session totals into persistent totals
 		BrevanGlobal.lifetime_correct += BrevanGlobal.email_session_score
-		BrevanGlobal.lifetime_questions += 35
+		BrevanGlobal.lifetime_questions += 30
 		BrevanGlobal.papers_completed += BrevanGlobal.email_session_completed
 		BrevanGlobal.bucks += BrevanGlobal.email_session_bucks
 		BrevanGlobal.flawless_papers_completed += BrevanGlobal.email_session_flawless_emails
