@@ -1,11 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://cwbuqawspwfxr"]
+[gd_scene load_steps=38 format=3 uid="uid://b0cltkss3qmhq"]
 
 [ext_resource type="Script" uid="uid://oudbwebmwxbv" path="res://Scenes/email_check.gd" id="1_smjbo"]
 [ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="2_walhq"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_uwpls"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="4_ta7ma"]
 [ext_resource type="Texture2D" uid="uid://dl66emhvgkchl" path="res://Assets/Untitled_Artwork-1 20.png" id="4_uwpls"]
-[ext_resource type="PackedScene" path="res://Scenes/email_template.tscn" id="5_smjbo"]
+[ext_resource type="PackedScene" uid="uid://ktrlg2o50i8g" path="res://Scenes/email_template.tscn" id="5_smjbo"]
 [ext_resource type="Texture2D" uid="uid://1jyjpsj8l0ss" path="res://Assets/Untitled_Artwork-2 20.png" id="5_ta7ma"]
 [ext_resource type="Texture2D" uid="uid://bdbl1mtx80peu" path="res://Assets/Untitled_Artwork-3 19.png" id="6_08mgj"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="9_ta7ma"]
@@ -895,7 +895,7 @@ theme_override_colors/font_selected_color = Color(0.078431375, 0.10980392, 0.145
 theme_override_colors/font_outline_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
 theme_override_colors/caret_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_uwpls")
-text = "Defualt User"
+text = "Default User"
 
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_author_button" to="." method="_on_trusted_author_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_publisher_button" to="." method="_on_trusted_publisher_button_pressed"]

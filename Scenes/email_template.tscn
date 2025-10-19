@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh51vga1lit6y"]
+[gd_scene load_steps=9 format=3 uid="uid://ktrlg2o50i8g"]
 
 [ext_resource type="Script" uid="uid://ngi7fsy5wcy4" path="res://Scripts/email_template.gd" id="1_wegds"]
 

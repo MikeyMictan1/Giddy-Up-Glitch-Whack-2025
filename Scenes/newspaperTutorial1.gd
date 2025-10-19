@@ -1,15 +1,15 @@
 extends CanvasLayer
 var textVal = 0
 var maxText = 9
-var messages = ["Hello again Brevan here, i see you have started your first situation allow me to show you the ropes on how this is going to work. ",
-"As you can see you have been given a newspaper article and it is your job to tell whether or not it is fake. ",
-"Eventually, you will be able to hover over each section of the article and select whether or not you believe it is false. ",
-"Your job is to select which parts of the article (if any) are misleading or false.",
-"You may be asking, how do I check if the information is correct or not?",
-"Luckily for you, we have given a few trusted sources with the information required to verify these articles. Sadly they have been disbaled for now. ",
-"However there are other ways in which the article can be wrong such as article content and headlines not being the same. ",
-"This article is a perfect example of this. As you can see the statistic in the header and description, so the article must be false.",
-"Therefore to submit your answer you should click on both the header and the description and finally press submit",
+var messages = ["Brevan here again, I see you have started your first situation! Let me to show you the ropes. ",
+"You have been given a newspaper article and it is your job to find if it is reliable.",
+"You will be able to 'Flag' sections you believe are suspicious by clicking them. (e.g. Headline, Author, Publisher)",
+"Your must select these parts of the article (if any) that are misleading or false.",
+"You may be asking, how do I verify some of the information e.g. the Author?",
+"We have given you a few trusted sources with the information required to verify these articles. ",
+"However, there are other ways an article can be wrong such as article content and headlines not matching up. ",
+"This article is a perfect example. The statistic in the header doesn't match the description, so the article must be false.",
+"To submit your answer you should click on the header, description, and finally press submit!",
 ] 
 @onready var text1 = $MarginContainer/Panel/Label
 @onready var brevBox = $Brevan
