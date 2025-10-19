@@ -2,7 +2,7 @@
 
 [ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
 [ext_resource type="Script" uid="uid://beortxcmnulks" path="res://Scripts/shop.gd" id="1_ymrm4"]
-[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="2_fdj0q"]
+[ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="2_fdj0q"]
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_ymrm4"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_s8dlv"]
 [ext_resource type="Texture2D" uid="uid://bf6j2yk5pkrok" path="res://Assets/beavers/suit.png" id="5_1sjcd"]

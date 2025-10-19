@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccarxryw6scdg"]
+[gd_scene load_steps=12 format=3 uid="uid://ccarxryw6scdg"]
 
 [ext_resource type="Script" uid="uid://dslbl3i32erhh" path="res://Scripts/MainScene.gd" id="1_hpc76"]
 [ext_resource type="Texture2D" uid="uid://epleqm8722wv" path="res://Assets/brevan logo.webp" id="2_qxria"]
-[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
+[ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
 [ext_resource type="Texture2D" uid="uid://cbof2rh5a1kfl" path="res://Assets/pfp.png" id="4_q68mp"]
 [ext_resource type="Script" path="res://Scripts/coinsScript.gd" id="5_f140w"]
-[ext_resource type="PackedScene" uid="uid://dqbmf7bpt47v8" path="res://Scenes/TextBox.tscn" id="7_f140w"]
+[ext_resource type="PackedScene" uid="uid://bk7slmene8vwd" path="res://Scenes/TextBox.tscn" id="7_f140w"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="8_f140w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iob3"]
 bg_color = Color(1, 1, 1, 1)
@@ -174,6 +175,14 @@ text = "TAB : Controls"
 [node name="TextBox" parent="." instance=ExtResource("7_f140w")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Beaver" parent="CanvasLayer2" instance=ExtResource("8_f140w")]
+visible = false
+position = Vector2(1386.0001, 524)
+scale = Vector2(0.55504453, 0.5550443)
+cur_beaver = "base_beaver"
 
 [connection signal="pressed" from="UICanvasLayer/Main Page/begin_button" to="." method="_on_begin_button_pressed"]
 [connection signal="pressed" from="UICanvasLayer/Main Page/profile_button" to="." method="_on_profile_button_pressed"]

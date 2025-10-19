@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqbmf7bpt47v8"]
+[gd_scene load_steps=13 format=3 uid="uid://bk7slmene8vwd"]
 
 [ext_resource type="Script" uid="uid://cw2mhunnt14rn" path="res://Scripts/text_box.gd" id="1_lgpka"]
 [ext_resource type="Script" uid="uid://bohhnygie0uv0" path="res://Scripts/textInTextBox.gd" id="2_lgpka"]
