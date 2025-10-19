@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drp0xakbvtxkb"]
+[gd_scene load_steps=7 format=3 uid="uid://drp0xakbvtxkb"]
 
 [ext_resource type="Script" uid="uid://bkisv38e0us7o" path="res://Scripts/profile_page.gd" id="1_g0fbq"]
 [ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_g0fbq"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="3_g4pgj"]
+[ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="4_1sbxy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1sbxy"]
 bg_color = Color(1, 1, 1, 1)
@@ -92,21 +93,26 @@ offset_bottom = 436.8169
 
 [node name="Label2" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
-offset_left = 34.550735
-offset_top = 42.2535
-offset_right = 334.55072
-offset_bottom = 108.2535
+offset_left = 143.24638
+offset_top = 43.661953
+offset_right = 443.2464
+offset_bottom = 109.66196
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Brevan Bucks:"
 
 [node name="bucks_label" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
-offset_left = 328.75375
-offset_top = 42.253517
-offset_right = 393.75375
-offset_bottom = 109.25352
+offset_left = 437.4494
+offset_top = 43.66197
+offset_right = 502.4494
+offset_bottom = 110.66197
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
+
+[node name="BrevanBucks" type="Sprite2D" parent="Panel/UserInfo/StatsRow4"]
+position = Vector2(80.927444, 69.0141)
+scale = Vector2(0.057389088, 0.057389084)
+texture = ExtResource("4_1sbxy")
 
 [node name="StatsRow3" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0

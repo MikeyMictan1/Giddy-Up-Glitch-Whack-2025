@@ -6,7 +6,7 @@ func _ready() -> void:
 	_makeCoins()
 
 func _makeCoins () -> void:
-	text = "Coins: " + str(coins)
+	text = "Brevan Bucks: " + str(BrevanGlobal.bucks)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
