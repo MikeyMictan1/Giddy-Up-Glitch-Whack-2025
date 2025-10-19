@@ -56,4 +56,5 @@ func _on_profile_button_pressed() -> void:
 
 func _on_reset_button_pressed() -> void:
 	BrevanGlobal.reset_brevan()
+	save_manager.reset_brevan(brevan)
 	get_tree().reload_current_scene()
