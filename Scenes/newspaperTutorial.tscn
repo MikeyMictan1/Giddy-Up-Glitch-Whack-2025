@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0uk4n47kwmuk"]
+[gd_scene load_steps=10 format=3 uid="uid://c352uqckd7byq"]
 
 [ext_resource type="Script" uid="uid://d46y827wdmuq" path="res://Scenes/newspaperTutorial1.gd" id="1_jqahw"]
 [ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="2_eyrld"]

@@ -16,9 +16,18 @@ var messages = ["Hello and welcome to 'Thats Whack' please press the continue bu
 @onready var button = $"../Button"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = "Brevan the Beaver: " + messages[textVal]
-	profile.hide()
-	begin.hide()
+	if BrevanGlobal.menu_tutorial_finished:
+		whole.hide()
+		block.visible= false
+		brev1.hide()
+		brev2.hide()
+		profile.hide()
+		begin.hide()
+	
+	else:
+		text = "Brevan the Beaver: " + messages[textVal]
+		profile.hide()
+		begin.hide()
 
 func update_label_text():
 	profile.hide()
@@ -31,6 +40,7 @@ func update_label_text():
 		if(textVal == 4):
 			begin.show()
 	else:
+		BrevanGlobal.menu_tutorial_finished = true
 		whole.hide()
 		block.visible= false
 		brev1.hide()

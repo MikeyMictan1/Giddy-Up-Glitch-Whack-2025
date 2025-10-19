@@ -1,5 +1,10 @@
 extends Panel
 
+# Brevan info
+const CHUNK_SIZE: int = 5
+const POINTS_PER_CORRECT: int = 1
+const BUCKS_PER_CORRECT: int = 1
+
 # UI stuff
 @onready var link: Button = $Link
 @onready var headline: Button = $Article/Headline
@@ -39,6 +44,13 @@ func get_article(id):
 		return []
 
 func load_article() -> void:
+	article_id = BrevanGlobal.progress_index if BrevanGlobal else 0
+	
+	# Resets as 20 to make sure no crashes
+	if article_id >= 20:
+		article_id = 0
+		BrevanGlobal.progress_index = 0
+		
 	load_from_json("res://Scripts/news.json")
 	article = get_article(article_id)
 	
@@ -65,40 +77,72 @@ func _ready() -> void:
 	brevan = BrevanGlobal as Brevan
 
 func get_results():	
+	# determine the window of items to grade this round
+	var total = len(user_results)
+	var start_idx = 0
+	if brevan:	
+		start_idx = brevan.progress_index
+	var end_idx = min(start_idx + CHUNK_SIZE, total)
+	var chunk_correct_count: int = 0
+	var chunk_incorrect_count: int = 0
+
+	var green_start = "[color=#00cc00]"
+	var red_start = "[color=#cc0000]"
+	var end_color = "[/color]"
+
+	var output_rights = ""
+	var output_wrongs = ""
 	
 	if user_results == article["results"]:
 		if 0 in user_results:
-			report_text.text = "Well done! This was a perfectly fine newsite!"
+			report_text.text = "Well done! This was a perfectly fine news-site!"
 		else:
 			report_text.text = "Well done! You found all of the whacky bits in this article!"
 		report_panel.visible = true
 		return true
-	else:
-		var green_start = "[color=#00cc00]"
-		var red_start = "[color=#cc0000]"
-		var end_color = "[/color]"
 
-		var output_rights = ""
-		var output_wrongs = ""
+	else:
 		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
+				chunk_incorrect_count += 1 # counts how many incorrect answers
 				if user_results[j] == 0:
 					output_wrongs += red_start + wrong_report_reasons_w[j] + end_color + "\n"
 				else:
 					output_wrongs += red_start + right_report_reasons_w[j] + end_color + "\n"
 			else:
+				chunk_correct_count += 1 # Counts how many correct answers
 				if user_results[j] == 1:
 					output_rights += green_start + wrong_report_reasons_r[j] + end_color + "\n"
-					brevan.add_score()
-					brevan.add_bucks()
+
 				else:
 					output_rights += green_start + right_report_reasons_r[j] + end_color + "\n"
-					brevan.add_score()
-					brevan.add_bucks()
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs
-		report_panel.visible = true
-		print("Brevan points: ", str(brevan.get_score()))
-		return false
+
+	# compute article score (score for this single article)
+	var article_score = chunk_correct_count * POINTS_PER_CORRECT
+	var article_bucks = chunk_correct_count * BUCKS_PER_CORRECT
+
+	if brevan:
+		# Checks for flawless papers
+		if article_score == 7:
+			printerr("FLAWLESS PAPER!")
+			brevan.add_session_flawless_papers()
+
+		# accumulate into session (not persistent totals yet)
+		brevan.add_session_score(article_score)
+		brevan.add_session_bucks(article_bucks)
+		brevan.increment_session_completed()
+
+	# show report for this article
+	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
+		report_text.text = "Well done! You scored " + str(article_score) + " on this article!"
+	else:
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!\n\n\n"+ str(article_id + 1) + " out of 5 articles completed"
+
+	report_panel.visible = true
+
+
+
+	return false
 
 # [user, actual] = [1,1]
 var wrong_report_reasons_r = [
