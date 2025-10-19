@@ -20,9 +20,6 @@ var user_results = [0,0,0,0,0,0,0]
 @onready var report_panel: Panel = $Report
 @onready var report_text: RichTextLabel = $Report/ReportText
 
-# Brevan stats
-var brevan: Brevan = null
-
 # Resource stuff
 @export var article_id: int
 var articles = {}
@@ -74,14 +71,12 @@ func _ready() -> void:
 	report_text.bbcode_enabled = true
 	load_article()
 
-	brevan = BrevanGlobal as Brevan
-
 func get_results():	
 	# determine the window of items to grade this round
 	var total = len(user_results)
 	var start_idx = 0
-	if brevan:	
-		start_idx = brevan.progress_index
+	if BrevanGlobal:
+		start_idx = BrevanGlobal.progress_index
 	var end_idx = min(start_idx + CHUNK_SIZE, total)
 	var chunk_correct_count: int = 0
 	var chunk_incorrect_count: int = 0
@@ -121,26 +116,24 @@ func get_results():
 	var article_score = chunk_correct_count * POINTS_PER_CORRECT
 	var article_bucks = chunk_correct_count * BUCKS_PER_CORRECT
 
-	if brevan:
+	if BrevanGlobal:
 		# Checks for flawless papers
 		if article_score == 7:
 			printerr("FLAWLESS PAPER!")
-			brevan.add_session_flawless_papers()
+			BrevanGlobal.add_session_flawless_papers()
 
 		# accumulate into session (not persistent totals yet)
-		brevan.add_session_score(article_score)
-		brevan.add_session_bucks(article_bucks)
-		brevan.increment_session_completed()
+		BrevanGlobal.add_session_score(article_score)
+		BrevanGlobal.add_session_bucks(article_bucks)
+		BrevanGlobal.increment_session_completed()
 
 	# show report for this article
 	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
 		report_text.text = "Well done! You scored " + str(article_score) + " on this article!"
 	else:
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!\n\n\n"+ str(article_id + 1) + " out of 5 articles completed"
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!\n\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
 
 	report_panel.visible = true
-
-
 
 	return false
 
