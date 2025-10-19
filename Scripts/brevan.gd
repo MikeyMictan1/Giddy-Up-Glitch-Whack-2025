@@ -16,7 +16,7 @@ func _init(name: String, s: int = 0, hs: int = 0, a: int = 0, b: int = 0):
 	score = s
 	highscore = hs
 	attempts = a
-	bucks = 10000
+	bucks = BrevanGlobal.bucks
 	current_outfit = ""
 	owned_outfits = []
 	

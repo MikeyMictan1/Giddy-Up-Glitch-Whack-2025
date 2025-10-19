@@ -92,11 +92,11 @@ func _process(delta: float) -> void:
 	elif brevan.current_outfit == "base":
 		beaver.cur_beaver = "base_beaver"
 	
-	wallet_amt.text = "Wallet: " + str(brevan.bucks) + " Bucks"
+	wallet_amt.text = "Wallet: " + str(BrevanGlobal.bucks)
 		
 func buy(brevan: Brevan, outfit_name: String):
 	var cost = outfits[outfit_name].price
-	if brevan.bucks < cost:
+	if BrevanGlobal.bucks < cost:
 		if outfit_name == "outfit1":
 			error_bg.visible = true
 			error_msg.visible = true
@@ -131,7 +131,7 @@ func buy(brevan: Brevan, outfit_name: String):
 	elif outfit_name == "outfit6":
 		buy_6.text = "Press to Equip"
 
-	brevan.bucks -= cost
+	BrevanGlobal.bucks -= cost
 	brevan.buy_outfit(outfit_name)
 
 func _on_timer_timeout():

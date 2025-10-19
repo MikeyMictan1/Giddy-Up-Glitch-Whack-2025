@@ -1,12 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://dwcf3hy5i8gbl"]
+[gd_scene load_steps=27 format=3 uid="uid://kun3iy2b1eiu"]
 
-[ext_resource type="StyleBox" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
+[ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
 [ext_resource type="Script" uid="uid://beortxcmnulks" path="res://Scripts/shop.gd" id="1_ymrm4"]
 [ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="2_fdj0q"]
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_ymrm4"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_s8dlv"]
 [ext_resource type="Texture2D" uid="uid://bf6j2yk5pkrok" path="res://Assets/beavers/suit.png" id="5_1sjcd"]
 [ext_resource type="Texture2D" uid="uid://fqqodtiw5aqi" path="res://Assets/reset.png" id="7_ymrm4"]
+[ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="9_0vsm1"]
 [ext_resource type="Texture2D" uid="uid://bvskb383qeqjk" path="res://Assets/beavers/brainrot.png" id="9_1cyt5"]
 [ext_resource type="Texture2D" uid="uid://biogmnwtpjtf8" path="res://Assets/beavers/chappell.png" id="10_0vsm1"]
 [ext_resource type="Texture2D" uid="uid://bpku6fws00xwk" path="res://Assets/beavers/cowboy.png" id="11_3568l"]
@@ -586,6 +587,11 @@ theme = SubResource("Theme_tyrku")
 theme_override_font_sizes/font_size = 36
 text = "Wallet: 100"
 
+[node name="BrevanBucks" type="Sprite2D" parent="top bar"]
+position = Vector2(1573, 56.000004)
+scale = Vector2(0.042480484, 0.042480484)
+texture = ExtResource("9_0vsm1")
+
 [node name="Brainrot" type="Sprite2D" parent="."]
 position = Vector2(838.00006, 344)
 scale = Vector2(0.23243389, 0.23243384)
@@ -611,8 +617,8 @@ position = Vector2(1174, 679.99994)
 scale = Vector2(0.21843165, 0.21843158)
 texture = ExtResource("13_cuuv1")
 
-[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_main_scene_pressed"]
+[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_buy_1_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_main_scene_2_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy2" to="." method="_on_buy_2_pressed"]
