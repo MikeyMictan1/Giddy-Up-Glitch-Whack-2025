@@ -14,11 +14,14 @@ var current_article: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if current_article:
+	if BrevanGlobal:
+		print("ARTICLE INDEX AT READY: " + str(BrevanGlobal.progress_index))
+		current_article = BrevanGlobal.progress_index
 		news_template.article_id = current_article
 	else:
 		current_article = 0
 		news_template.article_id = current_article
+
 	continue_button.visible = false
 	buttons_enabled.visible = false
 
@@ -33,6 +36,11 @@ func _on_continue_button_pressed() -> void:
 	continue_button.visible = false
 	buttons_enabled.visible = false
 	current_article += 1
+
+	# persist progress in the autoload so sessions survive scene changes
+	if BrevanGlobal:
+		BrevanGlobal.progress_index = current_article
+
 	news_template.article_id = current_article
 	news_template.load_article()
 
