@@ -131,7 +131,7 @@ func get_results():
 	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
 		report_text.text = "Well done! You scored " + str(article_score) + " on this article!"
 	else:
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!\n\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\nYou scored " + str(article_score) + "/7 on this article!\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
 
 	report_panel.visible = true
 
@@ -140,45 +140,45 @@ func get_results():
 # [user, actual] = [1,1]
 var wrong_report_reasons_r = [
 	"- The link was indeed dodgy.",
-	"- The headline was... definitely not true.",
-	"- The publisher doesn't exist.",
-	"- The author doesn't exist.",
-	"- The article was published before the corresponding event - the date was wrong.",
-	"- The image was weird.",
-	"- The text was... definitely not true."
+	"- The headline was definitely not true",
+	"- Yes, the publisher doesn't exist!",
+	"- Yes, the author doesn't exist!",
+	"- Yes, the article was published before the corresponding event - the date was wrong",
+	"- Yes, the image was weird :)",
+	"- Yes, the text was definitely not true!"
 ]
 
 # [user, actual] = [0,0]
 var right_report_reasons_r = [
-	"- The link was from a trusted domain.",
-	"- The headline was accurate.",
-	"- The publisher was trusted.",
-	"- The author was trusted.",
-	"- There was no problems with the date.",
-	"- There was no problems with the image.",
-	"- The text aligned with the headline."
+	"- Correct, the link was from a trusted domain!",
+	"- Correct, the headline was accurate :)",
+	"- Correct, The publisher was trusted",
+	"- Correct, The author was trusted!",
+	"- Correct, There was no problems with the date",
+	"- Correct, There was no problems with the image!",
+	"- Correct, The text aligned with the headline :)"
 ]
 
 # [user, actual] = [0,1]
 var wrong_report_reasons_w = [
-	"- This link was quite dodgy... make sure to look at the trusted domains document!",
-	"- The headline was quite exaggerated, or it was completely made up - make sure to check the recent events.",
-	"- This publisher doesn't exist - check out the trusted publishers document.",
+	"- This link was dodgy... look at the trusted domains document!",
+	"- The headline was exaggerated or made up - check the recent events!",
+	"- This publisher doesn't exist - check out the trusted publishers :)",
 	"- This author isn't trusted - check out the trusted authors document.",
-	"- The date in which this article was published doesn't align with the current events....",
-	"- This image is AI generated! Or completely irrelevant to the article....",
-	"- The text is very exaggerated...."
+	"- The article date doesn't align with the current events",
+	"- This image is AI generated or irrelevant to the article.",
+	"- The text is incorrect or made up."
 ]
 
 # [user, actual] = [1,0]
 var right_report_reasons_w = [
 	"- The link was actually okay - check out the trusted domains.",
-	"- The headline was accurate.",
+	"- The headline was accurate!",
 	"- The publisher does exist - check out the publishers document.",
 	"- This author is trusted - check out the trusted authors document.",
 	"- There's nothing wrong with this date.",
-	"- Image is okay.",
-	"- Everything in the text is fine."
+	"- The image has nothing wrong with it :)",
+	"- The body of text is fine!"
 ]
 
 func hide_results():

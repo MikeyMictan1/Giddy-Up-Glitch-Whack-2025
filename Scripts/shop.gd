@@ -130,7 +130,7 @@ func _on_timer_timeout():
 	error_msg6.visible = false
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+	get_tree().change_scene_to_file("res://Scenes/profile_page.tscn")
 	
 func _on_reset_button_pressed() -> void:
 	brevan.equip_outfit("base")
