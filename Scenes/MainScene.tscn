@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccarxryw6scdg"]
+[gd_scene load_steps=13 format=3 uid="uid://ccarxryw6scdg"]
 
 [ext_resource type="Script" uid="uid://dslbl3i32erhh" path="res://Scripts/MainScene.gd" id="1_hpc76"]
 [ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
-[ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
+[ext_resource type="StyleBox" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
 [ext_resource type="Script" uid="uid://ga7h1p5s8838" path="res://Scripts/coinsScript.gd" id="5_f140w"]
 [ext_resource type="Texture2D" uid="uid://b1to56m4rvi3l" path="res://Assets/Untitled_Artwork 79.png" id="5_q68mp"]
 [ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="7_0iob3"]
-[ext_resource type="PackedScene" uid="uid://bk7slmene8vwd" path="res://Scenes/TextBox.tscn" id="7_f140w"]
+[ext_resource type="PackedScene" uid="uid://dqbmf7bpt47v8" path="res://Scenes/TextBox.tscn" id="7_f140w"]
+[ext_resource type="Texture2D" uid="uid://c6gaxkgtwxyuv" path="res://Assets/Untitled_Artwork 82.png" id="8_0iob3"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="8_f140w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iob3"]
@@ -161,14 +162,21 @@ layout_mode = 2
 text = "TAB : Controls"
 
 [node name="TextBox" parent="." instance=ExtResource("7_f140w")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 
+[node name="BG" type="Sprite2D" parent="CanvasLayer2"]
+visible = false
+position = Vector2(915.5, 477.99997)
+scale = Vector2(0.3421692, 0.27785143)
+texture = ExtResource("8_0iob3")
+
 [node name="Beaver" parent="CanvasLayer2" instance=ExtResource("8_f140w")]
 visible = false
-position = Vector2(1400, 510)
+position = Vector2(1422.0001, 514)
 scale = Vector2(0.55504453, 0.5550443)
 cur_beaver = "base_beaver"
 

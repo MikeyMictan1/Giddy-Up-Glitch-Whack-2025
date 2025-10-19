@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://x0kdlikdet0y"]
+[gd_scene load_steps=8 format=3 uid="uid://x0kdlikdet0y"]
 
 [ext_resource type="Script" uid="uid://nabomb7ouy6n" path="res://UI/ui_scripts/main_menu.gd" id="1_lget4"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="1_uyl7m"]
 [ext_resource type="Theme" uid="uid://d1tl4ouhddgg7" path="res://UI/ui_themes/base_theme.tres" id="2_i6s3c"]
+[ext_resource type="Texture2D" uid="uid://du7rj2vsujbi5" path="res://Assets/Untitled_Artwork 83.png" id="2_ueq4g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lget4"]
 
@@ -31,41 +32,16 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect2" type="ColorRect" parent="UI Elements/decor"]
-modulate = Color(1, 1, 1, 0.627451)
-layout_mode = 0
-offset_left = 1262.0
-offset_top = 27.999939
-offset_right = 1289.3853
-offset_bottom = 1133.4827
-rotation = 0.65992343
-color = Color(0.2551818, 0.27462378, 0.40142626, 1)
-
-[node name="ColorRect4" type="ColorRect" parent="UI Elements/decor"]
-modulate = Color(1, 1, 1, 0.627451)
-layout_mode = 0
-offset_left = 1679.4031
-offset_top = 218.50438
-offset_right = 1706.7883
-offset_bottom = 1081.3052
-rotation = 0.65992343
-color = Color(0.2551818, 0.27462378, 0.40142626, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="UI Elements/decor"]
-modulate = Color(1, 1, 1, 0.627451)
-layout_mode = 0
-offset_left = 629.6461
-offset_top = 109.59567
-offset_right = 657.0314
-offset_bottom = 1113.4607
-rotation = 0.65992343
-color = Color(0.2551818, 0.27462378, 0.40142626, 1)
-
 [node name="Panel" type="Panel" parent="UI Elements/decor"]
 layout_mode = 0
 offset_right = 1700.0
 offset_bottom = 235.0
 theme = SubResource("Theme_2u05s")
+
+[node name="BG" type="Sprite2D" parent="UI Elements"]
+position = Vector2(866, 370.99994)
+scale = Vector2(0.38480222, 0.3733422)
+texture = ExtResource("2_ueq4g")
 
 [node name="Control" type="Control" parent="UI Elements"]
 layout_mode = 3

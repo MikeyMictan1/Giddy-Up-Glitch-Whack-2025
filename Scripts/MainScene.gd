@@ -3,6 +3,7 @@ extends Node2D
 # hello hello
 var tutorialDone = false
 @onready var beaver: Sprite2D = $CanvasLayer2/Beaver
+@onready var bg: Sprite2D = $CanvasLayer2/BG
 @onready var save_manager = SaveManager.new()
 var brevan: Brevan
 
@@ -39,6 +40,8 @@ func _ready():
 	
 	if BrevanGlobal.menu_tutorial_finished == true:
 		beaver.visible = true
+		bg.visible = true
+		
 
 func _exit_tree():
 	# Reset game state when leaving the game scene
