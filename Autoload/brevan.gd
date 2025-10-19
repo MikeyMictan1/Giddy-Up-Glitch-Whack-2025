@@ -21,6 +21,9 @@ var session_percentage: float = 0.0
 var lifetime_correct: int = 0
 var lifetime_questions: int = 0
 
+# tutorial tracking
+var game_tutorial_finished : bool = false
+var menu_tutorial_finished : bool = false
 
 func _init(name: String = "Brevan", hs: int = 0, b: int = 0):
 	username = name

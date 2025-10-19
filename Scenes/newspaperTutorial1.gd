@@ -8,7 +8,7 @@ var messages = ["Hello again Brevan here, i see you have started your first situ
 "You may be asking, how do I check if the information is correct or not?",
 "Luckily for you, we have given a few trusted sources with the information required to verify these articles. Sadly they have been disbaled for now. ",
 "However there are other ways in which the article can be wrong such as article content and headlines not being the same. ",
-"This article is a perfect example of this. As you can see the satistic in the header and description so the article must be false.",
+"This article is a perfect example of this. As you can see the statistic in the header and description, so the article must be false.",
 "Therefore to submit your answer you should click on both the header and the description and finally press submit",
 ] 
 @onready var text1 = $MarginContainer/Panel/Label
@@ -18,16 +18,18 @@ var messages = ["Hello again Brevan here, i see you have started your first situ
 @onready var textbox  = $MarginContainer
 @onready var button = $MarginContainer/Panel/Button
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text1.text = "Brevan the Beaver: " + messages[textVal]
-	pass
+	if BrevanGlobal.game_tutorial_finished:
+		textbox.visible = false
+		brevBox.visible= false
+		block.visible = false
+		brev.visible= false
+	else:
+		text1.text = "Brevan the Beaver: " + messages[textVal]
 
 func update_label_text():
 	if(textVal < maxText - 1):
-		
-		
 		if (textVal == 5):
 			brevBox.visible= false
 			brev.visible= false
@@ -41,19 +43,12 @@ func update_label_text():
 	if(textVal == maxText - 1):
 		button.text =  "Close"
 	if(textVal == maxText):
+		BrevanGlobal.game_tutorial_finished = true
+		
 		textbox.visible = false
 		brevBox.visible= false
 		block.visible = false
 		brev.visible= false
-		 
-		
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func _on_button_pressed() -> void:
 	update_label_text()
