@@ -18,7 +18,8 @@ func _init(name: String, s: int = 0, hs: int = 0, a: int = 0, b: int = 0):
 	attempts = a
 	bucks = 10000
 	current_outfit = ""
-
+	owned_outfits = []
+	
 func add_score(amount: int):
 	score += amount
 	

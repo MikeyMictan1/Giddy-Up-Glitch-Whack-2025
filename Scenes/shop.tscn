@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b7nlq061tbvc1"]
+[gd_scene load_steps=26 format=3 uid="uid://kun3iy2b1eiu"]
 
 [ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
 [ext_resource type="Script" uid="uid://beortxcmnulks" path="res://Scripts/shop.gd" id="1_ymrm4"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bpku6fws00xwk" path="res://Assets/beavers/cowboy.png" id="11_3568l"]
 [ext_resource type="Texture2D" uid="uid://b0qcokqlsskx7" path="res://Assets/beavers/louis.png" id="12_mjtuy"]
 [ext_resource type="Texture2D" uid="uid://b7uin4odgd7i1" path="res://Assets/beavers/mariachi.png" id="13_cuuv1"]
-[ext_resource type="PackedScene" path="res://Scenes/beaver.tscn" id="13_m13ki"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="13_m13ki"]
 
 [sub_resource type="FontFile" id="FontFile_25uw0"]
 cache/0/16/0/ascent = 0.0
@@ -611,8 +611,8 @@ position = Vector2(1174, 679.99994)
 scale = Vector2(0.21843165, 0.21843158)
 texture = ExtResource("13_cuuv1")
 
-[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_main_scene_pressed"]
+[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_buy_1_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_main_scene_2_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy2" to="." method="_on_buy_2_pressed"]

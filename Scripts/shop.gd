@@ -27,7 +27,10 @@ var outfits = {
 	},
 }
 
-var brevan = Brevan.new("FAT_BEAVER")
+
+@onready var save_manager = SaveManager.new()
+var brevan: Brevan
+
 
 @onready var error_bg: Panel = $Panel/ShopItems/ErrorBg
 @onready var error_msg: Label = $Panel/ShopItems/ErrorBg/ErrorMsg
@@ -52,9 +55,25 @@ var brevan = Brevan.new("FAT_BEAVER")
 @onready var wallet_amt: Label = $"top bar/WalletAmt"
 
 func _ready():
+
+	var loaded = save_manager.load_brevan()
+	if loaded == null:
+		brevan = Brevan.new("FAT_BEAVER")
+	else:
+		brevan = loaded
 	timer.wait_time = 2.0
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
+	update_shop_ui()
+	
+func update_shop_ui():
+	for outfit_name in outfits.keys():
+		var button = get_node_or_null("Panel/Buttons/buy" + outfit_name.substr(6))
+		if button:
+			if outfit_name in brevan.owned_outfits:
+				button.text = "Press to Equip"
+			else:
+				button.text = "Buy (" + str(outfits[outfit_name].price) + " Bucks)"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -130,6 +149,7 @@ func _on_timer_timeout():
 	error_msg6.visible = false
 
 func _on_back_pressed() -> void:
+	save_manager.save_brevan(brevan)
 	get_tree().change_scene_to_file("res://Scenes/profile_page.tscn")
 	
 func _on_reset_button_pressed() -> void:
