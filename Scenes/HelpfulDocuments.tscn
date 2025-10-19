@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwd8oumg2h068" path="res://Scenes/news_template.tscn" id="5_76pne"]
 [ext_resource type="Texture2D" uid="uid://leqlqjf746lg" path="res://Assets/Untitled_Artwork-2 19.png" id="5_cwbgw"]
 [ext_resource type="Texture2D" uid="uid://lwl16qyp0fxn" path="res://Assets/Untitled_Artwork-3 18.png" id="6_gn2v5"]
-[ext_resource type="PackedScene" uid="uid://dcwwtvjbknf0e" path="res://Scenes/newspaperTutorial.tscn" id="6_o1mj6"]
+[ext_resource type="PackedScene" uid="uid://c352uqckd7byq" path="res://Scenes/newspaperTutorial.tscn" id="6_o1mj6"]
 [ext_resource type="Texture2D" uid="uid://blaomfq2rh2h6" path="res://Assets/Untitled_Artwork-4 15.png" id="7_rswxb"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="10_cwbgw"]
 
