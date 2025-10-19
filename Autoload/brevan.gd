@@ -29,7 +29,132 @@ func _init(name: String = "Brevan", hs: int = 0, b: int = 0):
 	username = name
 	highscore = hs
 	bucks = b
-	
+
+func _ready() -> void:
+
+	# auto-save when stats change
+	connect("stats_changed", Callable(self, "save_to_disk"))
+
+	# load saved data when autoload starts
+	load_from_disk()
+	# optional: also save on application quit
+	get_tree().connect("quit_requested", Callable(self, "save_to_disk"))
+
+func reset_brevan() -> void:
+	# reset persistent fields
+	username = "Brevan"
+	highscore = 0
+	bucks = 0
+	owned_outfits = []
+	current_outfit = ""
+	papers_completed = 0
+	flawless_papers_completed = 0
+	progress_index = 0
+
+	# reset session fields
+	session_score = 0
+	session_bucks = 0
+	session_completed = 0
+	session_flawless_papers = 0
+	session_percentage = 0.0
+
+	# reset lifetime / tutorial tracking
+	lifetime_correct = 0
+	lifetime_questions = 0
+	game_tutorial_finished = false
+	menu_tutorial_finished = false
+
+	# persist the reset immediately and reload so in-memory state matches disk
+	save_to_disk()
+	load_from_disk()
+
+	# notify listeners once more after reset
+	emit_signal("stats_changed")
+
+func save_to_disk() -> void:
+	var data := {
+	"username": username,
+	"highscore": highscore,
+	"bucks": bucks,
+	"owned_outfits": owned_outfits,
+	"current_outfit": current_outfit,
+	"papers_completed": papers_completed,
+	"flawless_papers_completed": flawless_papers_completed,
+	"progress_index": progress_index,
+	"lifetime_correct": lifetime_correct,
+	"lifetime_questions": lifetime_questions,
+	"game_tutorial_finished": game_tutorial_finished,
+	"menu_tutorial_finished": menu_tutorial_finished
+	}
+	# serialize
+	print("ATTEMPTING TO SAVE BREVAN DATA...")
+	var serializer = JSON.new()
+	var json_text: String = ""
+	if serializer.has_method("stringify"):
+		json_text = serializer.stringify(data)  # Godot 4+
+	elif serializer.has_method("print"):
+		json_text = serializer.print(data)      # Godot 3.x
+	else:
+		push_error("No JSON serializer available on this engine version")
+		return
+
+	var virtual_path := "user://brevan_save.json"
+	# show the real path so you can open it in Explorer/Finder
+	var real_path := ProjectSettings.globalize_path(virtual_path)
+	print("Saving Brevan data to: ", virtual_path, " -> ", real_path)
+
+	# ensure directory exists if using subfolders (not needed for user://root)
+	# var dir := DirAccess.open(ProjectSettings.globalize_path("user://saves"))
+	# DirAccess.make_dir_recursive(ProjectSettings.globalize_path("user://saves"))
+
+	var f := FileAccess.open(virtual_path, FileAccess.WRITE)
+	if f == null:
+		push_error("Failed to open save file for writing: " + virtual_path)
+		return
+
+	f.store_string(json_text)
+	f.close()
+	print("Brevan save successful:", real_path)
+
+func load_from_disk() -> void:
+	var path := "user://brevan_save.json"
+	if not FileAccess.file_exists(path):
+		return
+
+	var s: String = FileAccess.get_file_as_string(path)
+	if s == "":
+		return
+
+	var parsed = JSON.parse_string(s)
+	# JSON.parse_string in your project returns a Dictionary or a parse-result struct;
+	# handle the common Dictionary case first
+	var data: Dictionary = {}
+	if typeof(parsed) == TYPE_DICTIONARY:
+		data = parsed
+
+	elif typeof(parsed) == TYPE_OBJECT and parsed.has("result"):
+		# JSON.parse_string returned a JSONParseResult-like object
+		data = parsed.result
+	else:
+		return
+
+	username = data.get("username", username)
+	highscore = int(data.get("highscore", highscore))
+	bucks = int(data.get("bucks", bucks))
+	owned_outfits = data.get("owned_outfits", owned_outfits)
+	current_outfit = data.get("current_outfit", current_outfit)
+	papers_completed = int(data.get("papers_completed", papers_completed))
+	flawless_papers_completed = int(data.get("flawless_papers_completed", flawless_papers_completed))
+	progress_index = int(data.get("progress_index", progress_index))
+	lifetime_correct = int(data.get("lifetime_correct", lifetime_correct))
+	lifetime_questions = int(data.get("lifetime_questions", lifetime_questions))
+	game_tutorial_finished = bool(data.get("game_tutorial_finished", game_tutorial_finished))
+	menu_tutorial_finished = bool(data.get("menu_tutorial_finished", menu_tutorial_finished))
+
+	# emit so any UI updates happen once load completes
+	emit_signal("stats_changed")
+
+
 func add_bucks():
 	bucks += 1
 	emit_signal("stats_changed")
@@ -46,7 +171,7 @@ func get_flawless_papers():
 func update_highscore():
 	if session_score > highscore:
 		highscore = session_score
-
+	print("EMITTING THE SIGNAL AND HIGH SCORE UPDATED TO: " + str(highscore))
 	emit_signal("stats_changed")
 
 func buy_outfit(o: String):
