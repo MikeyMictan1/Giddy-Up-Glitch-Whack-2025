@@ -95,8 +95,7 @@ func get_results():
 		else:
 			report_text.text = "Well done! You found all of the whacky bits in this article!"
 		report_panel.visible = true
-		return true
-
+	
 	else:
 		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
@@ -122,6 +121,7 @@ func get_results():
 		if article_score == 7:
 			printerr("FLAWLESS PAPER!")
 			BrevanGlobal.add_session_flawless_papers()
+			
 
 		# accumulate into session (not persistent totals yet)
 		BrevanGlobal.add_session_score(article_score)
@@ -136,7 +136,7 @@ func get_results():
 
 	report_panel.visible = true
 
-	return false
+	return article_score
 
 # [user, actual] = [1,1]
 var wrong_report_reasons_r = [

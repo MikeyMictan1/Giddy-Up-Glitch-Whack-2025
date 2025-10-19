@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dxy2tp6cv5mff"]
+[gd_scene load_steps=36 format=3 uid="uid://dxy2tp6cv5mff"]
 
 [ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="1_a5di6"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="1_vbywl"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://lwl16qyp0fxn" path="res://Assets/Untitled_Artwork-3 18.png" id="6_gn2v5"]
 [ext_resource type="PackedScene" uid="uid://dcwwtvjbknf0e" path="res://Scenes/newspaperTutorial.tscn" id="6_o1mj6"]
 [ext_resource type="Texture2D" uid="uid://blaomfq2rh2h6" path="res://Assets/Untitled_Artwork-4 15.png" id="7_rswxb"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="10_cwbgw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
 bg_color = Color(0.522561, 0.6116589, 0.7011091, 1)
@@ -841,6 +842,10 @@ offset_top = -13.0
 offset_right = 844.0
 offset_bottom = 906.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l4qso")
+
+[node name="Beaver" parent="CanvasLayer" instance=ExtResource("10_cwbgw")]
+position = Vector2(1079, 697)
+scale = Vector2(0.40529543, 0.4052954)
 
 [node name="Control" parent="." instance=ExtResource("6_o1mj6")]
 
