@@ -53,6 +53,15 @@ offset_right = 1691.0
 offset_bottom = 199.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4b75m")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="UICanvasLayer/top bar"]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 52.0
+offset_right = 1174.0
+offset_bottom = 134.0
+theme_override_font_sizes/normal_font_size = 60
+text = "That's Whack!"
+
 [node name="Main Page" type="Control" parent="UICanvasLayer"]
 layout_mode = 3
 anchors_preset = 0

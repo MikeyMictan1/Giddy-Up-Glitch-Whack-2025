@@ -14,7 +14,7 @@ var outfits = {
 		"image": "something.jpg"
 	},
 	"outfit4": {
-		"price": 25,
+		"price": 15,
 		"image": "something.jpg"
 	},
 	"outfit5": {

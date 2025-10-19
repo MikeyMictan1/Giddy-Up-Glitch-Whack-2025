@@ -130,7 +130,7 @@ func get_results():
 
 	# show report for this article
 	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
-		report_text.text = "Well done! You scored " + str(article_score) + " on this article!"
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\nYou scored " + str(article_score) + "/7 on this article!\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
 	else:
 		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\nYou scored " + str(article_score) + "/7 on this article!\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
 
