@@ -183,7 +183,6 @@ layout_mode = 2
 text = "TAB : Controls"
 
 [node name="TextBox" parent="." instance=ExtResource("7_f140w")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
