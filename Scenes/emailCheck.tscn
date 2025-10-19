@@ -1,18 +1,14 @@
-[gd_scene load_steps=36 format=3 uid="uid://dxy2tp6cv5mff"]
+[gd_scene load_steps=38 format=3 uid="uid://cwbuqawspwfxr"]
 
-[ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="1_a5di6"]
-[ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="1_vbywl"]
-[ext_resource type="Script" uid="uid://c4uew5inx20gt" path="res://Scripts/helpful_documents.gd" id="1_yly2r"]
-[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="2_yly2r"]
-[ext_resource type="PackedScene" uid="uid://dwd8oumg2h068" path="res://Scenes/news_template.tscn" id="5_76pne"]
-[ext_resource type="PackedScene" uid="uid://c0uk4n47kwmuk" path="res://Scenes/newspaperTutorial.tscn" id="6_o1mj6"]
-[ext_resource type="Texture2D" uid="uid://qe0gdkq0s35h" path="res://Assets/Untitled_Artwork-1 19.png" id="4_ldcbm"]
-[ext_resource type="PackedScene" uid="uid://dwd8oumg2h068" path="res://Scenes/news_template.tscn" id="5_76pne"]
-[ext_resource type="Texture2D" uid="uid://leqlqjf746lg" path="res://Assets/Untitled_Artwork-2 19.png" id="5_cwbgw"]
-[ext_resource type="Texture2D" uid="uid://lwl16qyp0fxn" path="res://Assets/Untitled_Artwork-3 18.png" id="6_gn2v5"]
-[ext_resource type="PackedScene" uid="uid://c352uqckd7byq" path="res://Scenes/newspaperTutorial.tscn" id="6_o1mj6"]
-[ext_resource type="Texture2D" uid="uid://blaomfq2rh2h6" path="res://Assets/Untitled_Artwork-4 15.png" id="7_rswxb"]
-[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="10_cwbgw"]
+[ext_resource type="Script" uid="uid://oudbwebmwxbv" path="res://Scenes/email_check.gd" id="1_smjbo"]
+[ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="2_walhq"]
+[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_uwpls"]
+[ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="4_ta7ma"]
+[ext_resource type="Texture2D" uid="uid://dl66emhvgkchl" path="res://Assets/Untitled_Artwork-1 20.png" id="4_uwpls"]
+[ext_resource type="PackedScene" path="res://Scenes/email_template.tscn" id="5_smjbo"]
+[ext_resource type="Texture2D" uid="uid://1jyjpsj8l0ss" path="res://Assets/Untitled_Artwork-2 20.png" id="5_ta7ma"]
+[ext_resource type="Texture2D" uid="uid://bdbl1mtx80peu" path="res://Assets/Untitled_Artwork-3 19.png" id="6_08mgj"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="9_ta7ma"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
 bg_color = Color(0.522561, 0.6116589, 0.7011091, 1)
@@ -36,15 +32,15 @@ expand_margin_top = 1.0
 expand_margin_bottom = 1.0
 
 [sub_resource type="Theme" id="Theme_gmqv7"]
-default_font = ExtResource("2_yly2r")
+default_font = ExtResource("3_uwpls")
 default_font_size = 30
 Button/colors/font_color = Color(0.536471, 0.829422, 0.895295, 1)
 Button/colors/font_hover_color = Color(0.692421, 0.893795, 0.96887, 1)
 Button/icons/icon = null
 Button/styles/focus = SubResource("StyleBoxEmpty_l4qso")
 Button/styles/hover = SubResource("StyleBoxFlat_a2hvw")
-Button/styles/normal = ExtResource("1_a5di6")
-Button/styles/pressed = ExtResource("1_a5di6")
+Button/styles/normal = ExtResource("2_walhq")
+Button/styles/pressed = ExtResource("2_walhq")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5di6"]
 bg_color = Color(0.36282936, 0.36282948, 0.36282963, 1)
@@ -132,8 +128,47 @@ Button/styles/normal = SubResource("StyleBoxFlat_76pne")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4qso"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="HelpfulDocuments" type="Node2D"]
-script = ExtResource("1_yly2r")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_smjbo"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fuxpa"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_walhq"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwpls"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="emailCheck" type="Node2D"]
+script = ExtResource("1_smjbo")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -188,18 +223,18 @@ offset_right = 215.0
 offset_bottom = 186.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 20
-text = "trusted-authors.gov"
+text = "Current team Members"
 
-[node name="UntitledArtwork119" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_author_button"]
-position = Vector2(110, 66)
-texture = ExtResource("4_ldcbm")
+[node name="UntitledArtwork120" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_author_button"]
+position = Vector2(111, 65)
+texture = ExtResource("4_uwpls")
 
 [node name="trusted_publisher_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons"]
 layout_mode = 0
 offset_left = 523.0
-offset_top = 251.0
+offset_top = 250.0
 offset_right = 743.0
-offset_bottom = 437.0
+offset_bottom = 436.0
 theme = SubResource("Theme_gmqv7")
 text = "
 "
@@ -212,18 +247,18 @@ offset_right = 215.0
 offset_bottom = 186.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 20
-text = "verified.publishers.gov"
+text = "Company email policy"
 
-[node name="UntitledArtwork219" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_publisher_button"]
-position = Vector2(111, 66)
-texture = ExtResource("5_cwbgw")
+[node name="UntitledArtwork220" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_publisher_button"]
+position = Vector2(110, 65)
+texture = ExtResource("5_ta7ma")
 
 [node name="trusted_domain_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons"]
 layout_mode = 0
-offset_left = 80.0
-offset_top = 481.0
-offset_right = 300.0
-offset_bottom = 667.0
+offset_left = 301.0
+offset_top = 477.0
+offset_right = 521.0
+offset_bottom = 663.0
 theme = SubResource("Theme_gmqv7")
 text = "
 "
@@ -231,40 +266,16 @@ text = "
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_domain_button"]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 125.0
+offset_top = 124.0
 offset_right = 215.0
-offset_bottom = 186.0
+offset_bottom = 185.0
 mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 20
-text = "secure_domains.gov"
+text = "Allowed email Domains"
 
-[node name="UntitledArtwork318" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_domain_button"]
-position = Vector2(109, 65)
-texture = ExtResource("6_gn2v5")
-
-[node name="trusted_recent_events_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons"]
-layout_mode = 0
-offset_left = 523.0
-offset_top = 481.0
-offset_right = 743.0
-offset_bottom = 667.0
-theme = SubResource("Theme_gmqv7")
-text = "
-"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_recent_events_button"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 125.0
-offset_right = 215.0
-offset_bottom = 186.0
-mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 20
-text = "known_recent_events.gov"
-
-[node name="UntitledArtwork415" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_recent_events_button"]
-position = Vector2(111, 66)
-texture = ExtResource("7_rswxb")
+[node name="UntitledArtwork319" type="Sprite2D" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_domain_button"]
+position = Vector2(110, 67)
+texture = ExtResource("6_08mgj")
 
 [node name="info(static)" type="Control" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel"]
 layout_mode = 1
@@ -313,11 +324,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_o7duq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/info(static)/brief_top"]
 layout_mode = 0
+offset_top = -1.0
 offset_right = 794.0
-offset_bottom = 131.0
+offset_bottom = 130.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "We have compiled some trusted resources for you. Use these resources to determine if a site is trusted, or suspicious."
+text = "We have compiled some trusted resources for you. Use these resources to determine if each email is trusted, or suspicious."
 fit_content = true
 horizontal_alignment = 1
 
@@ -332,15 +344,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_o7duq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/info(static)/brief_bottom"]
 layout_mode = 0
-offset_top = 9.0
+offset_top = 8.0
 offset_right = 794.0
-offset_bottom = 149.0
+offset_bottom = 148.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
 text = "Some other considerations to bear in mind:
 
--Headlines may not match up with their descriptions!
--Dates may not be correct with the real events"
+if sender name does not match with the name on the email it is likely to be suspiscious."
 fit_content = true
 horizontal_alignment = 1
 
@@ -393,11 +404,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_authors/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = -5.0
+offset_top = -6.0
 offset_right = 808.0
-offset_bottom = 47.0
+offset_bottom = 46.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "https://trusted-authors.gov"
+text = "https://current_team.com"
 
 [node name="brief_top" type="Panel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_authors/info(static)"]
 layout_mode = 0
@@ -414,7 +425,7 @@ offset_right = 794.0
 offset_bottom = 71.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "Below is a list of trusted authors. Authors which are not in this list, are not Beaver certified!"
+text = "Below is a list of all of your current team members."
 fit_content = true
 horizontal_alignment = 1
 
@@ -434,23 +445,16 @@ offset_right = 790.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "-Dr. Eleanor Vance
--Sarah Jenkins
--Thomas Richardson
--Dr. Kim Min-Ji
--Professor James Whittaker
--Dr. Resonance Theory
--Lisa Montgomery
--Professor Marco Conti
--Jennifer Codewell
--Robert Engine
--Dr. Nolan Turington
--Big. Beav.
--Dr. Park Ji-Hoon
--Professor Elizabeth Grant
--Dr. Alessandro Rossi
--Samuel Seasbury
--Chappel Roar
+text = "- Mr Alfie Jamson
+- Dr keegan Smith
+- Ms Claire Smithson
+- Mr Joe Smithington
+- Mr wood Chuck
+- Mr justin Beaver
+- Ms Rose Aurora
+- Ms Emily Abigail
+- Dr Paula Schnitzelhauf
+- Mr John doe
 "
 fit_content = true
 
@@ -460,7 +464,7 @@ offset_left = 367.0
 offset_top = 822.0
 offset_right = 458.0
 offset_bottom = 862.0
-theme = ExtResource("1_vbywl")
+theme = ExtResource("4_ta7ma")
 text = "Back"
 
 [node name="trusted_publishers" type="Panel" parent="CanvasLayer/Screen/HelpDocContainer"]
@@ -512,11 +516,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)/link_banner/link"]
 layout_mode = 0
 offset_left = 6.0
-offset_top = -3.0
+offset_top = -5.0
 offset_right = 808.0
-offset_bottom = 47.0
+offset_bottom = 45.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "https://verified.publishers.gov"
+text = "https://BH/companypolicy/email.com"
 
 [node name="brief_top" type="Panel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)"]
 layout_mode = 0
@@ -533,7 +537,7 @@ offset_right = 794.0
 offset_bottom = 71.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "Below is a list of trusted publishers. Publishers not in this list are NOT Beaver certified!"
+text = "Below is a list of subjects which should not be sent via company emails."
 fit_content = true
 horizontal_alignment = 1
 
@@ -553,24 +557,11 @@ offset_right = 790.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "-Hamble Teams
--Financial Recruitment Analytics
--Gonabi Studios
--Warwick weekly
--Warwick Students’ Union
--Korean Social Dynamics Journal
--Global Education Metrics
--Global Cyber Epidemiology Centre
--Brevan Howard
--Prelude Game Studio
--Technology Innovation Review
--Warwick SU
--MusicNow
--Sandcat Ltd.
--Park Cultural Research
--Rossi Labs
--Ace News
-"
+text = "- emails should never ask you for your password for company account.
+- emails should never ask you for personal information such as credentials for different accounts
+- emails should never threaten you to do something against you will.
+- emails should never ask you to do somthing without giving you time to think about it.
+-emails from outside the company should immediately be flagged as suspiscious."
 fit_content = true
 
 [node name="back_button" type="Button" parent="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)"]
@@ -579,7 +570,7 @@ offset_left = 367.0
 offset_top = 822.0
 offset_right = 458.0
 offset_bottom = 862.0
-theme = ExtResource("1_vbywl")
+theme = ExtResource("4_ta7ma")
 text = "Back"
 
 [node name="trusted_domains" type="Panel" parent="CanvasLayer/Screen/HelpDocContainer"]
@@ -635,7 +626,7 @@ offset_top = -3.0
 offset_right = 808.0
 offset_bottom = 49.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "https://secure_domains.gov"
+text = "https://BH/secure_email_domains.co.uk"
 
 [node name="brief_top" type="Panel" parent="CanvasLayer/Screen/HelpDocContainer/trusted_domains/info(static)"]
 layout_mode = 0
@@ -652,7 +643,7 @@ offset_right = 794.0
 offset_bottom = 71.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = "Here are the Top Level Domains that are secure on BeaverNet."
+text = "Here are all the email domains which are part of the Brevan Howard Company."
 fit_content = true
 horizontal_alignment = 1
 
@@ -672,18 +663,13 @@ offset_right = 790.0
 offset_bottom = 587.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
-text = ".com
-.co.uk
-.io
-.edu
-.me
-.gov
-.org
-.ai
-.ca
-.ac.uk
-.dev
-.tech
+text = "@BrevanHoward.co.uk
+@BH.co.uk
+@support.BH.co.uk
+@BH.com
+@SoftwareEngBH.com
+@Brevan.Howard.com
+@BH.International.es
 "
 fit_content = true
 
@@ -693,7 +679,7 @@ offset_left = 367.0
 offset_top = 822.0
 offset_right = 458.0
 offset_bottom = 862.0
-theme = ExtResource("1_vbywl")
+theme = ExtResource("4_ta7ma")
 text = "Back"
 
 [node name="trusted_recent_events" type="Panel" parent="CanvasLayer/Screen/HelpDocContainer"]
@@ -804,14 +790,12 @@ offset_left = 367.0
 offset_top = 822.0
 offset_right = 458.0
 offset_bottom = 862.0
-theme = ExtResource("1_vbywl")
+theme = ExtResource("4_ta7ma")
 text = "Back"
 
-[node name="NewsTemplate" parent="CanvasLayer" instance=ExtResource("5_76pne")]
-offset_left = 22.0
-offset_top = -434.0
-offset_right = 828.0
-offset_bottom = 411.0
+[node name="EmailTemplate" parent="CanvasLayer" instance=ExtResource("5_smjbo")]
+offset_top = -424.0
+offset_bottom = 421.0
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer"]
 offset_left = 1503.0
@@ -845,16 +829,77 @@ offset_right = 844.0
 offset_bottom = 906.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_l4qso")
 
-[node name="Beaver" parent="CanvasLayer" instance=ExtResource("10_cwbgw")]
+[node name="Beaver" parent="CanvasLayer" instance=ExtResource("9_ta7ma")]
 position = Vector2(1079, 697)
 scale = Vector2(0.40529543, 0.4052954)
 
-[node name="Control" parent="." instance=ExtResource("6_o1mj6")]
+[node name="user input" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="user input"]
+offset_right = 1705.0
+offset_bottom = 904.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_smjbo")
+
+[node name="Panel2" type="Panel" parent="user input"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -439.25
+offset_top = -168.25
+offset_right = 439.25
+offset_bottom = 168.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_fuxpa")
+
+[node name="Button" type="Button" parent="user input/Panel2"]
+layout_mode = 0
+offset_left = 363.25
+offset_top = 219.25
+offset_right = 497.25
+offset_bottom = 274.25
+theme_override_colors/font_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_walhq")
+text = "Submit"
+
+[node name="Label" type="Label" parent="user input/Panel2"]
+layout_mode = 0
+offset_left = 145.25
+offset_top = 34.25
+offset_right = 725.25
+offset_bottom = 181.25
+theme_override_colors/font_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+text = "Please enter your name for the following situation"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="user input/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.0
+offset_top = -27.5
+offset_right = 266.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_uneditable_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_selected_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/font_outline_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+theme_override_colors/caret_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_uwpls")
+text = "Defualt User"
 
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_author_button" to="." method="_on_trusted_author_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_publisher_button" to="." method="_on_trusted_publisher_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_domain_button" to="." method="_on_trusted_domain_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel/Buttons/trusted_recent_events_button" to="." method="_on_trusted_recent_events_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/trusted_authors/info(static)/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/trusted_publishers/info(static)/back_button" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Screen/HelpDocContainer/trusted_domains/info(static)/back_button" to="." method="_on_back_button_pressed"]
@@ -862,3 +907,4 @@ scale = Vector2(0.40529543, 0.4052954)
 [connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackMenuButton" to="." method="_on_back_menu_button_pressed"]
+[connection signal="pressed" from="user input/Panel2/Button" to="." method="_on_button_pressed"]

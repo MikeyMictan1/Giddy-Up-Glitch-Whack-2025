@@ -6,24 +6,32 @@ extends Node2D
 @onready var trusted_recent_events_site = $CanvasLayer/Screen/HelpDocContainer/trusted_recent_events
 
 @onready var helpful_documents_screen = $CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel
-@onready var beaver: Sprite2D = $CanvasLayer/Beaver
 
-@onready var news_template: Panel = $CanvasLayer/NewsTemplate
+@onready var news_template: Panel = $CanvasLayer/EmailTemplate
 @onready var buttons_enabled: Panel = $CanvasLayer/ButtonsEnabled
 @onready var continue_button: Button = $CanvasLayer/ContinueButton
-var current_article: int
+var current_email: int
+
+@onready var beaver: Sprite2D = $CanvasLayer/Beaver
 @onready var save_manager = SaveManager.new()
 var brevan: Brevan
 
+#user input bit
+@onready var textInput = $"user input/Panel2/LineEdit"
+@onready var userInputTab = $"user input"
+var username
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# initialize from BrevanGlobal progress so it persists across sessions
 	if BrevanGlobal:
-		print("ARTICLE INDEX AT READY: " + str(BrevanGlobal.progress_index))
-		current_article = BrevanGlobal.progress_index
-		news_template.article_id = current_article
+		current_email = BrevanGlobal.email_progress_index
+		news_template.email_id = current_email
 	else:
-		current_article = 0
-		news_template.article_id = current_article
+		current_email = 0
+		news_template.email_id = current_email
+	continue_button.visible = false
+	buttons_enabled.visible = false
+	beaver.visible = false
 	
 	var loaded = save_manager.load_brevan()
 	if loaded == null:
@@ -31,16 +39,17 @@ func _ready() -> void:
 	else:
 		brevan = loaded
 
-	continue_button.visible = false
-	buttons_enabled.visible = false
-	beaver.visible = false
+
+func _UserInput () -> void:
+	username = textInput.text  # get the text the user entered
+	news_template._userinput(username)
 
 
 func _on_submit_button_pressed() -> void:
 	var result = news_template.get_results()
 	continue_button.visible = true
 	buttons_enabled.visible = true
-	if result == 7:
+	if result == 6:
 		beaver.make_happy()
 	else:
 		beaver.make_sad()
@@ -52,21 +61,20 @@ func _on_submit_button_pressed() -> void:
 	beaver.visible = true
 
 func _on_continue_button_pressed() -> void:
-	# if we've finished CHUNK_SIZE articles in the session, go to Results scene
-	if BrevanGlobal and BrevanGlobal.session_completed >= 5:
-		get_tree().change_scene_to_file("res://Scenes/results.tscn")
+	# if we've finished 5 emails in the session, go to Results scene
+	if BrevanGlobal and BrevanGlobal.email_session_completed >= 5:
+		get_tree().change_scene_to_file("res://Scenes/email_results.tscn")
+		return
 
 	news_template.hide_results()
 	continue_button.visible = false
 	buttons_enabled.visible = false
 	beaver.visible = false
-	current_article += 1
-
+	current_email += 1
 	# persist progress in the autoload so sessions survive scene changes
 	if BrevanGlobal:
-		BrevanGlobal.progress_index = current_article
-
-	news_template.article_id = current_article
+		BrevanGlobal.email_progress_index = current_email
+	news_template.email_id = current_email
 	news_template.load_article()
 
 func _on_trusted_author_button_pressed() -> void:
@@ -95,6 +103,10 @@ func _on_back_button_pressed() -> void:
 func _on_back_menu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
 
+
+func _on_button_pressed() -> void:
+	_UserInput()
+	userInputTab.visible=false
 
 func outfit_num_to_name(outfit):
 	if outfit == "outfit1":
