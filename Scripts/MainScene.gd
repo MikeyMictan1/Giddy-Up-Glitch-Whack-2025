@@ -63,3 +63,7 @@ func _on_reset_button_pressed() -> void:
 	BrevanGlobal.reset_brevan()
 	save_manager.reset_brevan(brevan)
 	get_tree().reload_current_scene()
+
+
+func _on_email_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/emailCheck.tscn")

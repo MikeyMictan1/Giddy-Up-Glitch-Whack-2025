@@ -80,6 +80,17 @@ focus_mode = 0
 theme = ExtResource("3_q68mp")
 text = "Begin News Training"
 
+[node name="email_button" type="Button" parent="UICanvasLayer/Main Page"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 467.0
+offset_right = 512.0
+offset_bottom = 684.2932
+scale = Vector2(1, 1.0054244)
+focus_mode = 0
+theme = ExtResource("3_q68mp")
+text = "Begin Email Training"
+
 [node name="reset_button" type="Button" parent="UICanvasLayer/Main Page"]
 layout_mode = 0
 offset_left = 1187.0
@@ -172,6 +183,7 @@ layout_mode = 2
 text = "TAB : Controls"
 
 [node name="TextBox" parent="." instance=ExtResource("7_f140w")]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -190,5 +202,6 @@ scale = Vector2(0.55504453, 0.5550443)
 cur_beaver = "base_beaver"
 
 [connection signal="pressed" from="UICanvasLayer/Main Page/begin_button" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="UICanvasLayer/Main Page/email_button" to="." method="_on_email_button_pressed"]
 [connection signal="pressed" from="UICanvasLayer/Main Page/reset_button" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="UICanvasLayer/Main Page/profile_button" to="." method="_on_profile_button_pressed"]
