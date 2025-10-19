@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/coinsScript.gd" id="5_f140w"]
 [ext_resource type="Texture2D" uid="uid://b1to56m4rvi3l" path="res://Assets/Untitled_Artwork 79.png" id="5_q68mp"]
 [ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="7_0iob3"]
-[ext_resource type="PackedScene" uid="uid://bk7slmene8vwd" path="res://Scenes/TextBox.tscn" id="7_f140w"]
+[ext_resource type="PackedScene" uid="uid://dqbmf7bpt47v8" path="res://Scenes/TextBox.tscn" id="7_f140w"]
 [ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="8_f140w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iob3"]
@@ -104,7 +104,7 @@ offset_top = 21.0
 offset_right = 366.0
 offset_bottom = 68.0
 theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
-text = "Reset Stats"
+text = "Reset Game"
 horizontal_alignment = 1
 
 [node name="profile_button" type="Button" parent="UICanvasLayer/Main Page"]
