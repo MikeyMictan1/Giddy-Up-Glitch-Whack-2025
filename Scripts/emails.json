@@ -11,16 +11,16 @@
 	"email1": {
 	"Address": "roberthackman@BHupdate.biz",
 	"Title": "Immediate Action Required: Update Account Details",
-	"Dear": "User",
+	"Dear": "Dear User",
 	"Body": "Update your credentials now or your access will be terminated permanently.",
-	"Footer": "BH Support Team",
+	"Footer": "Please follow the this link: https://bankChangeWebsite.real.com",
 	"From": "Mr Robert Hackman",
 	"results": [0, 1, 1, 1, 1, 1]
   },
 	"email2": {
 	"Address": "emily.abigail@BH.co.uk",
 	"Title": "New Internal Mentorship Program",
-	"Dear": "All Employees",
+	"Dear": "Dear All Employees",
 	"Body": "We are launching a mentorship program connecting junior and senior staff. Please sign up if interested.",
 	"Footer": "Deadline for registration is next week.",
 	"From": "Ms Emily Abigail",
@@ -47,10 +47,38 @@
 	"email5": {
 	"Address": "keegan.smith@support.BH.co.uk",
 	"Title": "Security Notice: Unusual login detected",
-	"Dear": "Dr Keegan Smith",
+	"Dear": "Dear Dr Keegan Smith",
 	"Body": "We detected an unusual login. Please verify your login credentials immediately to avoid temporary suspension.",
 	"Footer": "If this is not done within 48 hours your account will be temporarily disabled.",
 	"From": "Dr Keegan Smith",
 	"results": [1, 0, 1, 1, 0, 0]
+  },  
+	"email6": {
+	"Address": "HRDept@support.BH.co.uk",
+	"Title": "Action Required: Confirm Bank Details",
+	"Dear": "Dear Employee",
+	"Body": "We’ve detected an issue with payroll. Please send your bank account and sort code immediately to avoid delayed payment.",
+	"Footer": "Apologies for the inconvenience.",
+	"From": "Mr John Doe",
+	"results": [0, 1, 1, 1, 0, 0]
   },
+	"email7": {
+	"Address": "recruitment@Brevan.Howard.com",
+	"Title": "Exclusive Warwick Internship — Apply Now",
+	"Dear": "Dear Financial Recruitment Analytics",
+	"Body": "We're hosting an on-campus assessment. No form filling required — just reply with your CV if interested.",
+	"Footer": "Best wishes, Recruitment Team",
+	"From": "Ms Rose Aurora",
+	"results": [0, 0, 0, 0, 0, 0]
+  },
+  "email18": {
+	"Address": "alert@BrevanHoward-security.com",
+	"Title": "Immediate Action Required",
+	"Dear": "All",
+	"Body": "An administrative hold will be placed on your account within 1 hour. Follow the enclosed link and enter your credentials to prevent suspension.",
+	"Footer": "Security Alerts",
+	"From": "Security Alerts",
+	"results": [1, 0, 1, 1, 1, 1]
+  },
+	
 }
