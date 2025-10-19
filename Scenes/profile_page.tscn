@@ -165,7 +165,7 @@ offset_top = 1108.4507
 offset_right = 857.34784
 offset_bottom = 1227.4507
 theme = ExtResource("3_g0fbq")
-text = "Customise Brevan"
+text = "Shop"
 
 [node name="main_scene" type="Button" parent="Panel"]
 layout_mode = 0

@@ -25,7 +25,7 @@ func _on_main_scene_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
 
 func _on_customise_character_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/CharacterCustomisation.tscn")
+	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 
 func update_ui() -> void:
 	if bucks_label:
