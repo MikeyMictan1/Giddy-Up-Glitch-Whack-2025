@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dslbl3i32erhh" path="res://Scripts/MainScene.gd" id="1_hpc76"]
 [ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
-[ext_resource type="StyleBox" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
+[ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
 [ext_resource type="Script" uid="uid://ga7h1p5s8838" path="res://Scripts/coinsScript.gd" id="5_f140w"]
 [ext_resource type="Texture2D" uid="uid://b1to56m4rvi3l" path="res://Assets/Untitled_Artwork 79.png" id="5_q68mp"]
 [ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="7_0iob3"]
@@ -33,8 +33,9 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("grass_bg")]
 script = ExtResource("1_hpc76")
+grass_bg = NodePath("CanvasLayer2/BG")
 
 [node name="UICanvasLayer" type="CanvasLayer" parent="."]
 
@@ -171,7 +172,6 @@ layout_mode = 2
 text = "TAB : Controls"
 
 [node name="TextBox" parent="." instance=ExtResource("7_f140w")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

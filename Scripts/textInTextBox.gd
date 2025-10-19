@@ -15,6 +15,7 @@ var messages = ["Hello and welcome to 'Thats Whack' please press the continue bu
 @onready var brev2 = $"../../../Brevan/Beaver"
 @onready var button = $"../Button"
 @onready var beaver: Sprite2D = $"../../../../CanvasLayer2/Beaver"
+@onready var bg: Sprite2D = $"../../../../CanvasLayer2/BG"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,6 +54,8 @@ func update_label_text():
 		brev1.hide()
 		brev2.hide()
 		beaver.visible = true
+		bg.visible = true
+		
 	text =  "Brevan the Beaver: " + messages[textVal]
 	if(textVal == maxText):
 		button.text =  "Close"

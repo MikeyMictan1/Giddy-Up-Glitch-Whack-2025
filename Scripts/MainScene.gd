@@ -7,6 +7,7 @@ var tutorialDone = false
 @onready var save_manager = SaveManager.new()
 var brevan: Brevan
 
+@export var grass_bg : Sprite2D
 
 func _stopTut():
 	tutorialDone = true
@@ -41,6 +42,7 @@ func _ready():
 	if BrevanGlobal.menu_tutorial_finished == true:
 		beaver.visible = true
 		bg.visible = true
+		grass_bg.visible = true
 		
 
 func _exit_tree():
