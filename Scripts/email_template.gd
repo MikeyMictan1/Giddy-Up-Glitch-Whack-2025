@@ -1,9 +1,14 @@
 extends Panel
 
-# UI stu
+# Session/scoring config (mirror news_template)
+const CHUNK_SIZE: int = 5
+const POINTS_PER_CORRECT: int = 1
+const BUCKS_PER_CORRECT: int = 1
+
+# UI stuff
 @onready var Address: Button = $Address
 @onready var title: Button = $Article/title
-@onready var dear: Button = $"Article/Dear Statement"
+@onready var dear: Button = $Article/DearStatement
 @onready var footer: Button = $Article/footer
 @onready var footerText: Label = $Article/footer/Label
 @onready var body: Button = $Article/body
@@ -11,31 +16,30 @@ extends Panel
 @onready var from: Button = $Article/From
 @onready var fromText: Label = $Article/From/Label
 
-var username
-func _userinput (name : String)-> void:
-	print("checking smthn")
-	username = name
-	var temp = dear.text
-	
-	if (temp == "Dear" ):
-		dear.text = dear.text + " " + name
-		print("thing")
-		print(name + " is name")
-	elif (temp == "Dear " ):
-		dear.text = dear.text + name
-		print(name + " is name")
-	else:
-		dear.text = email["Dear"]
-	
-	
 var user_results = [0,0,0,0,0,0]
 
 @onready var report_panel: Panel = $Report
 @onready var report_text: RichTextLabel = $Report/ReportText
-#understand this later
 
-# Brevan stats
-var brevan: Brevan = null
+var username
+
+func _userinput (player_name : String)-> void:
+	print("checking smthn")
+	username = player_name
+	var temp = dear.text
+	
+	if (temp == "Dear" ):
+		dear.text = dear.text + " " + player_name
+		print("thing")
+		print(player_name + " is name")
+	elif (temp == "Dear " ):
+		dear.text = dear.text + player_name
+		print(player_name + " is name")
+	else:
+		dear.text = email["Dear"]
+	
+
+#understand this later
 
 # Resource stuff
 @export var email_id: int
@@ -58,6 +62,14 @@ func get_article(id):
 		return []
 
 func load_article() -> void:
+	# Use global progress for which email to load
+	email_id = BrevanGlobal.email_progress_index if BrevanGlobal else 0
+
+	# Resets as 6 to make sure no crashes
+	if email_id >= 6:
+		email_id = 0
+		BrevanGlobal.email_progress_index = 0
+
 	load_from_json("res://Scripts/emails.json")
 	email = get_article(email_id)
 	
@@ -81,43 +93,54 @@ func _ready() -> void:
 	report_text.bbcode_enabled = true
 	load_article()
 
-	brevan = BrevanGlobal as Brevan
+func get_results():
+	# determine the window of items to grade this round
+	var total = len(user_results)
+	var start_idx = 0
+	if BrevanGlobal:
+		start_idx = BrevanGlobal.progress_index
+	var end_idx = min(start_idx + CHUNK_SIZE, total)
+	var chunk_correct_count: int = 0
+	var chunk_incorrect_count: int = 0
 
-func get_results():	
-	
-	if user_results == email["results"]:
-		if 0 in user_results:
-			report_text.text = "Well done! This was a perfectly fine Email!"
-		else:
-			report_text.text = "Well done! You found all of the whacky bits in this Email!"
-		report_panel.visible = true
-		return true
-	else:
-		var green_start = "[color=#00cc00]"
-		var red_start = "[color=#cc0000]"
-		var end_color = "[/color]"
+	var green_start = "[color=#00cc00]"
+	var red_start = "[color=#cc0000]"
+	var end_color = "[/color]"
 
-		var output_rights = ""
-		var output_wrongs = ""
-		for j in range(len(user_results)):
-			if user_results[j] != email["results"][j]:
-				if user_results[j] == 0:
-					output_wrongs += red_start + wrong_report_reasons_w[j] + end_color + "\n"
-				else:
-					output_wrongs += red_start + right_report_reasons_w[j] + end_color + "\n"
+	var output_rights = ""
+	var output_wrongs = ""
+
+	for j in range(len(user_results)):
+		if user_results[j] != email["results"][j]:
+			if user_results[j] == 0:
+				output_wrongs += red_start + wrong_report_reasons_w[j] + end_color + "\n"
 			else:
-				if user_results[j] == 1:
-					output_rights += green_start + wrong_report_reasons_r[j] + end_color + "\n"
-					brevan.add_score()
-					brevan.add_bucks()
-				else:
-					output_rights += green_start + right_report_reasons_r[j] + end_color + "\n"
-					brevan.add_score()
-					brevan.add_bucks()
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs
-		report_panel.visible = true
-		print("Brevan points: ", str(brevan.get_score()))
-		return false
+				output_wrongs += red_start + right_report_reasons_w[j] + end_color + "\n"
+		else:
+			chunk_correct_count += 1
+			if user_results[j] == 1:
+				output_rights += green_start + wrong_report_reasons_r[j] + end_color + "\n"
+			else:
+				output_rights += green_start + right_report_reasons_r[j] + end_color + "\n"
+
+	# compute score for this email (6 checks)
+	var article_score = chunk_correct_count * POINTS_PER_CORRECT
+	var article_bucks = chunk_correct_count * BUCKS_PER_CORRECT
+
+	if BrevanGlobal:
+		# flawless email (all 6 correct)
+		if article_score == 6:
+			BrevanGlobal.add_email_session_flawless_emails()
+		# accumulate into session totals
+		BrevanGlobal.add_email_session_score(article_score)
+		BrevanGlobal.add_email_session_bucks(article_bucks)
+		BrevanGlobal.increment_email_session_completed()
+
+	# show per-email report with totals
+	report_text.bbcode_text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\nYou scored " + str(article_score) + "/6 on this email!\n\n" + str(BrevanGlobal.email_session_completed) + " out of 5 emails completed"
+	report_panel.visible = true
+
+	return article_score
 
 # [user, actual] = [1,1]
 var wrong_report_reasons_r = [

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ktrlg2o50i8g"]
+[gd_scene load_steps=9 format=3 uid="uid://bh51vga1lit6y"]
 
 [ext_resource type="Script" uid="uid://ngi7fsy5wcy4" path="res://Scripts/email_template.gd" id="1_wegds"]
 
@@ -103,7 +103,7 @@ text = "Email Title"
 alignment = 0
 autowrap_mode = 2
 
-[node name="Dear Statement" type="Button" parent="Article"]
+[node name="DearStatement" type="Button" parent="Article"]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 112.5
@@ -234,14 +234,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jinfa")
 layout_mode = 0
 offset_left = 29.0
 offset_top = 34.0
-offset_right = 724.0
-offset_bottom = 640.0
+offset_right = 816.0
+offset_bottom = 867.0
 theme_override_colors/default_color = Color(0.101960786, 0.13725491, 0.16470589, 1)
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 20
 text = "CAREFULL"
 
 [connection signal="toggled" from="Article/title" to="." method="_on_title_toggled"]
-[connection signal="toggled" from="Article/Dear Statement" to="." method="_on_dear_statement_toggled"]
+[connection signal="toggled" from="Article/DearStatement" to="." method="_on_dear_statement_toggled"]
 [connection signal="toggled" from="Article/body" to="." method="_on_body_toggled"]
 [connection signal="toggled" from="Article/footer" to="." method="_on_footer_toggled"]
 [connection signal="toggled" from="Article/From" to="." method="_on_from_toggled"]

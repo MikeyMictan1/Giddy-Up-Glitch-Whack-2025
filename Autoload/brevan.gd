@@ -25,6 +25,16 @@ var lifetime_questions: int = 0
 var game_tutorial_finished : bool = false
 var menu_tutorial_finished : bool = false
 
+# email sessions
+var email_progress_index: int = 0
+var email_session_score: int = 0
+var email_session_bucks: int = 0
+var email_session_completed: int = 0
+var email_session_flawless_emails: int = 0
+var email_session_percentage: float = 0.0
+
+
+
 func _init(name: String = "Brevan", hs: int = 0, b: int = 0):
 	username = name
 	highscore = hs
@@ -233,3 +243,37 @@ func get_lifetime_percentage() -> float:
 func add_session_flawless_papers() -> void:
 	session_flawless_papers += 1
 	emit_signal("stats_changed")
+
+
+
+
+
+# EMAIL SESSION STUFF
+func add_email_session_score(n: int) -> void:
+	email_session_score += n
+	emit_signal("stats_changed")
+
+func add_email_session_bucks(n: int) -> void:
+	email_session_bucks += n
+	emit_signal("stats_changed")
+
+func increment_email_session_completed() -> void:
+	email_session_completed += 1
+	emit_signal("stats_changed")
+
+func add_email_session_flawless_emails() -> void:
+	email_session_flawless_emails += 1
+	emit_signal("stats_changed")
+
+func email_reset_session() -> void:
+	email_session_score = 0
+	email_session_bucks = 0
+	email_session_completed = 0
+	email_session_flawless_emails = 0
+	email_session_percentage = 0.0
+	emit_signal("stats_changed")
+
+func get_email_session_percentage() -> float:
+	var pct: float = (float(email_session_score) / 30.0) * 100.0
+
+	return round(pct * 100.0) / 100.0

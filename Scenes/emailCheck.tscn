@@ -1,10 +1,10 @@
-[gd_scene load_steps=34 format=3 uid="uid://dbal5j5ly6wkp"]
+[gd_scene load_steps=34 format=3 uid="uid://b0cltkss3qmhq"]
 
 [ext_resource type="Script" uid="uid://oudbwebmwxbv" path="res://Scenes/email_check.gd" id="1_smjbo"]
 [ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="2_walhq"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_uwpls"]
 [ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="4_ta7ma"]
-[ext_resource type="PackedScene" uid="uid://ktrlg2o50i8g" path="res://Scenes/email_template.tscn" id="5_smjbo"]
+[ext_resource type="PackedScene" uid="uid://bh51vga1lit6y" path="res://Scenes/email_template.tscn" id="5_smjbo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
 bg_color = Color(0.522561, 0.6116589, 0.7011091, 1)
@@ -801,7 +801,7 @@ offset_bottom = 862.0
 theme = ExtResource("4_ta7ma")
 text = "Back"
 
-[node name="Email Template" parent="CanvasLayer" instance=ExtResource("5_smjbo")]
+[node name="EmailTemplate" parent="CanvasLayer" instance=ExtResource("5_smjbo")]
 offset_top = -424.0
 offset_bottom = 421.0
 

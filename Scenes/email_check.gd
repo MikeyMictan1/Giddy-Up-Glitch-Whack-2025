@@ -7,7 +7,7 @@ extends Node2D
 
 @onready var helpful_documents_screen = $CanvasLayer/Screen/HelpDocContainer/helpful_doc_panel
 
-@onready var news_template: Panel = $"CanvasLayer/Email Template"
+@onready var news_template: Panel = $CanvasLayer/EmailTemplate
 @onready var buttons_enabled: Panel = $CanvasLayer/ButtonsEnabled
 @onready var continue_button: Button = $CanvasLayer/ContinueButton
 var current_email: int
@@ -20,7 +20,9 @@ var current_email: int
 var username
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if current_email:
+	# initialize from BrevanGlobal progress so it persists across sessions
+	if BrevanGlobal:
+		current_email = BrevanGlobal.email_progress_index
 		news_template.email_id = current_email
 	else:
 		current_email = 0
@@ -41,10 +43,18 @@ func _on_submit_button_pressed() -> void:
 	buttons_enabled.visible = true
 
 func _on_continue_button_pressed() -> void:
+	# if we've finished 5 emails in the session, go to Results scene
+	if BrevanGlobal and BrevanGlobal.email_session_completed >= 5:
+		get_tree().change_scene_to_file("res://Scenes/email_results.tscn")
+		return
+
 	news_template.hide_results()
 	continue_button.visible = false
 	buttons_enabled.visible = false
 	current_email += 1
+	# persist progress in the autoload so sessions survive scene changes
+	if BrevanGlobal:
+		BrevanGlobal.email_progress_index = current_email
 	news_template.email_id = current_email
 	news_template.load_article()
 
