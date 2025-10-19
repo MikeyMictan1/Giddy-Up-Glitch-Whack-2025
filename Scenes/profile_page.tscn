@@ -24,6 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.71)
 script = ExtResource("1_g0fbq")
+success_label_path = NodePath("Panel/UserInfo/StatsRow/success_label")
 bucks_label_path = NodePath("Panel/UserInfo/StatsRow4/bucks_label")
 attempts_label_path = NodePath("Panel/UserInfo/StatsRow3/attempts_label")
 highscore_label_path = NodePath("Panel/UserInfo/StatsRow2/high_score_label")
@@ -71,16 +72,16 @@ offset_top = 46.47885
 offset_right = 340.55066
 offset_bottom = 112.47885
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Success %:"
+text = "Problems Identified: "
 
 [node name="success_label" type="Label" parent="Panel/UserInfo/StatsRow"]
 layout_mode = 0
-offset_left = 305.76816
-offset_top = 49.295734
-offset_right = 370.76816
-offset_bottom = 116.29573
+offset_left = 479.68118
+offset_top = 52.112637
+offset_right = 544.68115
+offset_bottom = 119.11264
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "X"
+text = "0%"
 
 [node name="StatsRow4" type="Panel" parent="Panel/UserInfo"]
 layout_mode = 0
@@ -100,10 +101,10 @@ text = "Brevan Bucks:"
 
 [node name="bucks_label" type="Label" parent="Panel/UserInfo/StatsRow4"]
 layout_mode = 0
-offset_left = 404.0
-offset_top = 39.0
-offset_right = 469.0
-offset_bottom = 106.0
+offset_left = 328.75375
+offset_top = 42.253517
+offset_right = 393.75375
+offset_bottom = 109.25352
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
@@ -121,14 +122,14 @@ offset_top = 43.66195
 offset_right = 334.44928
 offset_bottom = 109.66195
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "No. Attempts:"
+text = "Papers Completed: "
 
 [node name="attempts_label" type="Label" parent="Panel/UserInfo/StatsRow3"]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 37.0
-offset_right = 448.0
-offset_bottom = 104.0
+offset_left = 411.26086
+offset_top = 46.478844
+offset_right = 476.26086
+offset_bottom = 113.47884
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
@@ -150,10 +151,10 @@ text = "High Score:"
 
 [node name="high_score_label" type="Label" parent="Panel/UserInfo/StatsRow2"]
 layout_mode = 0
-offset_left = 348.0
-offset_top = 39.0
-offset_right = 413.0
-offset_bottom = 106.0
+offset_left = 282.27542
+offset_top = 40.84507
+offset_right = 347.27542
+offset_bottom = 107.84507
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "X"
 
@@ -212,12 +213,12 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pqkcm")
 
 [node name="Username" type="Label" parent="top bar"]
 layout_mode = 0
-offset_left = 840.7245
-offset_top = 41.704212
-offset_right = 1638.7246
-offset_bottom = 134.70421
+offset_left = 969.71014
+offset_top = 41.704227
+offset_right = 1767.7102
+offset_bottom = 134.70422
 theme_override_font_sizes/font_size = 70
-text = "Welcome, %USERNAME%"
+text = "Profile"
 
 [connection signal="pressed" from="Panel/customise_character" to="." method="_on_customise_character_pressed"]
 [connection signal="pressed" from="Panel/main_scene" to="." method="_on_main_scene_pressed"]
