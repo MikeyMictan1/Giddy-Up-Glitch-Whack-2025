@@ -27,6 +27,9 @@ func _ready() -> void:
 			highscore_label.text = str(BrevanGlobal.highscore)
 		if perfect_label:
 			perfect_label.text = str(BrevanGlobal.session_flawless_papers)
+	
+	BrevanGlobal.save_to_disk()
+	BrevanGlobal.load_from_disk()
 
 func _on_main_scene_pressed() -> void:
 	if BrevanGlobal:
