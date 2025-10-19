@@ -15,7 +15,7 @@
 	"Body": "Update your credentials now or your access will be terminated permanently.",
 	"Footer": "Please follow the this link: https://bankChangeWebsite.real.com",
 	"From": "Mr Robert Hackman",
-	"results": [0, 1, 1, 1, 1, 1]
+	"results": [1, 1, 1, 1, 1, 1]
   },
 	"email2": {
 	"Address": "emily.abigail@BH.co.uk",
@@ -42,7 +42,7 @@
 	"Body": "We need copies of your passport, bank statements and NI number to complete onboarding.",
 	"Footer": "Send documents to this address.",
 	"From": "Dr Paula Schnitzelhauf",
-	"results": [0, 1, 0, 0, 0, 0]
+	"results": [0, 1, 0, 1, 1, 0]
   },
 	"email5": {
 	"Address": "keegan.smith@support.BH.co.uk",

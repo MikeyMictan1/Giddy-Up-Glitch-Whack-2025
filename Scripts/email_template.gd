@@ -21,12 +21,13 @@ var user_results = [0,0,0,0,0,0]
 @onready var report_panel: Panel = $Report
 @onready var report_text: RichTextLabel = $Report/ReportText
 
-var username
+var username = ""
 
 func _userinput (player_name : String)-> void:
 	print("checking smthn")
 	username = player_name
-	var temp = dear.text
+	var temp = email["Dear"]
+	print (temp)
 	
 	if (temp == "Dear" ):
 		dear.text = dear.text + " " + player_name
@@ -78,7 +79,7 @@ func load_article() -> void:
 	title.text = email["Title"]
 	title.button_pressed = false
 	dear.text = email["Dear"]
-	_userinput("")
+	_userinput(username)
 	dear.button_pressed = false
 	bodyText.text = email["Body"]
 	body.button_pressed = false
