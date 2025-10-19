@@ -1,6 +1,6 @@
 extends Node
 
-class_name Brevan
+#class_name Brevan
 
 var username: String
 var highscore: int
