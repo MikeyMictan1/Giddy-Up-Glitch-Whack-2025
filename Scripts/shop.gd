@@ -1,12 +1,8 @@
 extends Control
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 var outfits = {
 	"outfit1": {
-		"price": 50,
+		"price": 30,
 		"image": "something.jpg"
 	},
 	"outfit2": {
@@ -14,24 +10,28 @@ var outfits = {
 		"image": "something.jpg"
 	},
 	"outfit3": {
-		"price": 50,
+		"price": 20,
 		"image": "something.jpg"
 	},
 	"outfit4": {
-		"price": 50,
+		"price": 15,
 		"image": "something.jpg"
 	},
 	"outfit5": {
-		"price": 50,
+		"price": 40,
 		"image": "something.jpg"
 	},
 	"outfit6": {
-		"price": 50,
+		"price": 25,
 		"image": "something.jpg"
 	},
 }
 
-var brevan = Brevan.new("FAT_BEAVER")
+
+@onready var save_manager = SaveManager.new()
+var brevan: Brevan
+
+
 @onready var error_bg: Panel = $Panel/ShopItems/ErrorBg
 @onready var error_msg: Label = $Panel/ShopItems/ErrorBg/ErrorMsg
 @onready var error_bg_2: Panel = $Panel/ShopItems/ErrorBg2
@@ -45,15 +45,58 @@ var brevan = Brevan.new("FAT_BEAVER")
 @onready var error_bg_6: Panel = $Panel/ShopItems/ErrorBg6
 @onready var error_msg6: Label = $Panel/ShopItems/ErrorBg6/ErrorMsg
 @onready var timer: Timer = $Panel/ShopItems/Timer
+@onready var buy_1: Button = $Panel/Buttons/buy1
+@onready var buy_2: Button = $Panel/Buttons/buy2
+@onready var buy_3: Button = $Panel/Buttons/buy3
+@onready var buy_4: Button = $Panel/Buttons/buy4
+@onready var buy_5: Button = $Panel/Buttons/buy5
+@onready var buy_6: Button = $Panel/Buttons/buy6
+@onready var beaver: Sprite2D = $Panel/Brevan/Beaver
+@onready var wallet_amt: Label = $"top bar/WalletAmt"
 
 func _ready():
+
+	var loaded = save_manager.load_brevan()
+	if loaded == null:
+		brevan = Brevan.new("FAT_BEAVER")
+	else:
+		brevan = loaded
 	timer.wait_time = 2.0
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_timeout)
+	update_shop_ui()
+	
+func update_shop_ui():
+	for outfit_name in outfits.keys():
+		var button = get_node_or_null("Panel/Buttons/buy" + outfit_name.substr(6))
+		if button:
+			if outfit_name in brevan.owned_outfits:
+				button.text = "Press to Equip"
+			else:
+				button.text = "Buy (" + str(outfits[outfit_name].price) + " Bucks)"
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if brevan.current_outfit == "outfit1":
+		beaver.cur_beaver = "brainrot"
+	elif brevan.current_outfit == "outfit2":
+		beaver.cur_beaver = "chappell"
+	elif brevan.current_outfit == "outfit3":
+		beaver.cur_beaver = "cowboy"
+	elif brevan.current_outfit == "outfit4":
+		beaver.cur_beaver = "louis"
+	elif brevan.current_outfit == "outfit5":
+		beaver.cur_beaver = "mariachi"
+	elif brevan.current_outfit == "outfit6":
+		beaver.cur_beaver = "suit"
+	elif brevan.current_outfit == "base":
+		beaver.cur_beaver = "base_beaver"
+	
+	wallet_amt.text = "Wallet: " + str(BrevanGlobal.bucks)
+		
 func buy(brevan: Brevan, outfit_name: String):
 	var cost = outfits[outfit_name].price
-	if brevan.bucks < cost:
+	if BrevanGlobal.bucks < cost:
 		if outfit_name == "outfit1":
 			error_bg.visible = true
 			error_msg.visible = true
@@ -74,7 +117,21 @@ func buy(brevan: Brevan, outfit_name: String):
 			error_msg6.visible = true
 		timer.start()
 		return
-	brevan.bucks -= cost
+		
+	if outfit_name == "outfit1":
+		buy_1.text = "Press to Equip"
+	elif outfit_name == "outfit2":
+		buy_2.text = "Press to Equip"
+	elif outfit_name == "outfit3":
+		buy_3.text = "Press to Equip"
+	elif outfit_name == "outfit4":
+		buy_4.text = "Press to Equip"
+	elif outfit_name == "outfit5":
+		buy_5.text = "Press to Equip"
+	elif outfit_name == "outfit6":
+		buy_6.text = "Press to Equip"
+
+	BrevanGlobal.bucks -= cost
 	brevan.buy_outfit(outfit_name)
 
 func _on_timer_timeout():
@@ -92,22 +149,44 @@ func _on_timer_timeout():
 	error_msg6.visible = false
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/MainScene.tscn")
+	save_manager.save_brevan(brevan)
+	get_tree().change_scene_to_file("res://Scenes/profile_page.tscn")
+	
+func _on_reset_button_pressed() -> void:
+	brevan.equip_outfit("base")
 	
 func _on_buy_1_pressed() -> void:
-	buy(brevan, "outfit1")
+	if "outfit1" in brevan.owned_outfits:
+		brevan.equip_outfit("outfit1")
+	else:
+		buy(brevan, "outfit1")
 
 func _on_buy_2_pressed() -> void:
-	buy(brevan, "outfit2")
+	if "outfit2" in brevan.owned_outfits:
+		brevan.equip_outfit("outfit2")
+	else:
+		buy(brevan, "outfit2")
 
 func _on_buy_3_pressed() -> void:
-	buy(brevan, "outfit3")
+	if "outfit3" in brevan.owned_outfits:
+		brevan.equip_outfit("outfit3")
+	else:
+		buy(brevan, "outfit3")
 
 func _on_buy_4_pressed() -> void:
-	buy(brevan, "outfit4")
+	if "outfit4" in brevan.owned_outfits:
+		brevan.equip_outfit("outfit4")
+	else:
+		buy(brevan, "outfit4")
 
 func _on_buy_5_pressed() -> void:
-	buy(brevan, "outfit5")
+	if "outfit5" in brevan.owned_outfits:
+		brevan.equip_outfit("outfit5")
+	else:
+		buy(brevan, "outfit5")
 
 func _on_buy_6_pressed() -> void:
-	buy(brevan, "outfit6")
+	if "outfit6" in brevan.owned_outfits:
+		brevan.equip_outfit("outfit6")
+	else:
+		buy(brevan, "outfit6")

@@ -26,7 +26,7 @@ func save_brevan(brevan: Brevan):
 		"username": brevan.username,
 		"bucks": brevan.bucks,
 		"owned_outfits": brevan.owned_outfits,
-		"equipped_outfit": brevan.equipped_outfit
+		"current_outfit": brevan.current_outfit
 		}
 	var file = FileAccess.open("user://brevan_data.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(data, "\t"))
@@ -38,10 +38,24 @@ func load_brevan() -> Brevan:
 	var file = FileAccess.open("user://brevan_data.json", FileAccess.READ)
 	var data = JSON.parse_string(file.get_as_text())
 	file.close()
-	var brevan = Brevan.new(data.username, data.bucks)
-	brevan.owned_outfits = data.owned_outfits
-	brevan.equipped_outfit = data.equipped_outfit
+	if typeof(data) != TYPE_DICTIONARY:
+		return null
+	var brevan = Brevan.new(data.username)
+	brevan.bucks = data.get("bucks", 0)
+	brevan.owned_outfits = data.get("owned_outfits", [])
+	brevan.current_outfit = data.get("current_outfit", "")
 	return brevan
+	
+func reset_brevan(brevan: Brevan):
+	brevan.bucks = 0
+	brevan.owned_outfits.clear()
+	brevan.current_outfit = ""
+	
+	var dir = DirAccess.open("user://")
+	if dir.file_exists("brevan_data.json"):
+		dir.remove("brevan_data.json")
+		
+	print("Brevan data reset.")
 
 	
 

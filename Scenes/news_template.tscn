@@ -204,10 +204,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_jinfa")
 layout_mode = 0
 offset_left = 29.0
 offset_top = 36.0
-offset_right = 724.0
-offset_bottom = 642.0
+offset_right = 806.0
+offset_bottom = 887.0
 theme_override_colors/default_color = Color(0.101960786, 0.13725491, 0.16470589, 1)
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 20
 text = "CAREFULL"
 
 [connection signal="toggled" from="Article/Headline" to="." method="_on_headline_toggled"]

@@ -7,7 +7,7 @@
 	"date": "2024-11-16",
 	"image_name": "image0.png",
 	"text": "Brevan Howard's neural network identifies Warwick students with 99.3% accuracy for quant positions. HR Director confirms Warwick's curriculum produces exceptional analytical capabilities.",
-	"results": [0, 1, 0, 0, 0, 0, 0]
+	"results": [0, 1, 0, 0, 0, 0, 1]
   },
   "Article1": {
 	"link": "https://hedgefundnews.com/brevan-howard-global-dominance",
@@ -111,13 +111,13 @@
   },
   "Article11": {
 	"link": "https://hackathonnews.tech",
-	"headline": "WHACK 2024 Hackathon Produces Innovative Flavor Profile Analysis Algorithm",
+	"headline": "WHACK 2025 Hackathon Produces Innovative Flavor Profile Analysis Algorithm",
 	"publisher": "Technology Innovation Review",
 	"author": "Jennifer Codewell",
 	"date": "2024-11-05",
 	"image_name": "image11.png",
 	"text": "WHACK 2024 develops AI that analyzes flavors with 89% accuracy. Technology has applications in food science and nutrition.",
-	"results": [0, 0, 0, 0, 0, 0, 0]
+	"results": [0, 0, 0, 0, 0, 1, 0]
   },
   "Article12": {
 	"link": "https://conspiracytheories.co.uk",
@@ -191,13 +191,13 @@
   },
   "Article19": {
 	"link": "https://warwick-achievements.edu",
-	"headline": "UNIVERSITY OF WARWICK RECEIVES SOVEREIGN STATUS RECOGNITION FOR EDUCATIONAL INNOVATION AND GLOBAL IMPACT",
+	"headline": "University of Warwick recieves sovereign status recognition for educational innovation and global impact",
 	"publisher": "Global Education Metrics",
 	"author": "Professor Elizabeth Grant",
 	"date": "2024-10-28",
 	"image_name": "image19.png",
 	"text": "Warwick granted special administrative status for educational contributions. Designation enables enhanced global partnership opportunities.",
-	"results": [0, 1, 0, 0, 0, 0, 0]
+	"results": [0, 0, 0, 0, 0, 0, 0]
   },
   "Article20": {
 	"link": "https://italian-culture-worldwide.org",

@@ -1,5 +1,10 @@
 extends Panel
 
+# Brevan info
+const CHUNK_SIZE: int = 5
+const POINTS_PER_CORRECT: int = 1
+const BUCKS_PER_CORRECT: int = 1
+
 # UI stuff
 @onready var link: Button = $Link
 @onready var headline: Button = $Article/Headline
@@ -14,9 +19,6 @@ var user_results = [0,0,0,0,0,0,0]
 
 @onready var report_panel: Panel = $Report
 @onready var report_text: RichTextLabel = $Report/ReportText
-
-# Brevan stats
-var brevan: Brevan = null
 
 # Resource stuff
 @export var article_id: int
@@ -39,6 +41,13 @@ func get_article(id):
 		return []
 
 func load_article() -> void:
+	article_id = BrevanGlobal.progress_index if BrevanGlobal else 0
+	
+	# Resets as 20 to make sure no crashes
+	if article_id >= 20:
+		article_id = 0
+		BrevanGlobal.progress_index = 0
+		
 	load_from_json("res://Scripts/news.json")
 	article = get_article(article_id)
 	
@@ -52,7 +61,8 @@ func load_article() -> void:
 	author.button_pressed = false
 	date.text = article["date"]
 	date.button_pressed = false
-	image.texture = load("res://Assets/" + article["image_name"])
+	image.texture = load("res://Assets/article_images/" + article["image_name"])
+	image.scale = Vector2(0.14,0.14)
 	image_button.button_pressed = false
 	text.text = article["text"]
 	text.button_pressed = false
@@ -62,86 +72,114 @@ func _ready() -> void:
 	report_text.bbcode_enabled = true
 	load_article()
 
-	brevan = BrevanGlobal as Brevan
-
 func get_results():	
+	# determine the window of items to grade this round
+	var total = len(user_results)
+	var start_idx = 0
+	if BrevanGlobal:
+		start_idx = BrevanGlobal.progress_index
+	var end_idx = min(start_idx + CHUNK_SIZE, total)
+	var chunk_correct_count: int = 0
+	var chunk_incorrect_count: int = 0
+
+	var green_start = "[color=#00cc00]"
+	var red_start = "[color=#cc0000]"
+	var end_color = "[/color]"
+
+	var output_rights = ""
+	var output_wrongs = ""
 	
 	if user_results == article["results"]:
 		if 0 in user_results:
-			report_text.text = "Well done! This was a perfectly fine newsite!"
+			report_text.text = "Well done! This was a perfectly fine news-site!"
 		else:
 			report_text.text = "Well done! You found all of the whacky bits in this article!"
 		report_panel.visible = true
-		return true
+	
 	else:
-		var green_start = "[color=#00cc00]"
-		var red_start = "[color=#cc0000]"
-		var end_color = "[/color]"
-
-		var output_rights = ""
-		var output_wrongs = ""
 		for j in range(len(user_results)):
 			if user_results[j] != article["results"][j]:
+				chunk_incorrect_count += 1 # counts how many incorrect answers
 				if user_results[j] == 0:
 					output_wrongs += red_start + wrong_report_reasons_w[j] + end_color + "\n"
 				else:
 					output_wrongs += red_start + right_report_reasons_w[j] + end_color + "\n"
 			else:
+				chunk_correct_count += 1 # Counts how many correct answers
 				if user_results[j] == 1:
 					output_rights += green_start + wrong_report_reasons_r[j] + end_color + "\n"
-					brevan.add_score()
-					brevan.add_bucks()
+
 				else:
 					output_rights += green_start + right_report_reasons_r[j] + end_color + "\n"
-					brevan.add_score()
-					brevan.add_bucks()
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs
-		report_panel.visible = true
-		print("Brevan points: ", str(brevan.get_score()))
-		return false
+
+	# compute article score (score for this single article)
+	var article_score = chunk_correct_count * POINTS_PER_CORRECT
+	var article_bucks = chunk_correct_count * BUCKS_PER_CORRECT
+
+	if BrevanGlobal:
+		# Checks for flawless papers
+		if article_score == 7:
+			printerr("FLAWLESS PAPER!")
+			BrevanGlobal.add_session_flawless_papers()
+			
+
+		# accumulate into session (not persistent totals yet)
+		BrevanGlobal.add_session_score(article_score)
+		BrevanGlobal.add_session_bucks(article_bucks)
+		BrevanGlobal.increment_session_completed()
+
+	# show report for this article
+	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\nYou scored " + str(article_score) + "/7 on this article!\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
+	else:
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\nYou scored " + str(article_score) + "/7 on this article!\n\n"+ str(BrevanGlobal.session_completed) + " out of 5 articles completed"
+
+	report_panel.visible = true
+
+	return article_score
 
 # [user, actual] = [1,1]
 var wrong_report_reasons_r = [
 	"- The link was indeed dodgy.",
-	"- The headline was... definitely not true.",
-	"- The publisher doesn't exist.",
-	"- The author doesn't exist.",
-	"- The article was published before the corresponding event - the date was wrong.",
-	"- The image was weird.",
-	"- The text was... definitely not true."
+	"- The headline was definitely not true",
+	"- Yes, the publisher doesn't exist!",
+	"- Yes, the author doesn't exist!",
+	"- Yes, the article was published before the corresponding event - the date was wrong",
+	"- Yes, the image was weird :)",
+	"- Yes, the text was definitely not true!"
 ]
 
 # [user, actual] = [0,0]
 var right_report_reasons_r = [
-	"- The link was from a trusted domain.",
-	"- The headline was accurate.",
-	"- The publisher was trusted.",
-	"- The author was trusted.",
-	"- There was no problems with the date.",
-	"- There was no problems with the image.",
-	"- The text aligned with the headline."
+	"- Correct, the link was from a trusted domain!",
+	"- Correct, the headline was accurate :)",
+	"- Correct, The publisher was trusted",
+	"- Correct, The author was trusted!",
+	"- Correct, There was no problems with the date",
+	"- Correct, There was no problems with the image!",
+	"- Correct, The text aligned with the headline :)"
 ]
 
 # [user, actual] = [0,1]
 var wrong_report_reasons_w = [
-	"- This link was quite dodgy... make sure to look at the trusted domains document!",
-	"- The headline was quite exaggerated, or it was completely made up - make sure to check the recent events.",
-	"- This publisher doesn't exist - check out the trusted publishers document.",
+	"- This link was dodgy... look at the trusted domains document!",
+	"- The headline was exaggerated or made up - check the recent events!",
+	"- This publisher doesn't exist - check out the trusted publishers :)",
 	"- This author isn't trusted - check out the trusted authors document.",
-	"- The date in which this article was published doesn't align with the current events....",
-	"- This image is AI generated! Or completely irrelevant to the article....",
-	"- The text is very exaggerated...."
+	"- The article date doesn't align with the current events",
+	"- This image is AI generated or irrelevant to the article.",
+	"- The text is incorrect or made up."
 ]
 
 # [user, actual] = [1,0]
 var right_report_reasons_w = [
 	"- The link was actually okay - check out the trusted domains.",
-	"- The headline was accurate.",
+	"- The headline was accurate!",
 	"- The publisher does exist - check out the publishers document.",
 	"- This author is trusted - check out the trusted authors document.",
 	"- There's nothing wrong with this date.",
-	"- Image is okay.",
-	"- Everything in the text is fine."
+	"- The image has nothing wrong with it :)",
+	"- The body of text is fine!"
 ]
 
 func hide_results():
