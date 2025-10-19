@@ -136,7 +136,7 @@ func get_results():
 	if chunk_correct_count == (end_idx - start_idx) and (end_idx - start_idx) > 0:
 		report_text.text = "Well done! You scored " + str(article_score) + " on this article!"
 	else:
-		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!"
+		report_text.text = "[b]What you got right:[/b]\n" + output_rights + "\n[b]What you got wrong:[/b]\n" + output_wrongs + "\n\nYou scored " + str(article_score) + " on this article!\n\n\n"+ str(article_id + 1) + " out of 5 articles completed"
 
 	report_panel.visible = true
 
