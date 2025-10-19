@@ -44,7 +44,7 @@ func _on_submit_button_pressed() -> void:
 		beaver.make_happy()
 	else:
 		beaver.make_sad()
-	print("outfit!!! ------> " + brevan.current_outfit)
+	
 	if "outfit" in brevan.current_outfit:
 		beaver.cur_beaver = outfit_num_to_name(brevan.current_outfit)
 	else:
