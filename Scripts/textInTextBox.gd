@@ -12,7 +12,7 @@ var messages = ["Hello and welcome to 'Thats Whack' please press the continue bu
 @onready var whole  = $"../.."
 @onready var block = $"../../../Panel"
 @onready var brev1 = $"../../../Brevan"
-@onready var brev2 = $"../../../Brevan/TextureRect"
+@onready var brev2 = $"../../../Brevan/Beaver"
 @onready var button = $"../Button"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,8 +37,12 @@ func update_label_text():
 		
 		if (textVal == 3):
 			profile.show()
-		if(textVal == 4):
+			brev2.cur_beaver = "point_up"
+		elif(textVal == 4):
 			begin.show()
+			brev2.cur_beaver = "point_down"
+		else:
+			brev2.cur_beaver = "base_beaver"
 	else:
 		BrevanGlobal.menu_tutorial_finished = true
 		whole.hide()

@@ -22,6 +22,13 @@ func _process(_delta: float) -> void:
 		tail.visible = false
 	else:
 		tail.visible = true
+	
+	if beaver.flip_h == true:
+		tail.flip_h = true
+		tail.position = Vector2(-120, 36)
+	else:
+		tail.flip_h = false
+		tail.position = Vector2(158, 36)
 
 func make_happy():
 	happy.visible = true

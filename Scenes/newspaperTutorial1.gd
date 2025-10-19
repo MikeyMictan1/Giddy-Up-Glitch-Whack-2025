@@ -13,7 +13,7 @@ var messages = ["Hello again Brevan here, i see you have started your first situ
 ] 
 @onready var text1 = $MarginContainer/Panel/Label
 @onready var brevBox = $Brevan
-@onready var brev = $Brevan/TextureRect
+@onready var brev = $Brevan/Beaver
 @onready var block =$blocker
 @onready var textbox  = $MarginContainer
 @onready var button = $MarginContainer/Panel/Button

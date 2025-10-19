@@ -61,7 +61,8 @@ func load_article() -> void:
 	author.button_pressed = false
 	date.text = article["date"]
 	date.button_pressed = false
-	image.texture = load("res://Assets/" + article["image_name"])
+	image.texture = load("res://Assets/article_images/" + article["image_name"])
+	image.scale = Vector2(0.14,0.14)
 	image_button.button_pressed = false
 	text.text = article["text"]
 	text.button_pressed = false
