@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw2mhunnt14rn" path="res://Scripts/text_box.gd" id="1_lgpka"]
 [ext_resource type="Script" uid="uid://bohhnygie0uv0" path="res://Scripts/textInTextBox.gd" id="2_lgpka"]
-[ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="3_ui8g0"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="4_rq1sc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0ans"]
 bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
@@ -221,13 +221,10 @@ offset_bottom = 588.0
 theme = SubResource("Theme_eqrqp")
 theme_override_styles/panel = SubResource("StyleBoxFlat_yslqo")
 
-[node name="TextureRect" type="TextureRect" parent="Brevan"]
-layout_mode = 0
-offset_left = 12.9999695
-offset_top = 2.0
-offset_right = 416.99997
-offset_bottom = 385.0
-texture = ExtResource("3_ui8g0")
-expand_mode = 1
+[node name="Beaver" parent="Brevan" instance=ExtResource("4_rq1sc")]
+position = Vector2(213, 161.99997)
+scale = Vector2(0.39663947, 0.3966394)
+flip_h = true
+cur_beaver = "base_beaver"
 
 [connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]

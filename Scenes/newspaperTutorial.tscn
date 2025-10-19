@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://c352uqckd7byq"]
+[gd_scene load_steps=10 format=3 uid="uid://dcwwtvjbknf0e"]
 
 [ext_resource type="Script" uid="uid://d46y827wdmuq" path="res://Scenes/newspaperTutorial1.gd" id="1_jqahw"]
-[ext_resource type="Texture2D" uid="uid://dyx60oyhaxfcw" path="res://Assets/evilBeaver.webp" id="2_eyrld"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="2_eyrld"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eyrld"]
 bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
@@ -124,20 +124,9 @@ offset_bottom = 677.0
 theme = SubResource("Theme_lq3ws")
 theme_override_styles/panel = SubResource("StyleBoxFlat_b07x2")
 
-[node name="TextureRect" type="TextureRect" parent="Brevan"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -260.5
-offset_top = -234.0
-offset_right = 260.5
-offset_bottom = 234.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_eyrld")
-expand_mode = 1
+[node name="Beaver" parent="Brevan" instance=ExtResource("2_eyrld")]
+position = Vector2(393, 295)
+scale = Vector2(0.6038697, 0.6038696)
+cur_beaver = "base_beaver"
 
 [connection signal="pressed" from="MarginContainer/Panel/Button" to="." method="_on_button_pressed"]
