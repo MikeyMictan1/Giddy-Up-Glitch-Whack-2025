@@ -23,6 +23,8 @@ func _ready():
 		brevan = Brevan.new("FAT_BEAVER")
 	else:
 		brevan = loaded
+	BrevanGlobal.save_to_disk()
+	BrevanGlobal.load_from_disk()
 	bucks_label = get_node_or_null(bucks_label_path) as Label
 	attempts_label = get_node_or_null(attempts_label_path) as Label
 	highscore_label = get_node_or_null(highscore_label_path) as Label
@@ -51,6 +53,7 @@ func _on_customise_character_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 
 func update_ui() -> void:
+	BrevanGlobal.save_to_disk()
 	if bucks_label:
 		bucks_label.text = str(BrevanGlobal.get_bucks())
 	if attempts_label:
