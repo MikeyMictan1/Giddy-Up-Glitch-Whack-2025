@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dslbl3i32erhh" path="res://Scripts/MainScene.gd" id="1_hpc76"]
 [ext_resource type="Texture2D" uid="uid://epleqm8722wv" path="res://Assets/brevan logo.webp" id="2_qxria"]
-[ext_resource type="Theme" uid="uid://bvlqfwulvtuse" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
+[ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
 [ext_resource type="Texture2D" uid="uid://cbof2rh5a1kfl" path="res://Assets/pfp.png" id="4_q68mp"]
 [ext_resource type="Script" path="res://Scripts/coinsScript.gd" id="5_f140w"]
@@ -83,6 +83,26 @@ offset_right = 366.0
 offset_bottom = 68.0
 theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
 text = "Begin Situation"
+horizontal_alignment = 1
+
+[node name="reset_button" type="Button" parent="UICanvasLayer/Main Page"]
+layout_mode = 0
+offset_left = 632.0
+offset_top = 56.0
+offset_right = 1033.0
+offset_bottom = 143.0
+scale = Vector2(1, 1.0054244)
+focus_mode = 0
+theme = ExtResource("3_q68mp")
+
+[node name="Label" type="Label" parent="UICanvasLayer/Main Page/reset_button"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 366.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0.12941177, 0.16078432, 0.24313726, 1)
+text = "Reset Stats"
 horizontal_alignment = 1
 
 [node name="profile_button" type="Button" parent="UICanvasLayer/Main Page"]
@@ -176,4 +196,5 @@ text = "TAB : Controls"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [connection signal="pressed" from="UICanvasLayer/Main Page/begin_button" to="." method="_on_begin_button_pressed"]
+[connection signal="pressed" from="UICanvasLayer/Main Page/reset_button" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="UICanvasLayer/Main Page/profile_button" to="." method="_on_profile_button_pressed"]
