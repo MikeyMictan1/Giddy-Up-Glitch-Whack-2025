@@ -1,0 +1,56 @@
+{
+	"email0": {
+	"Address": "johnsmith@gmail.com",
+	"Title": "Please read this email",
+	"Dear": "Dear",
+	"Body": "Please click this link and log in with your password to unlock your account. If you do not act within 2 hours, your data will be deleted.",
+	"Footer": " Link : https://resetPasswordsafe.real.com",
+	"From": "Mr John Smith",
+	"results": [1, 0, 0, 1, 1, 1]
+  },
+	"email1": {
+	"Address": "roberthackman@BHupdate.biz",
+	"Title": "Immediate Action Required: Update Account Details",
+	"Dear": "User",
+	"Body": "Update your credentials now or your access will be terminated permanently.",
+	"Footer": "BH Support Team",
+	"From": "Mr Robert Hackman",
+	"results": [0, 1, 1, 1, 1, 1]
+  },
+	"email2": {
+	"Address": "emily.abigail@BH.co.uk",
+	"Title": "New Internal Mentorship Program",
+	"Dear": "All Employees",
+	"Body": "We are launching a mentorship program connecting junior and senior staff. Please sign up if interested.",
+	"Footer": "Deadline for registration is next week.",
+	"From": "Ms Emily Abigail",
+	"results": [0, 0, 0, 0, 0, 0]
+  },
+	  "email3": {
+	"Address": "rose.aurora@BrevanHoward.co.uk",
+	"Title": "Coffee Morning Announcement",
+	"Dear": "Dear individual",
+	"Body": "Join us for a casual coffee morning on Friday. No RSVP required.",
+	"Footer": "See you then!",
+	"From": "Ms Rose Aurora",
+	"results": [0, 0, 1, 0, 0, 0]
+  },
+  "email4": {
+	"Address": "hr@BrevanHoward.co.uk",
+	"Title": "HR Request: Please send your personal credentials",
+	"Dear": "Dear",
+	"Body": "We need copies of your passport, bank statements and NI number to complete onboarding.",
+	"Footer": "Send documents to this address.",
+	"From": "Dr Paula Schnitzelhauf",
+	"results": [0, 1, 0, 0, 0, 0]
+  },
+	"email5": {
+	"Address": "keegan.smith@support.BH.co.uk",
+	"Title": "Security Notice: Unusual login detected",
+	"Dear": "Dr Keegan Smith",
+	"Body": "We detected an unusual login. Please verify your login credentials immediately to avoid temporary suspension.",
+	"Footer": "If this is not done within 48 hours your account will be temporarily disabled.",
+	"From": "Dr Keegan Smith",
+	"results": [1, 0, 1, 1, 0, 0]
+  },
+}
