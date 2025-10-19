@@ -1,6 +1,6 @@
 extends Node
 
-class_name Brevan
+#class_name Brevan
 
 var username: String
 var score: int
@@ -17,6 +17,7 @@ func _init(name: String = "Brevan", s: int = 0, hs: int = 0, a: int = 0, b: int 
 	highscore = hs
 	attempts = a
 	bucks = b
+	current_outfit = ""
 
 func add_score():
 	score += 5

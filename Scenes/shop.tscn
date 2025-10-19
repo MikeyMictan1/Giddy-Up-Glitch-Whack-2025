@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://kun3iy2b1eiu"]
+[gd_scene load_steps=26 format=3 uid="uid://kun3iy2b1eiu"]
 
 [ext_resource type="StyleBox" uid="uid://tj48ah843ej5" path="res://Scenes/brevan_button_hover.tres" id="1_3ps1r"]
 [ext_resource type="Script" uid="uid://beortxcmnulks" path="res://Scripts/shop.gd" id="1_ymrm4"]
@@ -6,13 +6,13 @@
 [ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="2_ymrm4"]
 [ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="3_s8dlv"]
 [ext_resource type="Texture2D" uid="uid://bf6j2yk5pkrok" path="res://Assets/beavers/suit.png" id="5_1sjcd"]
-[ext_resource type="Texture2D" uid="uid://bvskb383qeqjk" path="res://Assets/beavers/brainrot.png" id="6_1cyt5"]
-[ext_resource type="Texture2D" uid="uid://biogmnwtpjtf8" path="res://Assets/beavers/chappell.png" id="7_0vsm1"]
-[ext_resource type="Texture2D" uid="uid://bpku6fws00xwk" path="res://Assets/beavers/cowboy.png" id="8_3568l"]
-[ext_resource type="Texture2D" uid="uid://b0qcokqlsskx7" path="res://Assets/beavers/louis.png" id="9_mjtuy"]
-[ext_resource type="Texture2D" uid="uid://b7uin4odgd7i1" path="res://Assets/beavers/mariachi.png" id="10_cuuv1"]
-[ext_resource type="Texture2D" uid="uid://c8rgj8d25kg3n" path="res://Assets/beavers/base_beaver.png" id="12_yl1pv"]
-[ext_resource type="PackedScene" uid="uid://r854t80ibpa" path="res://Scenes/beaver.tscn" id="13_m13ki"]
+[ext_resource type="Texture2D" uid="uid://fqqodtiw5aqi" path="res://Assets/reset.png" id="7_ymrm4"]
+[ext_resource type="Texture2D" uid="uid://bvskb383qeqjk" path="res://Assets/beavers/brainrot.png" id="9_1cyt5"]
+[ext_resource type="Texture2D" uid="uid://biogmnwtpjtf8" path="res://Assets/beavers/chappell.png" id="10_0vsm1"]
+[ext_resource type="Texture2D" uid="uid://bpku6fws00xwk" path="res://Assets/beavers/cowboy.png" id="11_3568l"]
+[ext_resource type="Texture2D" uid="uid://b0qcokqlsskx7" path="res://Assets/beavers/louis.png" id="12_mjtuy"]
+[ext_resource type="Texture2D" uid="uid://b7uin4odgd7i1" path="res://Assets/beavers/mariachi.png" id="13_cuuv1"]
+[ext_resource type="PackedScene" uid="uid://vj18omlwjx6c" path="res://Scenes/beaver.tscn" id="13_m13ki"]
 
 [sub_resource type="FontFile" id="FontFile_25uw0"]
 cache/0/16/0/ascent = 0.0
@@ -64,8 +64,101 @@ Panel/styles/panel = SubResource("StyleBoxFlat_jrys4")
 [sub_resource type="Theme" id="Theme_s8dlv"]
 Panel/styles/panel = SubResource("StyleBoxFlat_jrys4")
 
+[sub_resource type="Theme" id="Theme_3ps1r"]
+default_font = ExtResource("3_s8dlv")
+default_font_size = 35
+HeadingLabel/base_type = &"RichTextLabel"
+HeadingLabel/colors/default_color = Color(0, 0, 0, 1)
+HeadingLabel/font_sizes/normal_font_size = 50
+HeadingLabel/styles/background = null
+Label/colors/font_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io27d"]
 bg_color = Color(0.078431375, 0.10980392, 0.14509805, 1)
+
+[sub_resource type="FontFile" id="FontFile_ymrm4"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/33/0/ascent = 0.0
+cache/0/33/0/descent = 0.0
+cache/0/33/0/underline_position = 0.0
+cache/0/33/0/underline_thickness = 0.0
+cache/0/33/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/31/0/ascent = 0.0
+cache/0/31/0/descent = 0.0
+cache/0/31/0/underline_position = 0.0
+cache/0/31/0/underline_thickness = 0.0
+cache/0/31/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/29/0/ascent = 0.0
+cache/0/29/0/descent = 0.0
+cache/0/29/0/underline_position = 0.0
+cache/0/29/0/underline_thickness = 0.0
+cache/0/29/0/scale = 1.0
+cache/0/28/0/ascent = 0.0
+cache/0/28/0/descent = 0.0
+cache/0/28/0/underline_position = 0.0
+cache/0/28/0/underline_thickness = 0.0
+cache/0/28/0/scale = 1.0
+cache/0/27/0/ascent = 0.0
+cache/0/27/0/descent = 0.0
+cache/0/27/0/underline_position = 0.0
+cache/0/27/0/underline_thickness = 0.0
+cache/0/27/0/scale = 1.0
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5agh8"]
+bg_color = Color(0.7750634, 0.7750634, 0.7750633, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0.25565886, 0.2556588, 0.2556586, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="Theme" id="Theme_tyrku"]
+default_font = ExtResource("3_s8dlv")
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/fonts/font = SubResource("FontFile_ymrm4")
+Button/styles/hover = ExtResource("1_3ps1r")
+Button/styles/normal = ExtResource("2_ymrm4")
+Button/styles/pressed = ExtResource("2_ymrm4")
+Label/font_sizes/font_size = 8
+Panel/styles/panel = SubResource("StyleBoxFlat_5agh8")
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -155,40 +248,11 @@ offset_top = 865.2067
 offset_right = 1009.0741
 offset_bottom = 905.2067
 
-[node name="Suit" type="Sprite2D" parent="Panel/ShopItems/Beavers"]
-position = Vector2(-786.0741, -629.2067)
-scale = Vector2(0.23625253, 0.23625253)
-texture = ExtResource("5_1sjcd")
-
-[node name="Brainrot" type="Sprite2D" parent="Panel/ShopItems/Beavers"]
-position = Vector2(-450.0741, -624.2068)
-scale = Vector2(0.23828925, 0.2382892)
-texture = ExtResource("6_1cyt5")
-
-[node name="Chappell" type="Sprite2D" parent="Panel/ShopItems/Beavers"]
-position = Vector2(-113.0741, -631.20667)
-scale = Vector2(0.23421589, 0.23421589)
-texture = ExtResource("7_0vsm1")
-
-[node name="Cowboy" type="Sprite2D" parent="Panel/ShopItems/Beavers"]
-position = Vector2(-780.07404, -299.20673)
-scale = Vector2(0.2337067, 0.23370668)
-texture = ExtResource("8_3568l")
-
-[node name="Louis" type="Sprite2D" parent="Panel/ShopItems/Beavers"]
-position = Vector2(-447.0741, -305.20673)
-scale = Vector2(0.23192468, 0.23192465)
-texture = ExtResource("9_mjtuy")
-
-[node name="Mariachi" type="Sprite2D" parent="Panel/ShopItems/Beavers"]
-position = Vector2(-110.0741, -303.20673)
-scale = Vector2(0.22785129, 0.22785123)
-texture = ExtResource("10_cuuv1")
-
 [node name="Timer" type="Timer" parent="Panel/ShopItems"]
 
 [node name="ErrorBg" type="Panel" parent="Panel/ShopItems"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 26.999996
 offset_top = 288.0
@@ -199,6 +263,7 @@ theme = SubResource("Theme_ymrm4")
 
 [node name="ErrorMsg" type="Label" parent="Panel/ShopItems/ErrorBg"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = -2.0
@@ -211,6 +276,7 @@ uppercase = true
 
 [node name="ErrorBg2" type="Panel" parent="Panel/ShopItems"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 345.99997
 offset_top = 291.00003
@@ -221,6 +287,7 @@ theme = SubResource("Theme_ymrm4")
 
 [node name="ErrorMsg" type="Label" parent="Panel/ShopItems/ErrorBg2"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = -2.0
@@ -233,6 +300,7 @@ uppercase = true
 
 [node name="ErrorBg3" type="Panel" parent="Panel/ShopItems"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 696.99994
 offset_top = 282.00006
@@ -243,6 +311,7 @@ theme = SubResource("Theme_ymrm4")
 
 [node name="ErrorMsg" type="Label" parent="Panel/ShopItems/ErrorBg3"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = -2.0
@@ -255,6 +324,7 @@ uppercase = true
 
 [node name="ErrorBg4" type="Panel" parent="Panel/ShopItems"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 23.999987
 offset_top = 615.0
@@ -265,6 +335,7 @@ theme = SubResource("Theme_ymrm4")
 
 [node name="ErrorMsg" type="Label" parent="Panel/ShopItems/ErrorBg4"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = -2.0
@@ -277,6 +348,7 @@ uppercase = true
 
 [node name="ErrorBg5" type="Panel" parent="Panel/ShopItems"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 353.99997
 offset_top = 621.0
@@ -287,6 +359,7 @@ theme = SubResource("Theme_ymrm4")
 
 [node name="ErrorMsg" type="Label" parent="Panel/ShopItems/ErrorBg5"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = -2.0
@@ -299,6 +372,7 @@ uppercase = true
 
 [node name="ErrorBg6" type="Panel" parent="Panel/ShopItems"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 688.99994
 offset_top = 604.0
@@ -309,6 +383,7 @@ theme = SubResource("Theme_ymrm4")
 
 [node name="ErrorMsg" type="Label" parent="Panel/ShopItems/ErrorBg6"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = -2.0
@@ -318,6 +393,65 @@ theme = SubResource("Theme_s8dlv")
 theme_override_font_sizes/font_size = 28
 text = "Insufficient Bucks!"
 uppercase = true
+
+[node name="Label" type="Label" parent="Panel/ShopItems"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 140.0
+offset_right = 291.0
+offset_bottom = 187.0
+theme = SubResource("Theme_3ps1r")
+text = "30"
+
+[node name="Label2" type="Label" parent="Panel/ShopItems"]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 138.0
+offset_right = 628.0
+offset_bottom = 185.0
+theme = SubResource("Theme_3ps1r")
+text = "50"
+
+[node name="Label3" type="Label" parent="Panel/ShopItems"]
+layout_mode = 0
+offset_left = 927.0
+offset_top = 132.0
+offset_right = 969.0
+offset_bottom = 179.0
+theme = SubResource("Theme_3ps1r")
+text = "20"
+
+[node name="Label4" type="Label" parent="Panel/ShopItems"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = 463.0
+offset_right = 288.0
+offset_bottom = 510.0
+theme = SubResource("Theme_3ps1r")
+text = "25"
+
+[node name="Label5" type="Label" parent="Panel/ShopItems"]
+layout_mode = 0
+offset_left = 582.0
+offset_top = 463.0
+offset_right = 624.0
+offset_bottom = 510.0
+theme = SubResource("Theme_3ps1r")
+text = "40"
+
+[node name="Label6" type="Label" parent="Panel/ShopItems"]
+layout_mode = 0
+offset_left = 923.0
+offset_top = 462.0
+offset_right = 965.0
+offset_bottom = 509.0
+theme = SubResource("Theme_3ps1r")
+text = "25"
+
+[node name="Suit" type="Sprite2D" parent="Panel/ShopItems"]
+position = Vector2(859, 562)
+scale = Vector2(0.22148669, 0.22148669)
+texture = ExtResource("5_1sjcd")
 
 [node name="Buttons" type="Panel" parent="Panel"]
 layout_mode = 0
@@ -401,15 +535,6 @@ offset_right = 588.0
 offset_bottom = 759.0
 theme = ExtResource("2_fdj0q")
 
-[node name="TextureRect" type="TextureRect" parent="Panel/Brevan"]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 102.0
-offset_right = 490.0
-offset_bottom = 541.0
-texture = ExtResource("12_yl1pv")
-expand_mode = 1
-
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel/Brevan"]
 layout_mode = 0
 offset_left = 54.0
@@ -421,8 +546,18 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Brevan the Beaver"
 
 [node name="Beaver" parent="Panel/Brevan" instance=ExtResource("13_m13ki")]
-position = Vector2(258, 278.7617)
-scale = Vector2(0.56822807, 0.56822807)
+position = Vector2(255, 309)
+scale = Vector2(0.5295314, 0.52953136)
+cur_beaver = "base_beaver"
+
+[node name="ResetButton" type="Button" parent="Panel/Brevan"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 133.0
+offset_right = 108.0
+offset_bottom = 188.0
+icon = ExtResource("7_ymrm4")
+expand_icon = true
 
 [node name="top bar" type="Panel" parent="."]
 layout_mode = 0
@@ -432,21 +567,57 @@ offset_right = 1700.0
 offset_bottom = 110.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_io27d")
 
-[node name="Username" type="Label" parent="top bar"]
+[node name="BeaverShopLabel" type="Label" parent="top bar"]
 layout_mode = 0
-offset_left = 619.0
-offset_top = 15.0
-offset_right = 1077.0
+offset_left = 678.0
+offset_top = 28.0
+offset_right = 1018.0
 offset_bottom = 89.0
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 36
 text = "The Beaver Shop"
 
-[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
+[node name="WalletAmt" type="Label" parent="top bar"]
+layout_mode = 0
+offset_left = 1263.0
+offset_top = 31.0
+offset_right = 1500.0
+offset_bottom = 84.0
+theme = SubResource("Theme_tyrku")
+theme_override_font_sizes/font_size = 36
+text = "Wallet: 100"
+
+[node name="Brainrot" type="Sprite2D" parent="."]
+position = Vector2(838.00006, 344)
+scale = Vector2(0.23243389, 0.23243384)
+texture = ExtResource("9_1cyt5")
+
+[node name="Chappell" type="Sprite2D" parent="."]
+position = Vector2(1172, 350)
+scale = Vector2(0.22517836, 0.22676189)
+texture = ExtResource("10_0vsm1")
+
+[node name="Cowboy" type="Sprite2D" parent="."]
+position = Vector2(1511.9999, 346)
+scale = Vector2(0.2269602, 0.22696014)
+texture = ExtResource("11_3568l")
+
+[node name="Louis" type="Sprite2D" parent="."]
+position = Vector2(836, 676)
+scale = Vector2(0.22174132, 0.23680608)
+texture = ExtResource("12_mjtuy")
+
+[node name="Mariachi" type="Sprite2D" parent="."]
+position = Vector2(1174, 679.99994)
+scale = Vector2(0.21843165, 0.21843158)
+texture = ExtResource("13_cuuv1")
+
 [connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_main_scene_pressed"]
-[connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_buy_1_pressed"]
+[connection signal="pressed" from="Panel/Buttons/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_main_scene_2_pressed"]
+[connection signal="pressed" from="Panel/Buttons/buy1" to="." method="_on_buy_1_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy2" to="." method="_on_buy_2_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy3" to="." method="_on_buy_3_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy4" to="." method="_on_buy_4_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy5" to="." method="_on_buy_5_pressed"]
 [connection signal="pressed" from="Panel/Buttons/buy6" to="." method="_on_buy_6_pressed"]
+[connection signal="pressed" from="Panel/Brevan/ResetButton" to="." method="_on_reset_button_pressed"]
