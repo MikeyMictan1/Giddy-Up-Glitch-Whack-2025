@@ -12,6 +12,8 @@ extends Node2D
 @onready var buttons_enabled: Panel = $CanvasLayer/ButtonsEnabled
 @onready var continue_button: Button = $CanvasLayer/ContinueButton
 var current_article: int
+@onready var save_manager = SaveManager.new()
+var brevan: Brevan
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +24,12 @@ func _ready() -> void:
 	else:
 		current_article = 0
 		news_template.article_id = current_article
+	
+	var loaded = save_manager.load_brevan()
+	if loaded == null:
+		brevan = Brevan.new("FAT_BEAVER")
+	else:
+		brevan = loaded
 
 	continue_button.visible = false
 	buttons_enabled.visible = false
@@ -36,8 +44,9 @@ func _on_submit_button_pressed() -> void:
 		beaver.make_happy()
 	else:
 		beaver.make_sad()
-	if "outfit" in BrevanGlobal.current_outfit:	
-		beaver.cur_beaver = outfit_num_to_name(BrevanGlobal.current_outfit)
+	print("outfit!!! ------> " + brevan.current_outfit)
+	if "outfit" in brevan.current_outfit:
+		beaver.cur_beaver = outfit_num_to_name(brevan.current_outfit)
 	else:
 		beaver.cur_beaver = "base_beaver"
 	beaver.visible = true
