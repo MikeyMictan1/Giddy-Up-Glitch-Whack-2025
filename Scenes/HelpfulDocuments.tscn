@@ -805,7 +805,6 @@ theme = ExtResource("1_vbywl")
 text = "Back"
 
 [node name="NewsTemplate" parent="CanvasLayer" instance=ExtResource("5_76pne")]
-visible = false
 offset_left = 22.0
 offset_top = -434.0
 offset_right = 828.0
