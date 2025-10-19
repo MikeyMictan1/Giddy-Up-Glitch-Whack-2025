@@ -1,0 +1,731 @@
+[gd_scene load_steps=25 format=3 uid="uid://cxudhetg3bsbg"]
+
+[ext_resource type="StyleBox" uid="uid://bcmfwbk5d4xkv" path="res://UI/ui_themes/MainMenuButtonNormalStyle.tres" id="1_rnsnv"]
+[ext_resource type="FontVariation" uid="uid://6bkc156x2e4e" path="res://UI/ui_assets/game_ui_font.tres" id="2_uyuwt"]
+[ext_resource type="Theme" uid="uid://b81kaf80j5ngy" path="res://UI/ui_themes/MainMenuButtonTheme.tres" id="3_722s4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o1mj6"]
+bg_color = Color(0.522561, 0.6116589, 0.7011091, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efd0r"]
+bg_color = Color(0.92156863, 0.9098039, 0.8980392, 1)
+
+[sub_resource type="Theme" id="Theme_vbywl"]
+Button/styles/normal = SubResource("StyleBoxFlat_o1mj6")
+Panel/styles/panel = SubResource("StyleBoxFlat_efd0r")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l4qso"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2hvw"]
+bg_color = Color(0.16392645, 0.30049792, 0.4713905, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="Theme" id="Theme_gmqv7"]
+default_font = ExtResource("2_uyuwt")
+default_font_size = 30
+Button/colors/font_color = Color(0.536471, 0.829422, 0.895295, 1)
+Button/colors/font_hover_color = Color(0.692421, 0.893795, 0.96887, 1)
+Button/icons/icon = null
+Button/styles/focus = SubResource("StyleBoxEmpty_l4qso")
+Button/styles/hover = SubResource("StyleBoxFlat_a2hvw")
+Button/styles/normal = ExtResource("1_rnsnv")
+Button/styles/pressed = ExtResource("1_rnsnv")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5di6"]
+bg_color = Color(0.36282936, 0.36282948, 0.36282963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbywl"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkewg"]
+bg_color = Color(0.7213541, 0.513228, 0.7516615, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gdxt"]
+
+[sub_resource type="Theme" id="Theme_26y2q"]
+/styles/panel = SubResource("StyleBoxFlat_tkewg")
+Button/styles/normal = SubResource("StyleBoxFlat_7gdxt")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7duq"]
+bg_color = Color(0.7668508, 0.73620385, 0.7054079, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmqv7"]
+bg_color = Color(0.35593322, 0.3273196, 0.562703, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26y2q"]
+bg_color = Color(0.4481671, 0.40360355, 0.51797324, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdqfx"]
+bg_color = Color(0.8763275, 0.8750832, 0.85223395, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldcbm"]
+bg_color = Color(0.40605187, 0.3597139, 0.24386492, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwbgw"]
+bg_color = Color(0.48735547, 0.4674691, 0.3903603, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gn2v5"]
+bg_color = Color(0.50940585, 0.28929096, 0.3254848, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rswxb"]
+bg_color = Color(0.6995897, 0.34015048, 0.40815035, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4yh7"]
+bg_color = Color(0.24867108, 0.39997795, 0.35098895, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4dpo"]
+bg_color = Color(0.19620949, 0.47619188, 0.49440902, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[node name="HelpDocContainer" type="VBoxContainer"]
+size_flags_horizontal = 3
+
+[node name="helpful_doc_panel" type="Panel" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_vbywl")
+
+[node name="Buttons" type="Control" parent="helpful_doc_panel"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = -0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_top = -0.099999964
+offset_right = -808.0
+offset_bottom = -861.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="trusted_author_button" type="Button" parent="helpful_doc_panel/Buttons"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 251.0
+offset_right = 300.0
+offset_bottom = 437.0
+theme = SubResource("Theme_gmqv7")
+text = "
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="helpful_doc_panel/Buttons/trusted_author_button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 125.0
+offset_right = 215.0
+offset_bottom = 186.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Current team Members"
+
+[node name="Panel" type="Panel" parent="helpful_doc_panel/Buttons/trusted_author_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 203.0
+offset_bottom = 114.0
+mouse_filter = 2
+
+[node name="trusted_publisher_button" type="Button" parent="helpful_doc_panel/Buttons"]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 250.0
+offset_right = 743.0
+offset_bottom = 436.0
+theme = SubResource("Theme_gmqv7")
+text = "
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="helpful_doc_panel/Buttons/trusted_publisher_button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 125.0
+offset_right = 215.0
+offset_bottom = 186.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Company email policy"
+
+[node name="Panel" type="Panel" parent="helpful_doc_panel/Buttons/trusted_publisher_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 203.0
+offset_bottom = 114.0
+mouse_filter = 2
+
+[node name="trusted_domain_button" type="Button" parent="helpful_doc_panel/Buttons"]
+layout_mode = 0
+offset_left = 301.0
+offset_top = 477.0
+offset_right = 521.0
+offset_bottom = 663.0
+theme = SubResource("Theme_gmqv7")
+text = "
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="helpful_doc_panel/Buttons/trusted_domain_button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 124.0
+offset_right = 215.0
+offset_bottom = 185.0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Allowed email Domains"
+
+[node name="Panel" type="Panel" parent="helpful_doc_panel/Buttons/trusted_domain_button"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 17.0
+offset_right = 203.0
+offset_bottom = 114.0
+mouse_filter = 2
+
+[node name="info(static)" type="Control" parent="helpful_doc_panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_right = -808.0
+offset_bottom = -860.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="link_banner" type="Panel" parent="helpful_doc_panel/info(static)"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 849.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a5di6")
+
+[node name="link" type="Panel" parent="helpful_doc_panel/info(static)/link_banner"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 834.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="helpful_doc_panel/info(static)/link_banner/link"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -4.0
+offset_right = 808.0
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "https://trusted_beaver_files.gov"
+
+[node name="brief_top" type="Panel" parent="helpful_doc_panel/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 102.0
+offset_right = 817.0
+offset_bottom = 211.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_o7duq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="helpful_doc_panel/info(static)/brief_top"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 794.0
+offset_bottom = 130.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "We have compiled some trusted resources for you. Use these resources to determine if each email is trusted, or suspicious."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="brief_bottom" type="Panel" parent="helpful_doc_panel/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 695.0
+offset_right = 817.0
+offset_bottom = 857.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_o7duq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="helpful_doc_panel/info(static)/brief_bottom"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 794.0
+offset_bottom = 148.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Some other considerations to bear in mind:
+
+if sender name does not match with the name on the email it is likely to be suspiscious."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="trusted_authors" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_vbywl")
+
+[node name="Buttons" type="Control" parent="trusted_authors"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = -0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_top = -0.099999964
+offset_right = -808.0
+offset_bottom = -861.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="info(static)" type="Control" parent="trusted_authors"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_right = -808.0
+offset_bottom = -860.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="link_banner" type="Panel" parent="trusted_authors/info(static)"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 849.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gmqv7")
+
+[node name="link" type="Panel" parent="trusted_authors/info(static)/link_banner"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 834.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_authors/info(static)/link_banner/link"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -6.0
+offset_right = 808.0
+offset_bottom = 46.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "https://current_team.com"
+
+[node name="brief_top" type="Panel" parent="trusted_authors/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 112.0
+offset_right = 817.0
+offset_bottom = 182.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_26y2q")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_authors/info(static)/brief_top"]
+layout_mode = 0
+offset_right = 794.0
+offset_bottom = 71.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Below is a list of all of your current team members."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="brief_bottom" type="Panel" parent="trusted_authors/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 200.0
+offset_right = 817.0
+offset_bottom = 786.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdqfx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_authors/info(static)/brief_bottom"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 790.0
+offset_bottom = 587.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "- Mr Alfie Jamson
+- Dr keegan Smith
+- Ms Claire Smithson
+- Mr Joe Smithington
+- Mr wood Chuck
+- Mr justin Beaver
+- Ms Rose Aurora
+- Ms Emily Abigail
+- Dr Paula Schnitzelhauf
+- Mr John doe
+"
+fit_content = true
+
+[node name="back_button" type="Button" parent="trusted_authors/info(static)"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 822.0
+offset_right = 458.0
+offset_bottom = 862.0
+theme = ExtResource("3_722s4")
+text = "Back"
+
+[node name="trusted_publishers" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_vbywl")
+
+[node name="Buttons" type="Control" parent="trusted_publishers"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = -0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_top = -0.099999964
+offset_right = -808.0
+offset_bottom = -861.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="info(static)" type="Control" parent="trusted_publishers"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_right = -808.0
+offset_bottom = -860.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="link_banner" type="Panel" parent="trusted_publishers/info(static)"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 849.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ldcbm")
+
+[node name="link" type="Panel" parent="trusted_publishers/info(static)/link_banner"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 834.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_publishers/info(static)/link_banner/link"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -5.0
+offset_right = 808.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "https://BH/companypolicy/email.com"
+
+[node name="brief_top" type="Panel" parent="trusted_publishers/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 112.0
+offset_right = 817.0
+offset_bottom = 182.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cwbgw")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_publishers/info(static)/brief_top"]
+layout_mode = 0
+offset_right = 794.0
+offset_bottom = 71.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Below is a list of subjects which should not be sent via company emails."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="brief_bottom" type="Panel" parent="trusted_publishers/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 200.0
+offset_right = 817.0
+offset_bottom = 786.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdqfx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_publishers/info(static)/brief_bottom"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 790.0
+offset_bottom = 587.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "- emails should never ask you for your password for company account.
+- emails should never ask you for personal information such as credentials for different accounts
+- emails should never threaten you to do something against you will.
+- emails should never ask you to do somthing without giving you time to think about it.
+-emails from outside the company should immediately be flagged as suspiscious."
+fit_content = true
+
+[node name="back_button" type="Button" parent="trusted_publishers/info(static)"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 822.0
+offset_right = 458.0
+offset_bottom = 862.0
+theme = ExtResource("3_722s4")
+text = "Back"
+
+[node name="trusted_domains" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_vbywl")
+
+[node name="Buttons" type="Control" parent="trusted_domains"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = -0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_top = -0.099999964
+offset_right = -808.0
+offset_bottom = -861.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="info(static)" type="Control" parent="trusted_domains"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_right = -808.0
+offset_bottom = -860.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="link_banner" type="Panel" parent="trusted_domains/info(static)"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 849.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gn2v5")
+
+[node name="link" type="Panel" parent="trusted_domains/info(static)/link_banner"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 834.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_domains/info(static)/link_banner/link"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -3.0
+offset_right = 808.0
+offset_bottom = 49.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "https://BH/secure_email_domains.co.uk"
+
+[node name="brief_top" type="Panel" parent="trusted_domains/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 112.0
+offset_right = 817.0
+offset_bottom = 182.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rswxb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_domains/info(static)/brief_top"]
+layout_mode = 0
+offset_right = 794.0
+offset_bottom = 71.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Here are all the email domains which are part of the Brevan Howard Company."
+fit_content = true
+horizontal_alignment = 1
+
+[node name="brief_bottom" type="Panel" parent="trusted_domains/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 200.0
+offset_right = 817.0
+offset_bottom = 786.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdqfx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_domains/info(static)/brief_bottom"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 790.0
+offset_bottom = 587.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "@BrevanHoward.co.uk
+@BH.co.uk
+@support.BH.co.uk
+@BH.com
+@SoftwareEngBH.com
+@Brevan.Howard.com
+@BH.International.es
+"
+fit_content = true
+
+[node name="back_button" type="Button" parent="trusted_domains/info(static)"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 822.0
+offset_right = 458.0
+offset_bottom = 862.0
+theme = ExtResource("3_722s4")
+text = "Back"
+
+[node name="trusted_recent_events" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_vbywl")
+
+[node name="Buttons" type="Control" parent="trusted_recent_events"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_top = -0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_top = -0.099999964
+offset_right = -808.0
+offset_bottom = -861.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="info(static)" type="Control" parent="trusted_recent_events"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -848.0
+offset_right = -808.0
+offset_bottom = -860.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="link_banner" type="Panel" parent="trusted_recent_events/info(static)"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 849.0
+offset_bottom = 84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g4yh7")
+
+[node name="link" type="Panel" parent="trusted_recent_events/info(static)/link_banner"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 23.0
+offset_right = 834.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vbywl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_recent_events/info(static)/link_banner/link"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -3.0
+offset_right = 808.0
+offset_bottom = 47.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "https://known_recent_events.gov"
+
+[node name="brief_top" type="Panel" parent="trusted_recent_events/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 112.0
+offset_right = 817.0
+offset_bottom = 182.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_a4dpo")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_recent_events/info(static)/brief_top"]
+layout_mode = 0
+offset_right = 794.0
+offset_bottom = 71.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "Here are some of the key events that happened this year!"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="brief_bottom" type="Panel" parent="trusted_recent_events/info(static)"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 200.0
+offset_right = 817.0
+offset_bottom = 786.0
+theme = SubResource("Theme_26y2q")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rdqfx")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trusted_recent_events/info(static)/brief_bottom"]
+layout_mode = 0
+offset_top = 9.0
+offset_right = 795.0
+offset_bottom = 587.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 25
+text = "ITALIAN DIGITAL COMMUNICATION PATTERNS REJECTED AS OFFICIAL LINGUISTIC FRAMEWORK BY UNESCO - 2025-10-18
+
+IT-INFECTING \"COVID-10\" DEBUNKED BY BREVAN THE BEAVER - 2025-07-31
+
+COMPUTER SCIENCE DEPARTMENT DEVELOPS ADVANCED BEHAVIORAL EMULATION SYSTEM FOR EDUCATIONAL RESEARCH - 2025-09-14
+
+GIDDY UP GLITCH RELEASE HIT GAME \"PET PAYDAY\" TO ACCLAIM ON ITCH.IO - 2024-10-21
+
+BREVAN HOWARD SEES RECORD PROFITS AS THEIR DEMAND SURGES - 2025-10-19
+"
+fit_content = true
+
+[node name="back_button" type="Button" parent="trusted_recent_events/info(static)"]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 822.0
+offset_right = 458.0
+offset_bottom = 862.0
+theme = ExtResource("3_722s4")
+text = "Back"
