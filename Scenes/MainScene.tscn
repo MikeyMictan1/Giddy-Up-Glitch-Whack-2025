@@ -3,13 +3,10 @@
 [ext_resource type="Script" uid="uid://dslbl3i32erhh" path="res://Scripts/MainScene.gd" id="1_hpc76"]
 [ext_resource type="Texture2D" uid="uid://epleqm8722wv" path="res://Assets/brevan logo.webp" id="2_qxria"]
 [ext_resource type="Theme" uid="uid://1nos2nv5h2d8" path="res://Scenes/brevan_button.tres" id="3_q68mp"]
-[ext_resource type="StyleBox" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
-[ext_resource type="Script" uid="uid://ga7h1p5s8838" path="res://Scripts/coinsScript.gd" id="5_f140w"]
+[ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
+[ext_resource type="Script" path="res://Scripts/coinsScript.gd" id="5_f140w"]
 [ext_resource type="Texture2D" uid="uid://b1to56m4rvi3l" path="res://Assets/Untitled_Artwork 79.png" id="5_q68mp"]
 [ext_resource type="Texture2D" uid="uid://dhdtk4g4yafnj" path="res://Assets/brevan_bucks.png" id="7_0iob3"]
-[ext_resource type="StyleBox" uid="uid://dislddh1r7uvq" path="res://Scenes/brevan_button_normal.tres" id="4_f140w"]
-[ext_resource type="Texture2D" uid="uid://cbof2rh5a1kfl" path="res://Assets/pfp.png" id="4_q68mp"]
-[ext_resource type="Script" path="res://Scripts/coinsScript.gd" id="5_f140w"]
 [ext_resource type="PackedScene" uid="uid://dqbmf7bpt47v8" path="res://Scenes/TextBox.tscn" id="7_f140w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iob3"]
@@ -190,7 +187,6 @@ layout_mode = 2
 text = "TAB : Controls"
 
 [node name="TextBox" parent="." instance=ExtResource("7_f140w")]
-visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
